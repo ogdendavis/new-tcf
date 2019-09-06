@@ -1,0 +1,14 @@
+{
+  "files": {
+    "static/js/0.chunk.js": "/new-tcf/wp-content/themes/reactfit/static/js/0.chunk.js",
+    "static/js/0.chunk.js.map": "/new-tcf/wp-content/themes/reactfit/static/js/0.chunk.js.map",
+    "main.css": "/new-tcf/wp-content/themes/reactfit/static/css/main.chunk.css",
+    "main.js": "/new-tcf/wp-content/themes/reactfit/static/js/main.chunk.js",
+    "main.css.map": "/new-tcf/wp-content/themes/reactfit/static/css/main.chunk.css.map",
+    "main.js.map": "/new-tcf/wp-content/themes/reactfit/static/js/main.chunk.js.map",
+    "runtime~main.js": "/new-tcf/wp-content/themes/reactfit/static/js/bundle.js",
+    "runtime~main.js.map": "/new-tcf/wp-content/themes/reactfit/static/js/bundle.js.map",
+    "index.php": "/new-tcf/wp-content/themes/reactfit/index.php",
+    "static/media/logo.svg": "/new-tcf/wp-content/themes/reactfit/static/media/logo.5d5d9eef.svg"
+  }
+}
