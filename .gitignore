@@ -1,0 +1,18 @@
+# Foundationpress
+.DS_Store
+config.yml
+node_modules
+npm-debug.log
+*.sass-cache*
+*.log
+.idea/
+*.swp
+packaged/
+wpcs/
+
+# Local setup
+.htaccess
+
+# Wordpress
+wp-config.php
+uploads
