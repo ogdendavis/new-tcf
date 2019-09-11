@@ -1,31 +1,102 @@
 // Import globals and app-wide stuffs
 import React from 'react';
 import logo from './logo.svg';
+import axios from 'axios';
 import './App.css';
 
 // Import components
 import Header from './components/Header';
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>react-src/src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      render: false,
+    } // Initial app state set in getFromWordpress
+
+    this.getFromWordpress = this.getFromWordpress.bind(this);
+  }
+
+  componentDidMount() {
+    this.getFromWordpress();
+  }
+
+  // One API call to rule them all
+  getFromWordpress() {
+    // One call for app-wide info
+    const getSiteMeta = () => {
+      axios
+        .get('http://localhost/new-tcf/wp-json')
+        .then(response => {
+          this.setState({
+            meta: response.data,
+          });
+        })
+        .catch(error => console.log(error));
+    }
+
+    // Header info -- just menu items, for now
+    const getHeaderInfo = () => {
+      axios
+        .get('http://localhost/new-tcf/wp-json/reactfit/header-menu')
+        .then(response => {
+          // Just pull out needed data for now (might want more, if we get fancy)
+          const headerMenuItems = response.data.map(item => {
+            return {
+              id: item.ID,
+              title: item.title,
+              url: item.url,
+            };
+          });
+
+          this.setState({
+            header: {
+              menu: headerMenuItems,
+            }
+          });
+
+        })
+        .catch(error => console.log(error));
+    }
+
+    const runAllCalls = () => {
+      getSiteMeta();
+      getHeaderInfo();
+    }
+
+    runAllCalls();
+    window.setTimeout(() => {console.log(this.state);this.setState({render: true})}, 1000)
+  }
+
+  render() {
+    if (!this.state.render) {
+      return (
+        <div className="App">
+          {/*Replace this with a cool loading spinner!*/}
+          ... loading ...
+        </div>
+      );
+    }
+    return (
+      <div className="App">
+        <Header menuItems={this.state.header.menu} />
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>react-src/src/App.js</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;

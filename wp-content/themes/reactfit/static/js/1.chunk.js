@@ -1,4 +1,4 @@
-(window["webpackJsonpreactfit"] = window["webpackJsonpreactfit"] || []).push([[0],{
+(window["webpackJsonpreactfit"] = window["webpackJsonpreactfit"] || []).push([[1],{
 
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
@@ -32800,4 +32800,4 @@ module.exports = function (list, options) {
 /***/ })
 
 }]);
-//# sourceMappingURL=0.chunk.js.map
+//# sourceMappingURL=1.chunk.js.map

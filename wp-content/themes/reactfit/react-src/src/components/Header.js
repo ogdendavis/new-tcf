@@ -6,35 +6,9 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      menuItems: [],
+      menuItems: this.props.menuItems,
       open: false,
     }
-
-    this.setMenu = this.setMenu.bind(this);
-  }
-
-  componentDidMount() {
-    this.setMenu();
-  }
-
-  setMenu() {
-    axios
-      .get('http://localhost/new-tcf/wp-json/reactfit/header-menu')
-      .then(response => {
-        // Just pull out needed data for now (might want more, if we get fancy)
-        const items = response.data.map(item => {
-          return {
-            id: item.ID,
-            title: item.title,
-            url: item.url,
-          };
-        });
-        // Put it in state!
-        this.setState({
-          menuItems: items,
-        });
-      })
-      .catch(error => console.log(error));
   }
 
   render() {
@@ -61,6 +35,10 @@ const HeaderMenu = (props) => {
       {innerContent}
     </div>
   );
+}
+
+const HeaderLogo = (props) => {
+
 }
 
 export default Header
