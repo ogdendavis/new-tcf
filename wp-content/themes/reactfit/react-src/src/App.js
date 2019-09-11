@@ -28,9 +28,7 @@ class App extends React.Component {
       axios
         .get('http://localhost/new-tcf/wp-json')
         .then(response => {
-          this.setState({
-            meta: response.data,
-          });
+          return response.data;
         })
         .catch(error => console.log(error));
     }
@@ -49,29 +47,34 @@ class App extends React.Component {
             };
           });
 
-          this.setState({
-            header: {
-              menu: headerMenuItems,
-            }
-          });
+          return {
+            menu: headerMenuItems,
+          };
 
         })
         .catch(error => console.log(error));
     }
 
     const runAllCalls = () => {
-      getSiteMeta();
-      getHeaderInfo();
+      const meta = getSiteMeta();
+      const header = getHeaderInfo();
+      this.setState({
+        meta: meta,
+        header: header,
+      }, goTime);
+    }
+
+    const goTime = () => {
+      this.setState({render: true});
     }
 
     runAllCalls();
-    window.setTimeout(() => {console.log(this.state);this.setState({render: true})}, 1000)
   }
 
   render() {
     if (!this.state.render) {
       return (
-        <div className="App">
+        <div className="App" style={{marginTop:'50px'}}>
           {/*Replace this with a cool loading spinner!*/}
           ... loading ...
         </div>

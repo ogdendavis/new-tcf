@@ -106,9 +106,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     // One call for app-wide info
     const getSiteMeta = () => {
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://localhost/new-tcf/wp-json').then(response => {
-        this.setState({
-          meta: response.data
-        });
+        return response.data;
       }).catch(error => console.log(error));
     }; // Header info -- just menu items, for now
 
@@ -123,35 +121,40 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
             url: item.url
           };
         });
-        this.setState({
-          header: {
-            menu: headerMenuItems
-          }
-        });
+        return {
+          menu: headerMenuItems
+        };
       }).catch(error => console.log(error));
     };
 
     const runAllCalls = () => {
-      getSiteMeta();
-      getHeaderInfo();
+      const meta = getSiteMeta();
+      const header = getHeaderInfo();
+      this.setState({
+        meta: meta,
+        header: header
+      }, goTime);
     };
 
-    runAllCalls();
-    window.setTimeout(() => {
-      console.log(this.state);
+    const goTime = () => {
       this.setState({
         render: true
       });
-    }, 1000);
+    };
+
+    runAllCalls();
   }
 
   render() {
     if (!this.state.render) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "App",
+        style: {
+          marginTop: '50px'
+        },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 77
         },
         __self: this
       }, "... loading ...");
@@ -161,21 +164,21 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       className: "App",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 84
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_4__["default"], {
       menuItems: this.state.header.menu,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 82
+        lineNumber: 85
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
       className: "App-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83
+        lineNumber: 86
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -184,19 +187,19 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       alt: "logo",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84
+        lineNumber: 87
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 88
       },
       __self: this
     }, "Edit ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 89
       },
       __self: this
     }, "react-src/src/App.js"), " and save to reload."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -206,7 +209,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       rel: "noopener noreferrer",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 91
       },
       __self: this
     }, "Learn React")));
@@ -256,12 +259,9 @@ if (content.locals) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Header_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Header.css */ "./src/components/Header.css");
-/* harmony import */ var _Header_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Header_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Header_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header.css */ "./src/components/Header.css");
+/* harmony import */ var _Header_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Header_css__WEBPACK_IMPORTED_MODULE_1__);
 var _jsxFileName = "/Applications/MAMP/htdocs/new-tcf/wp-content/themes/reactfit/react-src/src/components/Header.js";
-
 
 
 
@@ -279,14 +279,14 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       className: "header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 15
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderMenu, {
       items: this.state.menuItems,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 16
       },
       __self: this
     }));
@@ -302,14 +302,14 @@ const HeaderMenu = props => {
       key: itemKey,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 26
       },
       __self: undefined
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       href: item.url,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 27
       },
       __self: undefined
     }, item.title));
@@ -318,7 +318,7 @@ const HeaderMenu = props => {
     className: "header-menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 33
     },
     __self: undefined
   }, innerContent);
@@ -514,5 +514,5 @@ module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/new-tcf/wp-co
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
