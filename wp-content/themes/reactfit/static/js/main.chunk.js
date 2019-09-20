@@ -79,7 +79,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Header */ "./src/components/Header.js");
 var _jsxFileName = "/Applications/MAMP/htdocs/new-tcf/wp-content/themes/reactfit/react-src/src/App.js";
-// Import globals and app-wide stuffs
+// Import modules and globals
 
 
 
@@ -104,15 +104,16 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
   getFromWordpress() {
     // One call for app-wide info
-    const getSiteMeta = () => {
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://localhost/new-tcf/wp-json').then(response => {
+    const getSiteMeta = async () => {
+      const meta = await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://localhost/new-tcf/wp-json').then(response => {
         return response.data;
       }).catch(error => console.log(error));
+      return meta;
     }; // Header info -- just menu items, for now
 
 
-    const getHeaderInfo = () => {
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://localhost/new-tcf/wp-json/reactfit/header-menu').then(response => {
+    const getHeaderInfo = async () => {
+      const headerInfo = await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://localhost/new-tcf/wp-json/reactfit/header-menu').then(response => {
         // Just pull out needed data for now (might want more, if we get fancy)
         const headerMenuItems = response.data.map(item => {
           return {
@@ -125,11 +126,12 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
           menu: headerMenuItems
         };
       }).catch(error => console.log(error));
+      return headerInfo;
     };
 
-    const runAllCalls = () => {
-      const meta = getSiteMeta();
-      const header = getHeaderInfo();
+    const runAllCalls = async () => {
+      const meta = await getSiteMeta();
+      const header = await getHeaderInfo();
       this.setState({
         meta: meta,
         header: header
@@ -154,7 +156,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 81
         },
         __self: this
       }, "... loading ...");
@@ -164,21 +166,21 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       className: "App",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84
+        lineNumber: 88
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_4__["default"], {
       menuItems: this.state.header.menu,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 89
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
       className: "App-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 90
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -187,19 +189,19 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       alt: "logo",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 91
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 92
       },
       __self: this
     }, "Edit ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89
+        lineNumber: 93
       },
       __self: this
     }, "react-src/src/App.js"), " and save to reload."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -209,7 +211,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       rel: "noopener noreferrer",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 95
       },
       __self: this
     }, "Learn React")));

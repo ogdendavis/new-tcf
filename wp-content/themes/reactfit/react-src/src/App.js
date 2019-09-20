@@ -1,4 +1,4 @@
-// Import globals and app-wide stuffs
+// Import modules and globals
 import React from 'react';
 import logo from './logo.svg';
 import axios from 'axios';
@@ -24,18 +24,20 @@ class App extends React.Component {
   // One API call to rule them all
   getFromWordpress() {
     // One call for app-wide info
-    const getSiteMeta = () => {
-      axios
+    const getSiteMeta = async () => {
+      const meta = await axios
         .get('http://localhost/new-tcf/wp-json')
         .then(response => {
           return response.data;
         })
         .catch(error => console.log(error));
+
+      return meta;
     }
 
     // Header info -- just menu items, for now
-    const getHeaderInfo = () => {
-      axios
+    const getHeaderInfo = async () => {
+      const headerInfo = await axios
         .get('http://localhost/new-tcf/wp-json/reactfit/header-menu')
         .then(response => {
           // Just pull out needed data for now (might want more, if we get fancy)
@@ -53,11 +55,13 @@ class App extends React.Component {
 
         })
         .catch(error => console.log(error));
+
+      return headerInfo;
     }
 
-    const runAllCalls = () => {
-      const meta = getSiteMeta();
-      const header = getHeaderInfo();
+    const runAllCalls = async () => {
+      const meta = await getSiteMeta();
+      const header = await getHeaderInfo();
       this.setState({
         meta: meta,
         header: header,
