@@ -265,7 +265,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Header_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Header_css__WEBPACK_IMPORTED_MODULE_1__);
 var _jsxFileName = "/Applications/MAMP/htdocs/new-tcf/wp-content/themes/reactfit/react-src/src/components/Header.js";
 
-
+ // Main header component
 
 class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor(props) {
@@ -281,20 +281,40 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       className: "header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderMenu, {
-      items: this.state.menuItems,
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 16
       },
       __self: this
-    }));
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderContact, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "header__row-two",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderLogo, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderMenu, {
+      items: this.state.menuItems,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      },
+      __self: this
+    })));
   }
 
-}
+} // Stateless child components
+
 
 const HeaderMenu = props => {
   const innerContent = props.items.map(item => {
@@ -304,14 +324,14 @@ const HeaderMenu = props => {
       key: itemKey,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 32
       },
       __self: undefined
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       href: item.url,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 33
       },
       __self: undefined
     }, item.title));
@@ -320,13 +340,62 @@ const HeaderMenu = props => {
     className: "header-menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 39
     },
     __self: undefined
   }, innerContent);
 };
 
-const HeaderLogo = props => {};
+const HeaderContact = props => {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "header__contact",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "phone",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48
+    },
+    __self: undefined
+  }, "229-977-5025"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "email",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: undefined
+  }, "abrie@thomasvillecrossfit.com"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "address",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: undefined
+  }, "118 Fairbanks Ave, Thomasville GA, 31792"));
+};
+
+const HeaderLogo = props => {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "header__logo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "//localhost/new-tcf/wp-content/uploads/2019/09/SM-tcf-logo-full.png",
+    alt: "TCF logo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    },
+    __self: undefined
+  }));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
 
@@ -516,5 +585,5 @@ module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/new-tcf/wp-co
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
