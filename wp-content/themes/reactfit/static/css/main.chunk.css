@@ -49,15 +49,15 @@ code {
 
 :root {
   /* base colors */
-  --black: #181818;
+  --black: #222;
   --white: #fff;
   --tcf-blue: #005fed;
   --orange: #ff6400;
   --yellow: #ffcb00;
   --purple: #8300ee;
   /* Making some transparent overlays */
-  --black-transparent: rgba(24, 24, 24, 0.5);
-  --black-opaque: rgba(24, 24, 24, 0.9);
+  --black-transparent: rgba(34, 34, 34, 0.5);
+  --black-opaque: rgba(34, 34, 34, 0.9);
 }
 
 :root {
@@ -75,6 +75,7 @@ h1, h2, h3, h4 {
 
 a {
   color: var(--tcf-blue);
+  text-decoration: none;
 }
 
 a:visited {
@@ -93,15 +94,54 @@ a:hover {
 }
 
 .header__row-one, .header__row-two {
-  display: flex;
   width: 100vw;
   padding: 10px;
+}
+
+.header__row-one {
+  background: var(--black);
 }
 
 .header__contact {
   font-size: 14px;
   font-weight: 700;
-  padding-left: 2em;
+  width: 100%;
+  text-align: center;
+}
+
+.contact__phone, .contact__email, .contact__address {
+  margin: 0 1.5em 0 0.5em;
+}
+
+.header__row-two {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header__logo img {
+  max-width: 10rem;
+}
+
+.header__menu {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.header-menu__item {
+  margin: 0 1rem;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.header-menu__item a {
+  color: var(--white);
+  transition: all 0.5s ease-in-out;
+}
+
+.header-menu__item a:hover {
+  color: var(--tcf-blue);
 }
 
 

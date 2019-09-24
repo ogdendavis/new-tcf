@@ -4,15 +4,54 @@
 }
 
 .header__row-one, .header__row-two {
-  display: flex;
   width: 100vw;
   padding: 10px;
+}
+
+.header__row-one {
+  background: var(--black);
 }
 
 .header__contact {
   font-size: 14px;
   font-weight: 700;
-  padding-left: 2em;
+  width: 100%;
+  text-align: center;
+}
+
+.contact__phone, .contact__email, .contact__address {
+  margin: 0 1.5em 0 0.5em;
+}
+
+.header__row-two {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header__logo img {
+  max-width: 10rem;
+}
+
+.header__menu {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.header-menu__item {
+  margin: 0 1rem;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.header-menu__item a {
+  color: var(--white);
+  transition: all 0.5s ease-in-out;
+}
+
+.header-menu__item a:hover {
+  color: var(--tcf-blue);
 }
 
 

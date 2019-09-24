@@ -41,7 +41,7 @@ const HeaderMenu = (props) => {
   });
 
   return (
-    <div className="header-menu">
+    <div className="header__menu">
       {innerContent}
     </div>
   );
@@ -51,11 +51,11 @@ const HeaderContact = (props) => {
   return(
     <div className="header__contact">
       <i className="fa fa-phone-alt"></i>
-      <span className="phone">229-977-5025</span>
+      <span className="contact__phone">229-977-5025</span>
       <i className="fa fa-envelope"></i>
-      <span className="email">abrie@thomasvillecrossfit.com</span>
+      <span className="contact__email">abrie@thomasvillecrossfit.com</span>
       <i className="fa fa-map-marker-alt"></i>
-      <span className="address">118 Fairbanks Ave, Thomasville GA, 31792</span>
+      <span className="contact__address">118 Fairbanks Ave, Thomasville GA, 31792</span>
     </div>
   );
 }

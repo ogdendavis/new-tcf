@@ -330,7 +330,7 @@ const HeaderMenu = props => {
     }, item.title));
   });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "header-menu",
+    className: "header__menu",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 44
@@ -355,7 +355,7 @@ const HeaderContact = props => {
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "phone",
+    className: "contact__phone",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 54
@@ -369,7 +369,7 @@ const HeaderContact = props => {
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "email",
+    className: "contact__email",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 56
@@ -383,7 +383,7 @@ const HeaderContact = props => {
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "address",
+    className: "contact__address",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 58
