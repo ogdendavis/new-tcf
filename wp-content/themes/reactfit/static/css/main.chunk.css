@@ -55,9 +55,17 @@ code {
   --orange: #ff6400;
   --yellow: #ffcb00;
   --purple: #8300ee;
+
   /* Making some transparent overlays */
-  --black-transparent: rgba(34, 34, 34, 0.5);
-  --black-opaque: rgba(34, 34, 34, 0.9);
+  --black-transparent: rgba(34,34,34,0.5);
+  --black-opaque: rgba(34,34,34,0.9);
+
+  --tcf-blue-semiopaque: rgba(0,95,237,0.8);
+  --tcf-blue-opaque: rgba(0,95,237,0.9);
+
+  --orange-opaque: rgba(255,100,0,0.9);
+
+  --yellow-opaque: rgba(255,203,0,0.9);
 }
 
 :root {
@@ -144,14 +152,34 @@ a:hover {
   color: var(--tcf-blue);
 }
 
-
-.hero--temp {
+.hero {
+  z-index: -1;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  z-index: -1;
-  width: 100%;
+  height: 70vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 10vw;
+  padding-top: 30vh;
+  box-sizing: border-box;
+}
+
+.hero__tagline {
+  text-align: left;
+  color: var(--white);
+  background: linear-gradient(var(--tcf-blue-semiopaque),var(--tcf-blue-semiopaque));
+  max-width: 50%;
+  padding: 2rem;
+}
+
+.tagline__heading {
+  margin: 0 0 1rem;
+}
+
+.tagline__subhead {
+  font-size: 1.5rem;
 }
 
 

@@ -22,6 +22,17 @@
 
 /***/ }),
 
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/components/Hero.css":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-3-1!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-2!./node_modules/postcss-loader/src??postcss!./src/components/Hero.css ***!
+  \************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/global/export.css":
 /*!**********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-3-1!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-2!./node_modules/postcss-loader/src??postcss!./src/global/export.css ***!
@@ -89,12 +100,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./App.css */ "./src/App.css");
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Header */ "./src/components/Header.js");
+/* harmony import */ var _components_Hero__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Hero */ "./src/components/Hero.js");
 var _jsxFileName = "/Applications/MAMP/htdocs/new-tcf/wp-content/themes/reactfit/react-src/src/App.js";
 // Import modules and globals
 
 
 
  // Import components
+
 
 
 
@@ -167,7 +180,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 82
         },
         __self: this
       }, "... loading ...");
@@ -177,23 +190,21 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       className: "App",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 89
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_4__["default"], {
       menuItems: this.state.header.menu,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89
+        lineNumber: 90
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      className: "hero--temp",
-      src: "//localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg",
-      alt: "Temp header",
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Hero__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      image: 'http://localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg',
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90
+        lineNumber: 91
       },
       __self: this
     }));
@@ -415,6 +426,104 @@ const HeaderLogo = props => {
 
 /***/ }),
 
+/***/ "./src/components/Hero.css":
+/*!*********************************!*\
+  !*** ./src/components/Hero.css ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var content = __webpack_require__(/*! !../../node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-3-1!../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-2!../../node_modules/postcss-loader/src??postcss!./Hero.css */ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/components/Hero.css");
+
+if (typeof content === 'string') {
+  content = [[module.i, content, '']];
+}
+
+var options = {}
+
+options.insert = "head";
+options.singleton = false;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js")(content, options);
+
+if (content.locals) {
+  module.exports = content.locals;
+}
+
+
+/***/ }),
+
+/***/ "./src/components/Hero.js":
+/*!********************************!*\
+  !*** ./src/components/Hero.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _global_export_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../global/export.css */ "./src/global/export.css");
+/* harmony import */ var _global_export_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_global_export_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Hero_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Hero.css */ "./src/components/Hero.css");
+/* harmony import */ var _Hero_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Hero_css__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Applications/MAMP/htdocs/new-tcf/wp-content/themes/reactfit/react-src/src/components/Hero.js";
+ // Import styles
+
+
+
+
+class Hero extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      image: this.props.image
+    };
+  }
+
+  render() {
+    const img = 'url(' + this.state.image + ')';
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "hero",
+      style: {
+        backgroundImage: img
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "hero__tagline",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+      className: "tagline__heading",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      },
+      __self: this
+    }, "Thomasville CrossFit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "tagline__subhead",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }, "Come hang out and get your sweat on with the fittest mfers in T-ville")));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Hero);
+
+/***/ }),
+
 /***/ "./src/global/export.css":
 /*!*******************************!*\
   !*** ./src/global/export.css ***!
@@ -626,5 +735,5 @@ module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/new-tcf/wp-co
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

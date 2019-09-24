@@ -1,0 +1,29 @@
+.hero {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 10vw;
+  padding-top: 30vh;
+  box-sizing: border-box;
+}
+
+.hero__tagline {
+  text-align: left;
+  color: var(--white);
+  background: linear-gradient(var(--tcf-blue-semiopaque),var(--tcf-blue-semiopaque));
+  max-width: 50%;
+  padding: 2rem;
+}
+
+.tagline__heading {
+  margin: 0 0 1rem;
+}
+
+.tagline__subhead {
+  font-size: 1.5rem;
+}

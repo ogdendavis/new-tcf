@@ -6,7 +6,15 @@
   --orange: #ff6400;
   --yellow: #ffcb00;
   --purple: #8300ee;
+
   /* Making some transparent overlays */
-  --black-transparent: rgba(34, 34, 34, 0.5);
-  --black-opaque: rgba(34, 34, 34, 0.9);
+  --black-transparent: rgba(34,34,34,0.5);
+  --black-opaque: rgba(34,34,34,0.9);
+
+  --tcf-blue-semiopaque: rgba(0,95,237,0.8);
+  --tcf-blue-opaque: rgba(0,95,237,0.9);
+
+  --orange-opaque: rgba(255,100,0,0.9);
+
+  --yellow-opaque: rgba(255,203,0,0.9);
 }

@@ -68,4 +68,4 @@ const HeaderLogo = (props) => {
   );
 }
 
-export default Header
+export default Header;

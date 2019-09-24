@@ -6,6 +6,7 @@ import './App.css';
 
 // Import components
 import Header from './components/Header';
+import Hero from './components/Hero';
 
 class App extends React.Component {
   constructor(props) {
@@ -87,7 +88,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header menuItems={this.state.header.menu} />
-        <img className="hero--temp" src="//localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg" alt="Temp header" />
+        <Hero image={'http://localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg'} />
       </div>
     );
   }
