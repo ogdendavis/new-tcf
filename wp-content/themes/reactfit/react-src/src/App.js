@@ -87,20 +87,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header menuItems={this.state.header.menu} />
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>react-src/src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <img className="hero--temp" src="//localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg" alt="Temp header" />
       </div>
     );
   }

@@ -88,5 +88,14 @@ a:hover {
   color: var(--white);
 }
 
+.hero--temp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+}
+
 
 /*# sourceMappingURL=main.chunk.css.map*/

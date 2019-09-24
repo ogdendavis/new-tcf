@@ -187,45 +187,16 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 89
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
-      className: "App-header",
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      className: "hero--temp",
+      src: "//localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg",
+      alt: "Temp header",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 90
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      src: _logo_svg__WEBPACK_IMPORTED_MODULE_1___default.a,
-      className: "App-logo",
-      alt: "logo",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 91
-      },
-      __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 92
-      },
-      __self: this
-    }, "Edit ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 93
-      },
-      __self: this
-    }, "react-src/src/App.js"), " and save to reload."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-      className: "App-link",
-      href: "https://reactjs.org",
-      target: "_blank",
-      rel: "noopener noreferrer",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 95
-      },
-      __self: this
-    }, "Learn React")));
+    }));
   }
 
 }
@@ -627,5 +598,5 @@ module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/new-tcf/wp-co
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
