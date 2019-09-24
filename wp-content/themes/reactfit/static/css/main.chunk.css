@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Karla:400,400i,700|Montserrat:400,700&display=swap);
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -46,6 +47,46 @@ code {
   }
 }
 
+:root {
+  --black: #181818;
+  --white: #fff;
+  --tcf-blue: #005fed;
+  --orange: #ff6400;
+  --yellow: #ffcb00;
+  --purple: #8300ee;
+}
+
+:root {
+  --heading-font: 'Montserrat', sans-serif;
+  --body-font: 'Karla', sans-serif;
+}
+
+body {
+  font-family: var(--body-font);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--heading-font);
+}
+
+a {
+  color: var(--tcf-blue);
+}
+
+a:visited {
+  color: var(--purple);
+}
+
+a:hover {
+  color: var(--orange);
+}
+
+
+
+.site-header {
+  background: var(--black);
+  color: var(--white);
+}
 
 
 /*# sourceMappingURL=main.chunk.css.map*/

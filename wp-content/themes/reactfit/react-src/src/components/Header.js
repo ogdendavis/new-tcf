@@ -1,4 +1,7 @@
 import React from 'react';
+
+// Import styles
+import '../global/export.css';
 import './Header.css';
 
 // Main header component
@@ -13,7 +16,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className="header">
+      <div className="site-header">
         <HeaderContact />
         <div className="header__row-two">
           <HeaderLogo />
@@ -55,7 +58,7 @@ const HeaderContact = (props) => {
 const HeaderLogo = (props) => {
   return(
     <div className="header__logo">
-      <img src="//localhost/new-tcf/wp-content/uploads/2019/09/SM-tcf-logo-full.png" alt="TCF logo" />
+      <img src="//localhost/new-tcf/wp-content/uploads/2019/09/SM-tcf-logo-transparent-white.png" alt="TCF logo" />
     </div>
   );
 }

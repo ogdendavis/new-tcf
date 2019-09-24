@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700|Montserrat:400,700&display=swap');
+
+:root {
+  --heading-font: 'Montserrat', sans-serif;
+  --body-font: 'Karla', sans-serif;
+}
+
+body {
+  font-family: var(--body-font);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--heading-font);
+}
+
+a {
+  color: var(--tcf-blue);
+}
+
+a:visited {
+  color: var(--purple);
+}
+
+a:hover {
+  color: var(--orange);
+}
