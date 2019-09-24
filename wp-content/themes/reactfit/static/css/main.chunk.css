@@ -48,12 +48,16 @@ code {
 }
 
 :root {
+  /* base colors */
   --black: #181818;
   --white: #fff;
   --tcf-blue: #005fed;
   --orange: #ff6400;
   --yellow: #ffcb00;
   --purple: #8300ee;
+  /* Making some transparent overlays */
+  --black-transparent: rgba(24, 24, 24, 0.5);
+  --black-opaque: rgba(24, 24, 24, 0.9);
 }
 
 :root {
@@ -84,9 +88,22 @@ a:hover {
 
 
 .site-header {
-  background: var(--black);
+  background: linear-gradient(var(--black-opaque), var(--black-opaque));
   color: var(--white);
 }
+
+.header__row-one, .header__row-two {
+  display: flex;
+  width: 100vw;
+  padding: 10px;
+}
+
+.header__contact {
+  font-size: 14px;
+  font-weight: 700;
+  padding-left: 2em;
+}
+
 
 .hero--temp {
   position: absolute;

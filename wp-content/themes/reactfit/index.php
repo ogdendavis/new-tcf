@@ -10,6 +10,7 @@
 
 <script> wpThemeClient.start("ws", "127.0.0.1", "8090"); </script>
 
+  <script src="https://kit.fontawesome.com/a0782f7d6f.js" crossorigin="anonymous"></script>
 <meta charset="utf-8" />
     <link rel="shortcut icon" href="/new-tcf/wp-content/themes/reactfit/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -38,7 +39,7 @@
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
     <title>React WordPress Theme</title>
-<link href="/new-tcf/wp-content/themes/reactfit/static/css/main.chunk.css?c671caf8c5bbc252e38a" rel="stylesheet"></head>
+<link href="/new-tcf/wp-content/themes/reactfit/static/css/main.chunk.css?4f9e8a5cde08c376a507" rel="stylesheet"></head>
     <body>
     <noscript>
         You need to enable JavaScript to run this app.
@@ -54,5 +55,5 @@
         To begin the development, run `npm run wpstart` or `yarn wpstart`.
         To create a production bundle, use `npm run wpbuild` or `yarn wpbuild`.
     -->
-    <script src="/new-tcf/wp-content/themes/reactfit/static/js/bundle.js?c671caf8c5bbc252e38a"></script><script src="/new-tcf/wp-content/themes/reactfit/static/js/0.chunk.js?c671caf8c5bbc252e38a"></script><script src="/new-tcf/wp-content/themes/reactfit/static/js/main.chunk.js?c671caf8c5bbc252e38a"></script></body>
+    <script src="/new-tcf/wp-content/themes/reactfit/static/js/bundle.js?4f9e8a5cde08c376a507"></script><script src="/new-tcf/wp-content/themes/reactfit/static/js/1.chunk.js?4f9e8a5cde08c376a507"></script><script src="/new-tcf/wp-content/themes/reactfit/static/js/main.chunk.js?4f9e8a5cde08c376a507"></script></body>
 </html>

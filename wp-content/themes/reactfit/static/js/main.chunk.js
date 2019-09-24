@@ -270,30 +270,37 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 19
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderContact, {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "header__row-one",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 20
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "header__row-two",
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderContact, {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 21
       },
       __self: this
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "header__row-two",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderLogo, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 24
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderMenu, {
       items: this.state.menuItems,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 25
       },
       __self: this
     })));
@@ -310,14 +317,14 @@ const HeaderMenu = props => {
       key: itemKey,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 37
       },
       __self: undefined
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       href: item.url,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 38
       },
       __self: undefined
     }, item.title));
@@ -326,7 +333,7 @@ const HeaderMenu = props => {
     className: "header-menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 44
     },
     __self: undefined
   }, innerContent);
@@ -337,28 +344,49 @@ const HeaderContact = props => {
     className: "header__contact",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "phone",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51
-    },
-    __self: undefined
-  }, "229-977-5025"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "email",
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 52
     },
     __self: undefined
-  }, "abrie@thomasvillecrossfit.com"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "address",
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-phone-alt",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 53
+    },
+    __self: undefined
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "phone",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: undefined
+  }, "229-977-5025"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-envelope",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: undefined
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "email",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: undefined
+  }, "abrie@thomasvillecrossfit.com"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-map-marker-alt",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: undefined
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "address",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
     },
     __self: undefined
   }, "118 Fairbanks Ave, Thomasville GA, 31792"));
@@ -369,7 +397,7 @@ const HeaderLogo = props => {
     className: "header__logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 65
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -377,7 +405,7 @@ const HeaderLogo = props => {
     alt: "TCF logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 66
     },
     __self: undefined
   }));
@@ -598,5 +626,5 @@ module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/new-tcf/wp-co
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

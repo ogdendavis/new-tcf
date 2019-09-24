@@ -17,7 +17,9 @@ class Header extends React.Component {
   render() {
     return (
       <div className="site-header">
-        <HeaderContact />
+        <div className="header__row-one">
+          <HeaderContact />
+        </div>
         <div className="header__row-two">
           <HeaderLogo />
           <HeaderMenu items={this.state.menuItems} />
@@ -48,8 +50,11 @@ const HeaderMenu = (props) => {
 const HeaderContact = (props) => {
   return(
     <div className="header__contact">
+      <i className="fa fa-phone-alt"></i>
       <span className="phone">229-977-5025</span>
+      <i className="fa fa-envelope"></i>
       <span className="email">abrie@thomasvillecrossfit.com</span>
+      <i className="fa fa-map-marker-alt"></i>
       <span className="address">118 Fairbanks Ave, Thomasville GA, 31792</span>
     </div>
   );
