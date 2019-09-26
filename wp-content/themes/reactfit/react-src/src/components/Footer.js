@@ -19,26 +19,74 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <div className="site-footer">
-        <div className="footer__copyright">
-          &#169; 2019 Thomasville CrossFit
-        </div>
-        <FooterSocial fb={this.state.facebook} ig={this.state.instagram} />
-      </div>
+      <footer className="site-footer">
+        <FooterUpper fb={this.state.facebook} ig={this.state.instagram} />
+        <FooterLower />
+      </footer>
     );
   }
 }
 
 // Stateless child components
-const FooterSocial = (props) => {
+const FooterUpper = (props) => {
+  return(
+    <div className="site-footer__upper">
+      <div className="site-footer__hours">
+        <h2>HOURS</h2>
+        <ul className="hours__list">
+          <li>
+            <span className="hours__day">Monday - Friday:</span>
+            <ul>
+              <li>5:30am - 9:00am</li>
+              <li>3:30pm - 7:30pm</li>
+            </ul>
+          </li>
+          <li>
+            <span className="hours__day">Saturday:</span>
+            <ul>
+              <li>8:00am - 12:00pm</li>
+            </ul>
+          </li>
+          <li>
+            <span className="hours__day">Sunday:</span>
+            <ul>
+              <li>Closed</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div className="site-footer__location">
+        <h2>LOCATION</h2>
+        <div className="location__address">
+          <a href="https://goo.gl/maps/aCP4gUYY4CrYWixM6" target="_blank">
+            118 Fairbanks Avenue<br />
+            Thomasville, Georgia 31792
+          </a>
+        </div>
+        <div className="location__phone">
+          Phone: 229.977.5025
+        </div>
+        <div className="location__email">
+          Email: abrie@thomasvillecrossfit.com
+        </div>
+      </div>
+      <div className="site-footer__social">
+        <SocialIcon platform='fb' link={props.fb}/>
+        <SocialIcon platform='ig' link={props.ig}/>
+      </div>
+    </div>
+  );
+}
+
+const FooterLower = (props) => {
   return (
-    <div className="footer__social">
-      <a href={props.fb} target="_blank">
-        <SocialIcon platform='fb' />
-      </a>
-      <a href={props.ig} target="_blank">
-        <SocialIcon platform='ig' />
-      </a>
+    <div className="site-footer__lower">
+      <div className="site-footer__copyright">
+        &#169; 2019 Thomasville CrossFit
+      </div>
+      <div className="site-footer__credit">
+        Site by <a href="https://ogdendavis.com" rel="nofollow" target="_blank">ogdendavis.com</a>
+      </div>
     </div>
   );
 }

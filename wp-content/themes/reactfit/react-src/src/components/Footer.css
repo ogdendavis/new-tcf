@@ -1,13 +1,45 @@
 .site-footer {
-  background: linear-gradient(var(--black-opaque), var(--black-opaque));
   color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 1em;
-  font-size: 14px;
 }
 
-.site-footer .social__icon {
+.site-footer__upper, .site-footer__lower {
+  padding: 1em 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.site-footer__upper {
+  background: linear-gradient(var(--black-opaque), var(--black-opaque));
+  font-size: 18px;
+}
+
+.hours__list, .hours-list ul, .hours__list li, .hours__list li ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.hours__list>li {
+  margin: 1em 0;
+}
+
+.hours__day {
+  font-weight: 700;
+}
+
+.site-footer__location>div {
+  margin: 1em 0;
+}
+
+.site-footer__social {
+  padding: 1.25em;
+}
+
+.site-footer__social .social__icon {
   margin: 0 1em;
+}
+
+.site-footer__lower {
+  background: var(--black);
+  font-size: 14px;
 }
