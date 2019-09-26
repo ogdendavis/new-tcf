@@ -1,0 +1,12 @@
+.social__icon {
+  max-width: 3em;
+}
+
+.social__icon path, .social__icon circle {
+  fill: var(--white);
+  transition: fill .5s ease-in-out;
+}
+
+.social__icon:hover path, .social__icon:hover circle {
+  fill: var(--tcf-blue);
+}

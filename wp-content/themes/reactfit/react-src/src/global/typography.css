@@ -16,6 +16,7 @@ h1, h2, h3, h4 {
 a {
   color: var(--tcf-blue);
   text-decoration: none;
+  transition: color .5s ease-in-out;
 }
 
 a:visited {
