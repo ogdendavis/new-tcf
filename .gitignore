@@ -16,3 +16,6 @@ wpcs/
 # Wordpress
 wp-config.php
 uploads
+
+# Create React App
+static/
