@@ -7,6 +7,7 @@ import axios from 'axios';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
+import Content from './components/Content';
 
 class App extends React.Component {
   constructor(props) {
@@ -89,6 +90,7 @@ class App extends React.Component {
       <div className="App">
         <Header menuItems={this.state.header.menu} />
         <Hero image={'http://localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg'} />
+        <Content />
         <Footer />
       </div>
     );

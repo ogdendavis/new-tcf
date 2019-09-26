@@ -1,0 +1,6 @@
+.site-main {
+  min-height: 700px;
+  max-width: 1400px;
+  margin: 2rem auto;
+  background: gray;
+}
