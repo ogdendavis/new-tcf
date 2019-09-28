@@ -17,7 +17,10 @@ class Content extends React.Component {
   render() {
     return (
       <main className="site-main">
+      {/*This is placeholder content, replicating front-page content, for now. It'll change once design is finished and we're porting in content from the back end*/}
         This is the content!!!
+
+        <a href="#" class="button">This is a button!</a>
       </main>
     );
   }
