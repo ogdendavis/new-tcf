@@ -1,6 +1,14 @@
+/*
+Moved to reusable components for each section, so we can change behavior for individual content areas, if needed. Classes are .section and .section__container, styled in global/identity.
+
 .site-main {
+  padding: 1rem 0;
+}
+
+.main__container {
   min-height: 700px;
   max-width: 1400px;
-  margin: 2rem auto;
-  background: gray;
+  margin: 0 auto;
+  overflow: auto;
 }
+*/

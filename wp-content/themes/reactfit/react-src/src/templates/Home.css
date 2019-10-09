@@ -1,0 +1,33 @@
+.home__programs {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.home__programs .programs__heading {
+  width: 100%;
+  text-align: center;
+}
+
+.home__programs .programs__left, .home__programs .programs__right, .home__programs .programs__center {
+  flex-grow: 1;
+  box-sizing: border-box;
+  min-height: 200px;
+  color: var(--white);
+}
+
+.home__programs .programs__left h3, .home__programs .programs__right h3, .home__programs .programs__center h3 {
+  text-align: center;
+}
+
+.home__programs .programs__left {
+  background: linear-gradient(var(--black-transparent),var(--black-transparent)), url('http://localhost/new-tcf/wp-content/uploads/2019/10/demo-team.jpg') center/cover no-repeat;
+}
+
+.home__programs .programs__right {
+  background: linear-gradient(var(--black-transparent),var(--black-transparent)), url('http://localhost/new-tcf/wp-content/uploads/2019/10/teens.jpg') center/cover no-repeat;
+}
+
+.home__programs .programs__center {
+  background: linear-gradient(var(--black-transparent),var(--black-transparent)), url('http://localhost/new-tcf/wp-content/uploads/2019/10/pete-coaches.jpg') center/cover no-repeat;
+}

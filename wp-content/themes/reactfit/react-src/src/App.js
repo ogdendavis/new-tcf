@@ -90,7 +90,7 @@ class App extends React.Component {
       <div className="App">
         <Header menuItems={this.state.header.menu} />
         <Hero image={'http://localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg'} />
-        <Content />
+        <Content meta={this.state.meta}/>
         <Footer />
       </div>
     );

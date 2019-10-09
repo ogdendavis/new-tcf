@@ -6,3 +6,16 @@
 body {
   background: var(--off-white);
 }
+
+/* Utility classes for controlling page content position */
+.section__container {
+  /* full-width container for each content element */
+  padding: 1rem 0;
+}
+
+.section {
+  /* Container to keep content from bleeding too wide on large screens */
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: auto; /* Keeps margins of child elements from moving container */
+}
