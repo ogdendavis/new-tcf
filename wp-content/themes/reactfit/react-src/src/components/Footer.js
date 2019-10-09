@@ -58,7 +58,7 @@ const FooterUpper = (props) => {
       <div className="site-footer__location">
         <h2>LOCATION</h2>
         <div className="location__address">
-          <a href="https://goo.gl/maps/aCP4gUYY4CrYWixM6" target="_blank">
+          <a href="https://goo.gl/maps/aCP4gUYY4CrYWixM6" target="_blank" rel="noopener noreferrer">
             118 Fairbanks Avenue<br />
             Thomasville, Georgia 31792
           </a>
@@ -85,7 +85,7 @@ const FooterLower = (props) => {
         &#169; 2019 Thomasville CrossFit
       </div>
       <div className="site-footer__credit">
-        Site by <a href="https://ogdendavis.com" rel="nofollow" target="_blank">ogdendavis.com</a>
+        Site by <a href="https://ogdendavis.com" rel="nofollow" target="_blank" rel="noopener noreferrer">ogdendavis.com</a>
       </div>
     </div>
   );
