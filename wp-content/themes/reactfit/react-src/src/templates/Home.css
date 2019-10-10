@@ -12,8 +12,8 @@
 .home__programs .programs__left, .home__programs .programs__right, .home__programs .programs__center {
   flex-grow: 1;
   box-sizing: border-box;
-  min-height: 200px;
   color: var(--white);
+  padding: 3rem 2rem;
 }
 
 .home__programs .programs__left h3, .home__programs .programs__right h3, .home__programs .programs__center h3 {
@@ -21,13 +21,29 @@
 }
 
 .home__programs .programs__left {
-  background: linear-gradient(var(--black-transparent),var(--black-transparent)), url('http://localhost/new-tcf/wp-content/uploads/2019/10/demo-team.jpg') center/cover no-repeat;
+  background: linear-gradient(var(--black-a6),var(--black-a6)), url('http://localhost/new-tcf/wp-content/uploads/2019/10/demo-team.jpg') center/cover no-repeat;
 }
 
 .home__programs .programs__right {
-  background: linear-gradient(var(--black-transparent),var(--black-transparent)), url('http://localhost/new-tcf/wp-content/uploads/2019/10/teens.jpg') center/cover no-repeat;
+  background: linear-gradient(var(--black-a6),var(--black-a6)), url('http://localhost/new-tcf/wp-content/uploads/2019/10/teens.jpg') center/cover no-repeat;
 }
 
 .home__programs .programs__center {
-  background: linear-gradient(var(--black-transparent),var(--black-transparent)), url('http://localhost/new-tcf/wp-content/uploads/2019/10/pete-coaches.jpg') center/cover no-repeat;
+  background: linear-gradient(var(--black-a6),var(--black-a6)), url('http://localhost/new-tcf/wp-content/uploads/2019/10/pete-coaches.jpg') center/cover no-repeat;
+}
+
+.program__heading {
+  font-size: 24px;
+}
+
+.program__detail {
+  display: block;
+  margin: auto;
+  width: fit-content;
+  width: -moz-fit-content;
+}
+
+.program__action {
+  text-align: center;
+  margin: 2rem auto;
 }

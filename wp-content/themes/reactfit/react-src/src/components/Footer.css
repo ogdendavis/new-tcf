@@ -14,7 +14,7 @@
 }
 
 .site-footer__upper {
-  background: linear-gradient(var(--black-opaque), var(--black-opaque));
+  background: linear-gradient(var(--black-a9), var(--black-a9));
   font-size: 18px;
 }
 

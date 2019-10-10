@@ -17,6 +17,10 @@
   color: var(--tcf-blue);
 }
 
+.button__container {
+  text-align: center;
+}
+
 .social__icon {
   max-width: 3em;
 }

@@ -13,7 +13,7 @@
 .hero__tagline {
   text-align: left;
   color: var(--white);
-  background: linear-gradient(var(--tcf-blue-semiopaque),var(--tcf-blue-semiopaque));
+  background: linear-gradient(var(--tcf-blue-a8),var(--tcf-blue-a8));
   max-width: 50%;
   padding: 2rem;
 }
