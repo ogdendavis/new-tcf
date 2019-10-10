@@ -25,7 +25,4 @@ class Content extends React.Component {
   }
 }
 
-// Stateless child components
-
-
 export default Content;
