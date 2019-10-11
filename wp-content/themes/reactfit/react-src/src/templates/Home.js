@@ -18,6 +18,7 @@ class Home extends React.Component {
         <Programs />
         <Testimonials />
         <DoIt link="#" text="Get started" blurb="Ready to start your fitness journey? Sign up for our Foundations program today." />
+        <Trainers />
       </div>
     );
   }
@@ -115,6 +116,16 @@ const DoIt = (props) => {
         <div className="do-it__link">
           <a className="button button--white-alt do-it__button" href={props.link}>{props.text}</a>
         </div>
+      </div>
+    </div>
+  );
+}
+
+const Trainers = (props) => {
+  return (
+    <div className="section__container do-it__container">
+      <div className="section do-it">
+        <h2>Our Trainers</h2>
       </div>
     </div>
   );
