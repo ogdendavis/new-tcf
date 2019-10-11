@@ -54,18 +54,20 @@
 
 .home__testimonials {
   background: var(--off-white);
-  padding: 2rem 3rem;
+  padding: 1rem 3rem;
 }
 
 .testimonials__carousel {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   align-items: center;
+  justify-content: space-evenly;
 }
 
 .testimonial__text {
   padding: 2rem 4rem 2rem 2rem;
   font-size: 18px;
+  max-width: 50vw;
 }
 
 .testimonial::before, .testimonial::after {
@@ -84,8 +86,14 @@
   text-align: right;
 }
 
+.testimonial__author::before {
+  content: '-';
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
 .testimonial__photo img {
-  max-height: 300px;
+  max-height: 20rem;
   border-radius: 50%;
 }
 
