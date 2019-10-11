@@ -103,4 +103,17 @@
 
 .do-it {
   color: white;
+  font-size: 1.5rem;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.do-it__blurb {
+  padding: 0 1rem;
+}
+
+.do-it__button {
+  font-size: 1.5rem;
 }

@@ -3,18 +3,37 @@
   padding: 1rem;
   margin: 1rem;
   border-radius: var(--rounded);
-  color: white;
+  color: var(--white);
   text-decoration: none;
   font-weight: 700;
   font-size: 18px;
   background: var(--tcf-blue);
   transition: var(--transition);
-  border: 1px solid var(--tcf-blue);
 }
 
 .button:hover {
   background: var(--white);
   color: var(--tcf-blue);
+}
+
+.button--white {
+  background: var(--white);
+  color: var(--tcf-blue);
+}
+
+.button--white:hover {
+  background: var(--tcf-blue);
+  color: var(--white);
+}
+
+.button--white-alt {
+  background: var(--white);
+  color: var(--tcf-blue);
+}
+
+.button--white-alt:hover {
+  background: var(--orange);
+  color: var(--white);
 }
 
 .button__container {

@@ -17,7 +17,7 @@ class Home extends React.Component {
       <div className="home__wrapper">
         <Programs />
         <Testimonials />
-        <DoIt />
+        <DoIt link="#" text="Get started" blurb="Ready to start your fitness journey? Sign up for our Foundations program today." />
       </div>
     );
   }
@@ -43,7 +43,7 @@ const Programs = (props) => {
           </ul>
           <div className="button__container">
             <a className="program__action button" href="#">
-              Learn More
+              Sign up now
             </a>
           </div>
         </div>
@@ -58,7 +58,7 @@ const Programs = (props) => {
           </ul>
           <div className="button__container">
             <a className="program__action button" href="#">
-              Sign up now
+              Get started
             </a>
           </div>
         </div>
@@ -109,7 +109,12 @@ const DoIt = (props) => {
   return (
     <div className="section__container do-it__container">
       <div className="section do-it">
-        Put a button to do a thing!
+        <div className="do-it__blurb">
+          {props.blurb}
+        </div>
+        <div className="do-it__link">
+          <a className="button button--white-alt do-it__button" href={props.link}>{props.text}</a>
+        </div>
       </div>
     </div>
   );
