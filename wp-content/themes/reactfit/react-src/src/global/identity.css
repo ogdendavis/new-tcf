@@ -15,6 +15,7 @@ body {
 
 .section {
   /* Container to keep content from bleeding too wide on large screens */
+  box-sizing: border-box;
   max-width: 1400px;
   margin: 0 auto;
   overflow: auto; /* Keeps margins of child elements from moving container */

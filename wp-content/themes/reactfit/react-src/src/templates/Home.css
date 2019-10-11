@@ -47,3 +47,52 @@
   text-align: center;
   margin: 2rem auto;
 }
+
+.testimonials__container {
+  background: var(--black-a9);
+}
+
+.home__testimonials {
+  background: var(--off-white);
+  padding: 2rem 3rem;
+}
+
+.testimonials__carousel {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.testimonial__text {
+  padding: 2rem 4rem 2rem 2rem;
+  font-size: 18px;
+}
+
+.testimonial::before, .testimonial::after {
+  display: block;
+  font-family: var(--heading-font);
+  font-size: 5rem;
+  box-sizing: border-box;
+}
+
+.testimonial::before {
+  content: '“';
+}
+
+.testimonial::after {
+  content: '”';
+  text-align: right;
+}
+
+.testimonial__photo img {
+  max-height: 300px;
+  border-radius: 50%;
+}
+
+.do-it__container {
+  background: var(--tcf-blue);
+}
+
+.do-it {
+  color: white;
+}
