@@ -1,6 +1,7 @@
 :root {
   /* base colors */
   --black: #222;
+  --gray: #383838;
   --white: #fff;
   --off-white: #f7f7f7;
   --tcf-blue: #005fed;
@@ -11,6 +12,7 @@
   /* Making some transparent overlays */
   --black-a5: rgba(34,34,34,0.5);
   --black-a6: rgba(34,34,34,0.6);
+  --black-a8: rgba(34,34,34,0.8);
   --black-a9: rgba(34,34,34,0.9);
 
   --off-white-a5: rgba(247,247,247,0.5);

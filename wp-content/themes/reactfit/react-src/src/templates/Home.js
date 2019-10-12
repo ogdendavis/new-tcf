@@ -3,6 +3,9 @@ import React from 'react';
 // Import styles
 import './Home.css';
 
+// Import nav icons
+import NavIcon from '../assets/img/NavIcons.js';
+
 // Main export component
 class Home extends React.Component {
   constructor(props) {
@@ -88,6 +91,9 @@ const Testimonials = (props) => {
     <div className="section__container testimonials__container">
       <div className="section home__testimonials">
         <h2 className="screen-reader-text">Testimonials</h2>
+        <div className="testimonials__nav-container">
+          <NavIcon icon='caret-left' class='testimonials__arrow--left' />
+        </div>
         <div className="testimonials__carousel">
           <div className="testimonial__text">
             <div className="testimonial">
@@ -100,6 +106,9 @@ const Testimonials = (props) => {
           <div className="testimonial__photo">
             <img src="http://localhost/new-tcf/wp-content/uploads/2019/10/shane.jpg" alt="Shane holding a kettlebell" />
           </div>
+        </div>
+        <div className="testimonials__nav-container">
+          <NavIcon icon='caret-right' class='testimonials__arrow--left' />
         </div>
       </div>
     </div>
@@ -123,8 +132,8 @@ const DoIt = (props) => {
 
 const Trainers = (props) => {
   return (
-    <div className="section__container do-it__container">
-      <div className="section do-it">
+    <div className="section__container">
+      <div className="section">
         <h2>Our Trainers</h2>
       </div>
     </div>

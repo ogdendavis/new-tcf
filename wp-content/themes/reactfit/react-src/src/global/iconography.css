@@ -32,8 +32,8 @@
 }
 
 .button--white-alt:hover {
-  background: var(--orange);
-  color: var(--white);
+  background: var(--yellow);
+  color: var(--gray);
 }
 
 .button__container {
