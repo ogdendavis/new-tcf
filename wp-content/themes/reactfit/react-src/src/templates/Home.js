@@ -91,9 +91,11 @@ const Testimonials = (props) => {
     <div className="section__container testimonials__container">
       <div className="section home__testimonials">
         <h2 className="screen-reader-text">Testimonials</h2>
+
         <div className="testimonials__nav-container">
           <NavIcon icon='caret-left' class='testimonials__arrow--left' />
         </div>
+
         <div className="testimonials__carousel">
           <div className="testimonial__text">
             <div className="testimonial">
@@ -107,9 +109,11 @@ const Testimonials = (props) => {
             <img src="http://localhost/new-tcf/wp-content/uploads/2019/10/shane.jpg" alt="Shane holding a kettlebell" />
           </div>
         </div>
+
         <div className="testimonials__nav-container">
           <NavIcon icon='caret-right' class='testimonials__arrow--left' />
         </div>
+
       </div>
     </div>
   );
@@ -133,8 +137,36 @@ const DoIt = (props) => {
 const Trainers = (props) => {
   return (
     <div className="section__container">
-      <div className="section">
-        <h2>Our Trainers</h2>
+      <div className="section home__trainers">
+        <h2 className="screen-reader-text">Our Trainers</h2>
+
+        <div className="trainer">
+          <div className="trainer__text">
+            Nick is awesome! He's so awesome that it's hard to describe how awesome he is. But let's try: He's more awesome than the awesomest thing that the awesomest person in the world could ever hope to think of.
+          </div>
+          <div className="trainer__photo">
+            <img src="http://localhost/new-tcf/wp-content/uploads/2019/10/nick-cleans.jpg" alt="Nick Sellers" />
+          </div>
+        </div>
+
+        <div className="trainer">
+          <div className="trainer__text">
+            Abrie is awesome! She's so awesome that it's hard to describe how awesome she is. But let's try: She's more awesome than the awesomest thing that the awesomest person in the world could ever hope to think of.
+          </div>
+          <div className="trainer__photo">
+            <img src="http://localhost/new-tcf/wp-content/uploads/2019/10/abrie-square.jpg" alt="Abrie Sellers" />
+          </div>
+        </div>
+
+        <div className="trainer">
+          <div className="trainer__text">
+            Lucas is ok, too.
+          </div>
+          <div className="trainer__photo">
+            <img src="http://localhost/new-tcf/wp-content/uploads/2019/10/lucas-silly.jpg" alt="Lucas Ogden-Davis" />
+          </div>
+        </div>
+
       </div>
     </div>
   );

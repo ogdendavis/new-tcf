@@ -130,3 +130,8 @@
 .do-it__button {
   font-size: 1.5rem;
 }
+
+.trainer__photo img {
+  border-radius: 50%;
+  max-width: 20rem;
+}
