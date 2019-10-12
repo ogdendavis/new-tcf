@@ -23,6 +23,7 @@ class Home extends React.Component {
         <DoIt link="#" text="Get Started" blurb="Ready to start your fitness journey? Sign up for our Foundations program today." />
         <Trainers />
         <DoIt link="#" text="Join Us" blurb="Want to get fit and have fun? Check out our membership options." />
+        <Schedule />
       </div>
     );
   }
@@ -171,6 +172,17 @@ const Trainers = (props) => {
           </div>
         </div>
 
+      </div>
+    </div>
+  );
+}
+
+const Schedule = (props) => {
+  return (
+    <div className="section__container">
+      <div className="section home__schedule">
+        <h2 className="section__heading">Class Schedule</h2>
+          <iframe src="https://app.wodify.com/Schedule/PublicCalendarListView.aspx?tenant=3716" width="800" height="800"></iframe>
       </div>
     </div>
   );
