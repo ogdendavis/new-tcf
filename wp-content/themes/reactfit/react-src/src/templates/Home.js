@@ -20,8 +20,9 @@ class Home extends React.Component {
       <div className="home__wrapper">
         <Programs />
         <Testimonials />
-        <DoIt link="#" text="Get started" blurb="Ready to start your fitness journey? Sign up for our Foundations program today." />
+        <DoIt link="#" text="Get Started" blurb="Ready to start your fitness journey? Sign up for our Foundations program today." />
         <Trainers />
+        <DoIt link="#" text="Join Us" blurb="Want to get fit and have fun? Check out our membership options." />
       </div>
     );
   }
