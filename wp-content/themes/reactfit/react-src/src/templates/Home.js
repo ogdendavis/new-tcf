@@ -24,6 +24,7 @@ class Home extends React.Component {
         <Trainers />
         <DoIt link="#" text="Join Us" blurb="Want to get fit and have fun? Check out our membership options." />
         <Schedule />
+        <DoIt link="#" text="Contact Us" blurb="Have questions? We'd love to talk with you about our awesome fitness programs." />
       </div>
     );
   }

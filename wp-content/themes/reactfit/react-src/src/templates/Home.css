@@ -143,8 +143,10 @@
   justify-content: space-evenly;
   background: var(--black-a5);
   color: var(--white);
-  padding: 1rem;
-  margin: 2rem 0;
+  padding: 1rem 3rem;
+  margin: 2rem auto;
+  width: fit-content;
+  width: -moz-fit-content;
 }
 
 .trainer h3 {
