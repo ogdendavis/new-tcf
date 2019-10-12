@@ -138,10 +138,11 @@ const Trainers = (props) => {
   return (
     <div className="section__container">
       <div className="section home__trainers">
-        <h2 className="screen-reader-text">Our Trainers</h2>
+        <h2 className="section__heading">Our Trainers</h2>
 
         <div className="trainer">
           <div className="trainer__text">
+            <h3>Nick Sellers</h3>
             Nick is awesome! He's so awesome that it's hard to describe how awesome he is. But let's try: He's more awesome than the awesomest thing that the awesomest person in the world could ever hope to think of.
           </div>
           <div className="trainer__photo">
@@ -151,6 +152,7 @@ const Trainers = (props) => {
 
         <div className="trainer">
           <div className="trainer__text">
+            <h3>Abrie Sellers</h3>
             Abrie is awesome! She's so awesome that it's hard to describe how awesome she is. But let's try: She's more awesome than the awesomest thing that the awesomest person in the world could ever hope to think of.
           </div>
           <div className="trainer__photo">
@@ -160,7 +162,8 @@ const Trainers = (props) => {
 
         <div className="trainer">
           <div className="trainer__text">
-            Lucas is ok, too.
+            <h3>Lucas Ogden-Davis</h3>
+            Lucas is ok, too. It's pretty easy to describe how ok he is. Imagine someone who is pretty ok. Now imagine that person imagining another person, who the original ok person thinks is ok. Lucas is that ok person, as envisioned by another ok person.
           </div>
           <div className="trainer__photo">
             <img src="http://localhost/new-tcf/wp-content/uploads/2019/10/lucas-silly.jpg" alt="Lucas Ogden-Davis" />
