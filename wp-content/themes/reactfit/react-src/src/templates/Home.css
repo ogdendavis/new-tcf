@@ -64,7 +64,7 @@
 }
 
 .testimonials__arrow--left, .testimonials__arrow--right {
-  max-width: 3rem;
+  width: 2rem;
 }
 
 .testimonial__text {
