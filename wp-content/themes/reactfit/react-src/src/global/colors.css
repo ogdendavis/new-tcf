@@ -10,10 +10,13 @@
   --purple: #8300ee;
 
   /* Making some transparent overlays */
+  --black-a0: rgba(34,34,34,0);
   --black-a5: rgba(34,34,34,0.5);
   --black-a6: rgba(34,34,34,0.6);
   --black-a8: rgba(34,34,34,0.8);
   --black-a9: rgba(34,34,34,0.9);
+
+  --white-a5: rgba(255,255,255,0.5);
 
   --off-white-a5: rgba(247,247,247,0.5);
 
