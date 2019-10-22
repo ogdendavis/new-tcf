@@ -146,52 +146,34 @@ const Trainers = (props) => {
         <div className="trainers__container">
 
           <div className="trainer" style={{
-            background: "url('http://localhost/new-tcf/wp-content/uploads/2019/10/nick-cleans-square.jpg') bottom center/cover no-repeat",
-            color: 'white',
-            display: 'flex',
-            flexFlow: 'column nowrap',
-            justifyContent: 'flex-end'
+            background: "url('http://localhost/new-tcf/wp-content/uploads/2019/10/nick-cleans-square.jpg') center/cover no-repeat"
           }}>
-            {/*<div className="trainer__photo">
-              <img src="http://localhost/new-tcf/wp-content/uploads/2019/10/nick-cleans.jpg" alt="Nick Sellers" />
-            </div>*/}
-            <div className="trainer__text" style={{
-              background: 'var(--black-a8)',
-              padding: '1rem',
-            }}>
-              <h3>Nick Sellers</h3>
-              Nick is awesome! He's so awesome that it's hard to describe how awesome he is. But let's try: He's more awesome than the awesomest thing that the awesomest person in the world could ever hope to think of.
-            </div>
+            <h3>Nick Sellers</h3>
+
+            {/*
+              <div className="trainer__text">
+                Nick is awesome! He's so awesome that it's hard to describe how awesome he is. But let's try: He's more awesome than the awesomest thing that the awesomest person in the world could ever hope to think of.
+              </div>
+              */}
           </div>
 
-          <div className="trainer">
-            <div className="trainer__photo">
-              <img src="http://localhost/new-tcf/wp-content/uploads/2019/10/abrie-square.jpg" alt="Abrie Sellers" />
-            </div>
-            <div className="trainer__text">
-              <h3>Abrie Sellers</h3>
-              Abrie is awesome! She's so awesome that it's hard to describe how awesome she is. But let's try: She's more awesome than the awesomest thing that the awesomest person in the world could ever hope to think of.
-            </div>
+          <div className="trainer" style={{
+            background: "url('http://localhost/new-tcf/wp-content/uploads/2019/10/abrie-square.jpg') center/cover no-repeat"
+          }}>
+            <h3>Abrie Sellers</h3>
+            {/*
+              <div className="trainer__text">
+                Abrie is awesome! She's so awesome that it's hard to describe how awesome she is. But let's try: She's more awesome than the awesomest thing that the awesomest person in the world could ever hope to think of.
+              </div>
+              */}
           </div>
 
           <div className="trainer" style={{
             background: "url('http://localhost/new-tcf/wp-content/uploads/2019/10/lucas-silly-mod.jpg') center/cover no-repeat"
           }}>
-          <h3 style={{
-            display: 'inline-block',
-            textAlign: 'left',
-            boxSizing: 'border-box',
-            padding: '1rem',
-            marginLeft: '-2rem',
-            marginTop: '-1rem',
-            background: 'var(--tcf-blue)',
-            color: 'var(--white)',
-          }}>Lucas Ogden-Davis</h3>
-            {/*<div className="trainer__photo">
-              <img src="http://localhost/new-tcf/wp-content/uploads/2019/10/lucas-silly.jpg" alt="Lucas Ogden-Davis" />
-            </div>
+          <h3>Lucas Ogden-Davis</h3>
+            {/*
             <div className="trainer__text">
-              <h3>Lucas Ogden-Davis</h3>
               Lucas is ok, too. It's pretty easy to describe how ok he is. Imagine someone who is pretty ok. Now imagine that person imagining another person, who the original ok person thinks is ok. Lucas is that ok person, as envisioned by another ok person.
             </div>*/}
           </div>
