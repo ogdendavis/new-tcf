@@ -159,14 +159,17 @@
 .trainer__text {
   text-align: justify;
   margin: 12rem 3rem 5rem;
-  color: transparent;
+  color: var(--black);
   position: relative;
   z-index: 2;
   transition: var(--transition);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .trainer:hover .trainer__text {
-  color: var(--black);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .trainer::after {

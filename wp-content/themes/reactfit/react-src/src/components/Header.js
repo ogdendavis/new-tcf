@@ -10,13 +10,31 @@ class Header extends React.Component {
     super(props);
     this.state = {
       menuItems: this.props.menuItems,
-      open: false,
+      scrolled: false,
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = () => {
+    if(document.documentElement.scrollTop > 100 && this.state.scrolled === false) {
+      this.setState({ scrolled: true, });
+    }
+    else if (document.documentElement.scrollTop <= 100 && this.state.scrolled === true) {
+      this.setState({ scrolled: false, });
     }
   }
 
   render() {
+    const classes = this.state.scrolled ? 'site-header site-header--scrolled' : 'site-header';
     return (
-      <div className="site-header">
+      <div className={classes}>
         <div className="header__row-one">
           <HeaderContact />
         </div>

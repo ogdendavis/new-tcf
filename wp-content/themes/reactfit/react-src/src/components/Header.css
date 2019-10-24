@@ -1,6 +1,9 @@
 .site-header {
   background: linear-gradient(var(--black-a9), var(--black-a9));
   color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .header__row-one, .header__row-two {
@@ -32,6 +35,11 @@
 
 .header__logo img {
   max-width: 10rem;
+  transition: var(--transition);
+}
+
+.site-header--scrolled .header__logo img {
+  max-width: 5rem;
 }
 
 .header__menu {
@@ -40,14 +48,20 @@
 }
 
 .header-menu__item {
-  margin: 0 1rem;
+  margin: 0 1.5rem;
   font-weight: 700;
+  font-size: 20px;
+  transition: var(--transition);
+}
+
+.site-header--scrolled .header-menu__item {
+  margin: 0 1rem;
   font-size: 18px;
 }
 
 .header-menu__item a {
   color: var(--white);
-  transition: all 0.5s ease-in-out;
+  transition: var(--transition);
 }
 
 .header-menu__item a:hover {
