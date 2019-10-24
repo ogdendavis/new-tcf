@@ -23,10 +23,10 @@ class Header extends React.Component {
   }
 
   handleScroll = () => {
-    if(document.documentElement.scrollTop > 100 && this.state.scrolled === false) {
+    if(document.documentElement.scrollTop > 120 && this.state.scrolled === false) {
       this.setState({ scrolled: true, });
     }
-    else if (document.documentElement.scrollTop <= 100 && this.state.scrolled === true) {
+    else if (document.documentElement.scrollTop <= 80 && this.state.scrolled === true) {
       this.setState({ scrolled: false, });
     }
   }

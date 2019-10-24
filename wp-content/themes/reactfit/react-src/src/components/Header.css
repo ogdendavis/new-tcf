@@ -34,12 +34,12 @@
 }
 
 .header__logo img {
-  max-width: 10rem;
+  width: 10rem;
   transition: var(--transition);
 }
 
 .site-header--scrolled .header__logo img {
-  max-width: 5rem;
+  width: 5rem;
 }
 
 .header__menu {
@@ -55,8 +55,7 @@
 }
 
 .site-header--scrolled .header-menu__item {
-  margin: 0 1rem;
-  font-size: 18px;
+  transform: scale(0.9);
 }
 
 .header-menu__item a {
