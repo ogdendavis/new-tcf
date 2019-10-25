@@ -29,7 +29,7 @@ class App extends React.Component {
 
   // One API call to rule them all
   getFromWordpress() {
-    // One call for app-wide info
+    // WP meta info
     const getSiteMeta = async () => {
       const meta = await axios
         .get('http://localhost/new-tcf/wp-json')
@@ -69,11 +69,20 @@ class App extends React.Component {
       return headerInfo;
     }
 
+    // Get pages using default WP api call, and simplify data in the JS
     const getPages = async () => {
       const pages = await axios
-        .get('http://localhost/new-tcf/wp-json/reactfit/pages')
+        .get('http://localhost/new-tcf/wp-json/wp/v2/pages')
         .then(response => {
-          return response.data;
+          const simplifiedPages = response.data.map(page => {
+            return {
+              id: page.id,
+              slug: page.slug,
+              template: page.template,
+              parent: page.parent,
+            };
+          });
+          return simplifiedPages;
         })
         .catch(error => console.log(error));
 
@@ -94,7 +103,6 @@ class App extends React.Component {
 
     const goTime = () => {
       this.setState({render: true});
-      console.log(this.state);
     }
 
     runAllCalls();
@@ -109,7 +117,7 @@ class App extends React.Component {
         </div>
       );
     }
-    console.log(this.state.header.menu);
+
     return (
       <BrowserRouter basename={this.state.meta.basePath}>
         <div className="App">

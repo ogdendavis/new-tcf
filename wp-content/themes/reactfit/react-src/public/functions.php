@@ -20,13 +20,14 @@ add_action( 'rest_api_init', function() {
   ));
 });
 
-// Getting simplified page info for use with React Router
-function reactfit_get_pages() {
-  return get_pages();
-}
-add_action( 'rest_api_init', function () {
-  register_rest_route( 'reactfit', '/pages', array(
-    'methods' => 'GET',
-    'callback' => 'reactfit_get_pages',
-  ));
-});
+// NOT USED - using default WP API endpoint for pages, instead: /wp-json/wp/v2/pages
+// Getting page info for use with React Router
+// function reactfit_get_pages() {
+//   return get_pages();
+// }
+// add_action( 'rest_api_init', function () {
+//   register_rest_route( 'reactfit', '/pages', array(
+//     'methods' => 'GET',
+//     'callback' => 'reactfit_get_pages',
+//   ));
+// });
