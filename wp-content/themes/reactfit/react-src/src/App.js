@@ -2,12 +2,16 @@
 import React from 'react';
 import logo from './logo.svg';
 import axios from 'axios';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 // Import components
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
 import Content from './components/Content';
+
+// Import page templates
+import Home from './templates/Home';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,6 +37,10 @@ class App extends React.Component {
           return response.data;
         })
         .catch(error => console.log(error));
+
+      // Add home route info to meta -- used to ensure React Router works on any installation (localhost, dev server, etc)
+
+      meta.basePath = '/' + meta.url.split('/').pop();
 
       return meta;
     }
@@ -86,13 +94,30 @@ class App extends React.Component {
         </div>
       );
     }
+
     return (
-      <div className="App">
-        <Header menuItems={this.state.header.menu} />
-        <Hero image={'http://localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg'} />
-        <Content meta={this.state.meta}/>
-        <Footer />
-      </div>
+      <BrowserRouter basename={this.state.meta.basePath}>
+        <div className="App">
+
+          <Header menuItems={this.state.header.menu} />
+
+          <Switch>
+
+            <Route path="/farts">
+              <h1>You passed the test!</h1>
+            </Route>
+
+            <Route path="/">
+              <Hero home={true} image={'http://localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg'} />
+              <Home meta={this.state.meta}/>
+            </Route>
+
+          </Switch>
+
+          <Footer />
+
+        </div>
+      </BrowserRouter>
     );
   }
 }
