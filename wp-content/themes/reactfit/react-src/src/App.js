@@ -39,8 +39,8 @@ class App extends React.Component {
         .catch(error => console.log(error));
 
       // Add home route info to meta -- used to ensure React Router works on any installation (localhost, dev server, etc)
-
-      meta.basePath = '/' + meta.url.split('/').pop();
+      const testPath = '/' + meta.url.split('/').pop();
+      meta.basePath = testPath.includes('.') || testPath.length === 0 ? '/' : testPath;
 
       return meta;
     }
@@ -69,17 +69,32 @@ class App extends React.Component {
       return headerInfo;
     }
 
+    const getPages = async () => {
+      const pages = await axios
+        .get('http://localhost/new-tcf/wp-json/reactfit/pages')
+        .then(response => {
+          return response.data;
+        })
+        .catch(error => console.log(error));
+
+      return pages;
+    }
+
+
     const runAllCalls = async () => {
       const meta = await getSiteMeta();
       const header = await getHeaderInfo();
+      const pages = await getPages();
       this.setState({
         meta: meta,
         header: header,
+        pages: pages,
       }, goTime);
     }
 
     const goTime = () => {
       this.setState({render: true});
+      console.log(this.state);
     }
 
     runAllCalls();
@@ -94,7 +109,7 @@ class App extends React.Component {
         </div>
       );
     }
-
+    console.log(this.state.header.menu);
     return (
       <BrowserRouter basename={this.state.meta.basePath}>
         <div className="App">
@@ -102,10 +117,6 @@ class App extends React.Component {
           <Header menuItems={this.state.header.menu} />
 
           <Switch>
-
-            <Route path="/farts">
-              <h1>You passed the test!</h1>
-            </Route>
 
             <Route path="/">
               <Hero home={true} image={'http://localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg'} />
