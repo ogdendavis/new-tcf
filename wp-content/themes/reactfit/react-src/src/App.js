@@ -36,7 +36,7 @@ class App extends React.Component {
         .then(response => {
           return response.data;
         })
-        .catch(error => console.log(error));
+        .catch(error => console.error(error));
 
       // Add home route info to meta -- used to ensure React Router works on any installation (localhost, dev server, etc)
       const testPath = '/' + meta.url.split('/').pop();
@@ -64,7 +64,7 @@ class App extends React.Component {
           };
 
         })
-        .catch(error => console.log(error));
+        .catch(error => console.error(error));
 
       return headerInfo;
     }
@@ -84,7 +84,7 @@ class App extends React.Component {
           });
           return simplifiedPages;
         })
-        .catch(error => console.log(error));
+        .catch(error => console.error(error));
 
       return pages;
     }
