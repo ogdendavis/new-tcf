@@ -6,7 +6,6 @@
 <head>
   <script type="text/javascript">
     var reactfitHomeUrl = '<?php echo get_bloginfo('url'); ?>'
-    console.log(reactfitHomeUrl)
   </script>
   <script src="https://kit.fontawesome.com/a0782f7d6f.js" crossorigin="anonymous"></script>
   <meta charset="utf-8" />

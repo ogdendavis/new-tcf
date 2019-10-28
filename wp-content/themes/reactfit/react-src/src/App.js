@@ -32,7 +32,7 @@ class App extends React.Component {
     // WP meta info
     const getSiteMeta = async () => {
       const meta = await axios
-        .get('http://localhost/new-tcf/wp-json')
+        .get(reactfitHomeUrl + '/wp-json')
         .then(response => {
           return response.data;
         })
@@ -48,7 +48,7 @@ class App extends React.Component {
     // Header info -- just menu items, for now
     const getHeaderInfo = async () => {
       const headerInfo = await axios
-        .get('http://localhost/new-tcf/wp-json/reactfit/header-menu')
+        .get(reactfitHomeUrl + '/wp-json/reactfit/header-menu')
         .then(response => {
           // Just pull out needed data for now (might want more, if we get fancy)
           const headerMenuItems = response.data.map(item => {
@@ -72,7 +72,7 @@ class App extends React.Component {
     // Get pages using default WP api call, and simplify data in the JS
     const getPages = async () => {
       const pages = await axios
-        .get('http://localhost/new-tcf/wp-json/wp/v2/pages')
+        .get(reactfitHomeUrl + '/wp-json/wp/v2/pages')
         .then(response => {
           const simplifiedPages = response.data.map(page => {
             return {
