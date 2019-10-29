@@ -12,6 +12,7 @@ import Content from './components/Content';
 
 // Import page templates
 import Home from './templates/Home';
+import DefaultTemplate from './templates/Default';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class App extends React.Component {
     } // Initial app state set in getFromWordpress
 
     this.getFromWordpress = this.getFromWordpress.bind(this);
+    this.createRoutes = this.createRoutes.bind(this);
   }
 
   componentDidMount() {
@@ -77,9 +79,11 @@ class App extends React.Component {
           const simplifiedPages = response.data.map(page => {
             return {
               id: page.id,
+              title: page.title.rendered,
               slug: page.slug,
               template: page.template,
               parent: page.parent,
+              content: page.content.rendered,
             };
           });
           return simplifiedPages;
@@ -108,6 +112,18 @@ class App extends React.Component {
     runAllCalls();
   }
 
+  createRoutes(pages) {
+    console.log(pages);
+
+    return pages.map(page => {
+      return (
+        <Route path={'/' + page.slug} key={page.title + '_route'}>
+          <DefaultTemplate meta={this.state.meta} title={page.title} content={page.content} />
+        </Route>
+      );
+    });
+  }
+
   render() {
     if (!this.state.render) {
       return (
@@ -126,7 +142,9 @@ class App extends React.Component {
 
           <Switch>
 
-            <Route path="/">
+            {this.createRoutes(this.state.pages)}
+
+            <Route path="/" key="home_route">
               <Hero home={true} image={'http://localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg'} />
               <Home meta={this.state.meta}/>
             </Route>
