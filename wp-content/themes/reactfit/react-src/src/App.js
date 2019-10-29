@@ -116,9 +116,28 @@ class App extends React.Component {
     console.log(pages);
 
     return pages.map(page => {
+      const template = page.template === '' ? 'default' : page.template;
+      let content;
+
+      // Will need to update this when our templates are developed
+      switch(template) {
+        case 'templates/testimonials_template.php':
+          content = (
+            <div>
+              <h1 style={{color:'red'}}>BOO-YA!</h1>
+            </div>
+          );
+          break;
+        case 'default':
+        default:
+          content = (
+            <DefaultTemplate title={page.title} content={page.content} />
+          );
+      }
+      
       return (
         <Route path={'/' + page.slug} key={page.title + '_route'}>
-          <DefaultTemplate meta={this.state.meta} title={page.title} content={page.content} />
+          {content}
         </Route>
       );
     });

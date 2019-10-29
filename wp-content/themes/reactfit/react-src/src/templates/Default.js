@@ -7,7 +7,6 @@ class DefaultTemplate extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      meta: props.meta,
       title: props.title,
       content: props.content,
     }
