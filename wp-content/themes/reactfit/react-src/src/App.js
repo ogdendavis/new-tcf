@@ -14,6 +14,11 @@ import Content from './components/Content';
 import Home from './templates/Home';
 import DefaultTemplate from './templates/Default';
 
+// Provisionally define home url -- comes from header in prod,
+// but needs definition for build to work
+// const homeUrl = typeof(reactfitHomeUrl) === undefined ? '' : reactfitHomeUrl;
+const homeUrl = 'http://localhost/new-tcf/';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +39,7 @@ class App extends React.Component {
     // WP meta info
     const getSiteMeta = async () => {
       const meta = await axios
-        .get(reactfitHomeUrl + '/wp-json')
+        .get(homeUrl + '/wp-json')
         .then(response => {
           return response.data;
         })
@@ -50,7 +55,7 @@ class App extends React.Component {
     // Header info -- just menu items, for now
     const getHeaderInfo = async () => {
       const headerInfo = await axios
-        .get(reactfitHomeUrl + '/wp-json/reactfit/header-menu')
+        .get(homeUrl + '/wp-json/reactfit/header-menu')
         .then(response => {
           // Just pull out needed data for now (might want more, if we get fancy)
           const headerMenuItems = response.data.map(item => {
@@ -74,7 +79,7 @@ class App extends React.Component {
     // Get pages using default WP api call, and simplify data in the JS
     const getPages = async () => {
       const pages = await axios
-        .get(reactfitHomeUrl + '/wp-json/wp/v2/pages')
+        .get(homeUrl + '/wp-json/wp/v2/pages')
         .then(response => {
           const simplifiedPages = response.data.map(page => {
             return {
@@ -134,7 +139,7 @@ class App extends React.Component {
             <DefaultTemplate title={page.title} content={page.content} />
           );
       }
-      
+
       return (
         <Route path={'/' + page.slug} key={page.title + '_route'}>
           {content}
