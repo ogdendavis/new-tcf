@@ -12,6 +12,7 @@ import Content from './components/Content';
 
 // Import page templates
 import Home from './templates/Home';
+import GetStarted from './templates/GetStarted';
 import DefaultTemplate from './templates/Default';
 
 // Declare gloabl to prevent ESLint error in Yarn build
@@ -92,7 +93,7 @@ class App extends React.Component {
               id: page.id,
               title: page.title.rendered,
               slug: page.slug,
-              template: page.template,
+              template: page.custom_template,
               parent: page.parent,
               content: page.content.rendered,
             };
@@ -128,16 +129,16 @@ class App extends React.Component {
       const template = page.template === '' ? 'default' : page.template;
       let content;
 
-      // Will need to update this when our templates are developed
+      // Template determined by custom template field
+      // User updates field on page edit screen (created via ACF)
+      // These template names map to the possible values of the ACF field
       switch(template) {
-        case 'templates/testimonials_template.php':
+        case 'Get Started':
           content = (
-            <div>
-              <h1 style={{color:'red'}}>BOO-YA!</h1>
-            </div>
+            <GetStarted />
           );
           break;
-        case 'default':
+        case 'None':
         default:
           content = (
             <DefaultTemplate title={page.title} content={page.content} />

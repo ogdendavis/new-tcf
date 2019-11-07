@@ -31,3 +31,14 @@ add_action( 'rest_api_init', function() {
 //     'callback' => 'reactfit_get_pages',
 //   ));
 // });
+
+// Add custom meta for which front-end template to use
+function reactfit_get_custom_template($object) {
+  return get_post_meta($object['id'], 'custom_page_template', true);
+}
+
+add_action( 'rest_api_init', function () {
+  register_rest_field ( 'page', 'custom_template', array(
+    'get_callback' => 'reactfit_get_custom_template'
+  ));
+} );
