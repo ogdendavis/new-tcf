@@ -14,24 +14,30 @@ import Content from './components/Content';
 import Home from './templates/Home';
 import DefaultTemplate from './templates/Default';
 
-// Provisionally define home url -- comes from header in prod,
-// but needs definition for build to work
-// const homeUrl = typeof(reactfitHomeUrl) === undefined ? '' : reactfitHomeUrl;
-const homeUrl = 'http://localhost/new-tcf/';
+// Declare gloabl to prevent ESLint error in Yarn build
+/* global reactfitHomeUrl */
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       render: false,
-    } // Initial app state set in getFromWordpress
+      home: ''
+    } // Initial app state set in componentDidMount
 
     this.getFromWordpress = this.getFromWordpress.bind(this);
     this.createRoutes = this.createRoutes.bind(this);
   }
 
   componentDidMount() {
-    this.getFromWordpress();
+    // Set home url in state from variable in header
+    // Wait until home is set before getting data from REST API
+    if (typeof(reactfitHomeUrl) !== undefined) {
+      this.setState({ home: reactfitHomeUrl }, this.getFromWordpress);
+    }
+    else {
+      console.error('Home URL is not defined in App.js');
+    }
   }
 
   // One API call to rule them all
@@ -39,7 +45,7 @@ class App extends React.Component {
     // WP meta info
     const getSiteMeta = async () => {
       const meta = await axios
-        .get(homeUrl + '/wp-json')
+        .get(this.state.home + '/wp-json')
         .then(response => {
           return response.data;
         })
@@ -55,7 +61,7 @@ class App extends React.Component {
     // Header info -- just menu items, for now
     const getHeaderInfo = async () => {
       const headerInfo = await axios
-        .get(homeUrl + '/wp-json/reactfit/header-menu')
+        .get(this.state.home + '/wp-json/reactfit/header-menu')
         .then(response => {
           // Just pull out needed data for now (might want more, if we get fancy)
           const headerMenuItems = response.data.map(item => {
@@ -79,7 +85,7 @@ class App extends React.Component {
     // Get pages using default WP api call, and simplify data in the JS
     const getPages = async () => {
       const pages = await axios
-        .get(homeUrl + '/wp-json/wp/v2/pages')
+        .get(this.state.home + '/wp-json/wp/v2/pages')
         .then(response => {
           const simplifiedPages = response.data.map(page => {
             return {
