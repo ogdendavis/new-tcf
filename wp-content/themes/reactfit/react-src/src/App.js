@@ -124,8 +124,6 @@ class App extends React.Component {
   }
 
   createRoutes(pages) {
-    console.log(pages);
-
     return pages.map(page => {
       const template = page.template === '' ? 'default' : page.template;
       let content;
@@ -168,7 +166,7 @@ class App extends React.Component {
       <BrowserRouter basename={this.state.meta.basePath}>
         <div className="App">
 
-          <Header menuItems={this.state.header.menu} />
+          <Header menuItems={this.state.header.menu} home={this.state.home} />
 
           <Switch>
 

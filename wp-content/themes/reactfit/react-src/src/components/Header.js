@@ -39,7 +39,7 @@ class Header extends React.Component {
           <HeaderContact />
         </div>
         <div className="header__row-two">
-          <HeaderLogo />
+          <HeaderLogo url={this.props.home} />
           <HeaderMenu items={this.state.menuItems} />
         </div>
       </div>
@@ -81,7 +81,9 @@ const HeaderContact = (props) => {
 const HeaderLogo = (props) => {
   return(
     <div className="header__logo">
-      <img src="//localhost/new-tcf/wp-content/uploads/2019/09/SM-tcf-logo-transparent-white.png" alt="TCF logo" />
+      <a href={props.url}>
+        <img src="//localhost/new-tcf/wp-content/uploads/2019/09/SM-tcf-logo-transparent-white.png" alt="TCF logo" />
+      </a>
     </div>
   );
 }
