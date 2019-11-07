@@ -3,6 +3,7 @@ import React from 'react';
 // Import modules
 import Testimonials from '../modules/Testimonials.js';
 import Trainers from '../modules/Trainers.js';
+import Schedule from '../modules/Schedule.js';
 
 // Import styles
 import './Home.css';
@@ -100,17 +101,6 @@ const DoIt = (props) => {
         <div className="do-it__link">
           <a className="button button--white-alt do-it__button" href={props.link}>{props.text}</a>
         </div>
-      </div>
-    </div>
-  );
-}
-
-const Schedule = (props) => {
-  return (
-    <div className="section__container">
-      <div className="section home__schedule">
-        <h2 className="section__heading">Class Schedule</h2>
-          <iframe src="https://app.wodify.com/Schedule/PublicCalendarListView.aspx?tenant=3716" width="800" height="800"></iframe>
       </div>
     </div>
   );
