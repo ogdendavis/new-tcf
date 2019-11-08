@@ -173,6 +173,13 @@ class App extends React.Component {
 
             {this.createRoutes(this.state.pages)}
 
+            {/* TEMP routes for page design */}
+
+            <Route path ="/TEMP-get-started">
+              <GetStarted />
+            </Route>
+
+            {/* When done, move this logic to createRoutes, and change to a 404 page as the default route */}
             <Route path="/" key="home_route">
               <Hero home={true} image={'http://localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg'} />
               <Home meta={this.state.meta}/>
