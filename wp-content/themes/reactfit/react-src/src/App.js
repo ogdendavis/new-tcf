@@ -6,9 +6,10 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 // Import components
 import Header from './components/Header';
-import Hero from './components/Hero';
 import Footer from './components/Footer';
-import Content from './components/Content';
+
+// Import modules
+import Hero from './modules/Hero';
 
 // Import page templates
 import Home from './templates/Home';
@@ -175,7 +176,7 @@ class App extends React.Component {
 
             {/* TEMP routes for page design */}
 
-            <Route path ="/TEMP-get-started">
+            <Route path ="/TEMP-get-started" key="TEMP-get-started-route">
               <GetStarted />
             </Route>
 
