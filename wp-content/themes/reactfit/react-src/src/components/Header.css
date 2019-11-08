@@ -1,9 +1,14 @@
 .site-header {
-  background: linear-gradient(var(--black-a9), var(--black-a9));
+  background: linear-gradient(var(--black), var(--black));
   color: var(--white);
   position: sticky;
   top: 0;
   z-index: 10;
+  transition: var(--transition);
+}
+
+.site-header--scrolled {
+  background: linear-gradient(var(--black-a9), var(--black-a9));
 }
 
 .header__row-one, .header__row-two {
