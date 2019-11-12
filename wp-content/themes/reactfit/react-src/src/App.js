@@ -177,7 +177,7 @@ class App extends React.Component {
             {/* TEMP routes for page design */}
 
             <Route path ="/TEMP-get-started" key="TEMP-get-started-route">
-              <GetStarted />
+              <GetStarted home={this.state.home}/>
             </Route>
 
             {/* When done, move this logic to createRoutes, and change to a 404 page as the default route */}
