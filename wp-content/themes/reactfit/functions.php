@@ -42,3 +42,14 @@ add_action( 'rest_api_init', function () {
     'get_callback' => 'reactfit_get_custom_template'
   ));
 } );
+
+// Server render Contact Form 7 form via shortcode
+function reactfit_render_form( $data ) {
+  return do_shortcode('[contact-form-7 id="' . $data['id'] . '"]');
+}
+add_action( 'rest_api_init', function() {
+  register_rest_route( 'reactfit', '/contact-form/(?P<id>\d+)', array(
+    'methods' => 'GET',
+    'callback' => 'reactfit_render_form',
+  ));
+});
