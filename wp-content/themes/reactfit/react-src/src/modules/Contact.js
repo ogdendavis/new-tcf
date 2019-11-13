@@ -39,7 +39,7 @@ class Contact extends React.Component {
     return (
       <div className="section__container contact__container">
         <div className="section contact">
-          <div className="cf7__container" dangerouslySetInnerHTML={{
+          <div className="wpcf7__container" dangerouslySetInnerHTML={{
             __html: this.state.rendered
           }} />
         </div>
