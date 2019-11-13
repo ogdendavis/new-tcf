@@ -16,11 +16,20 @@
 
 .get-started__intro .intro__form-container {
   padding: 0 1rem;
-  background: var(--gray);
+  background: var(--tcf-blue);
   color: var(--white);
 
 }
 
 .intro__form-container .get-started__form {
   margin: auto;
+}
+
+.get-started__testimonials-container {
+  background: var(--black-a8);
+  color: var(--white);
+}
+
+.get-started__testimonials-container .testimonials__arrow path {
+  fill: var(--white);
 }
