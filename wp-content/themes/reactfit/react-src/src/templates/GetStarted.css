@@ -1,0 +1,4 @@
+.get-started__intro {
+  display: flex;
+  flex-flow: row wrap;
+}

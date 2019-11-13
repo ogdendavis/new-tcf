@@ -32,8 +32,10 @@ class GetStarted extends React.Component {
 
 const Intro = (props) => {
   return (
-    <div className="get-started__intro">
-      <Contact home={props.home} id={props.id} addClass={props.addClass} />
+    <div className="section__container">
+      <div className="section get-started__intro">
+        <Contact home={props.home} id={props.id} addClass={props.addClass} />
+      </div>
     </div>
   );
 }

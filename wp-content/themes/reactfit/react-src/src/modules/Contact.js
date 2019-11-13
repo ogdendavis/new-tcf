@@ -41,15 +41,11 @@ class Contact extends React.Component {
   }
 
   render() {
-    const containerClass = this.state.addClass ? 'section__container contact__container ' + this.state.addClass : 'section__container contact__container'
+    const containerClass = this.state.addClass ? 'wpcf7__container ' + this.state.addClass : 'wpcf7__container';
     return (
-      <div className={containerClass}>
-        <div className="section contact">
-          <div className="wpcf7__container" dangerouslySetInnerHTML={{
-            __html: this.state.rendered
-          }} />
-        </div>
-      </div>
+      <div className={containerClass} dangerouslySetInnerHTML={{
+        __html: this.state.rendered
+      }} />
     );
   }
 
