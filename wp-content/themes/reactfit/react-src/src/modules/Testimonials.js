@@ -28,7 +28,7 @@ class Testimonials extends React.Component {
           <h2 className="screen-reader-text">Testimonials</h2>
 
           <div className="testimonials__nav-container">
-            <NavIcon icon='caret-left' class='testimonials__arrow--left' />
+            <NavIcon icon='caret-left' class='testimonials__arrow' />
           </div>
 
           <div className="testimonials__carousel">
@@ -46,7 +46,7 @@ class Testimonials extends React.Component {
           </div>
 
           <div className="testimonials__nav-container">
-            <NavIcon icon='caret-right' class='testimonials__arrow--left' />
+            <NavIcon icon='caret-right' class='testimonials__arrow' />
           </div>
 
         </div>

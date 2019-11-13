@@ -13,7 +13,7 @@
   justify-content: space-evenly;
 }
 
-.testimonials__arrow--left, .testimonials__arrow--right {
+.testimonials__arrow {
   width: 2rem;
   margin: 0 1rem;
 }
