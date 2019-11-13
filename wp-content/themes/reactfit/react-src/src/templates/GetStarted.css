@@ -26,8 +26,9 @@
 }
 
 .get-started__testimonials-container {
-  background: var(--black-a8);
+  background: var(--tcf-blue);
   color: var(--white);
+  margin-top: 2rem;
 }
 
 .get-started__testimonials-container .testimonials__arrow path {
