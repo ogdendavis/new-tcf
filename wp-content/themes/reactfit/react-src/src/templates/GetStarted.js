@@ -21,8 +21,8 @@ class GetStarted extends React.Component {
     return (
       <div className="get-started__wrapper">
         <Hero home={false} image={'http://localhost/new-tcf/wp-content/uploads/2019/11/learning-cleans.jpg'} />
-        <Intro home={this.state.home} id='285' addClass='get-started__form'/>
-        <Testimonials />
+        <Intro home={this.state.home} id='285' addClass='get-started__form' />
+        <Testimonials addClass="get-started__testimonials-container" />
       </div>
     );
   }

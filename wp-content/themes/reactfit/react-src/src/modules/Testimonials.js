@@ -9,13 +9,21 @@ class Testimonials extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      addClass: false,
+    }
+  }
 
+  componentDidMount() {
+    if (this.props.addClass) {
+      this.setState({ addClass: this.props.addClass });
     }
   }
 
   render() {
+    console.log(this.state);
+    const containerClass = this.state.addClass ? 'section__container testimonials__container ' + this.state.addClass : 'section__container testimonials__container';
     return (
-      <div className="section__container testimonials__container">
+      <div className={containerClass}>
         <div className="section testimonials">
           <h2 className="screen-reader-text">Testimonials</h2>
 
