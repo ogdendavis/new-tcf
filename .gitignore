@@ -18,4 +18,8 @@ wp-config.php
 uploads
 
 # Create React App
-static/
+wp-content/themes/reactfit/*
+!wp-content/themes/reactfit/react-src
+
+# Ignore backups created by plugin
+wp-content/ai1wm-backups
