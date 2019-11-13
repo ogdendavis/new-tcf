@@ -1,4 +1,26 @@
 .get-started__intro {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.get-started__intro .intro__heading {
+  width: 100%;
+  padding-left: 2rem;
+}
+
+.get-started__intro .intro__step-container {
+  flex-basis: 65%;
+  padding: 0 1rem;
+}
+
+.get-started__intro .intro__form-container {
+  padding: 0 1rem;
+  background: var(--gray);
+  color: var(--white);
+
+}
+
+.intro__form-container .get-started__form {
+  margin: auto;
 }
