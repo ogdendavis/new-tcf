@@ -10,7 +10,8 @@ class Contact extends React.Component {
     this.state = {
       home: this.props.home,
       id: this.props.id,
-      rendered: '',
+      rendered: false,
+      addClass: false,
     }
   }
 
@@ -33,11 +34,16 @@ class Contact extends React.Component {
     }
 
     putFormInState();
+
+    if (this.props.addClass) {
+      this.setState({ addClass: this.props.addClass });
+    }
   }
 
   render() {
+    const containerClass = this.state.addClass ? 'section__container contact__container ' + this.state.addClass : 'section__container contact__container'
     return (
-      <div className="section__container contact__container">
+      <div className={containerClass}>
         <div className="section contact">
           <div className="wpcf7__container" dangerouslySetInnerHTML={{
             __html: this.state.rendered
