@@ -31,9 +31,16 @@ class Programs extends React.Component {
       );
     }) : '';
 
+    const heading = this.props.title ? (
+      <div className="programs__heading">
+        <h2 className="section__heading">{this.props.title}</h2>
+      </div>
+    ) : null;
+
     return (
       <div className="section__container">
         <div className="section programs">
+          {heading}
           {renderedPrograms}
         </div>
       </div>

@@ -4,6 +4,7 @@ import React from 'react';
 import Hero from '../modules/Hero';
 import Testimonials from '../modules/Testimonials';
 import Contact from '../modules/Contact';
+import Programs from '../modules/Programs'
 
 // Import styles
 import './GetStarted.css';
@@ -12,17 +13,54 @@ import './GetStarted.css';
 class GetStarted extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      home: this.props.home,
-    }
+    this.state = {}
+  }
+
+  componentDidMount() {
+    // Temporary object to hold Program info
+    const tempPrograms = [
+      {
+        title: 'CrossFit',
+        points: [
+          'Fun, motivating group classes',
+          'Led by professional CrossFit trainers',
+          'Unlimited sessions per month',
+        ],
+        button: 'Sign up now',
+        image: 'http://localhost/new-tcf/wp-content/uploads/2019/10/demo-team.jpg',
+      },
+      {
+        title: 'Foundations',
+        points: [
+          'Start CrossFit with 1:1 guidance',
+          'Learn how to eat for your goals',
+          'Gain skills and confidence',
+        ],
+        button: 'Get started',
+        image: 'http://localhost/new-tcf/wp-content/uploads/2019/10/pete-coaches.jpg',
+      },
+      {
+        title: 'Youth',
+        points: [
+          'Learn about fitness and health',
+          'Gain strength and confidence',
+          'have fun!',
+        ],
+        button: 'Learn more',
+        image: 'http://localhost/new-tcf/wp-content/uploads/2019/10/teens.jpg',
+      },
+    ];
+    this.setState({programs: tempPrograms});
   }
 
   render() {
     return (
       <div className="get-started__wrapper">
         <Hero home={false} image={'http://localhost/new-tcf/wp-content/uploads/2019/11/learning-cleans.jpg'} />
-        <Intro home={this.state.home} id='285' addClass='get-started__form' />
+        <Intro home={this.props.home} id='285' addClass='get-started__form' />
         <Testimonials addClass="get-started__testimonials-container" />
+        <Programs programs={this.state.programs} title='Check out our programs'/>
+        <DropIn />
       </div>
     );
   }
@@ -35,7 +73,7 @@ const Intro = (props) => {
     <div className="section__container">
       <div className="section get-started__intro">
         <div className="intro__heading">
-          <h2>New to CrossFit? Let's get started</h2>
+          <h2 className="section__heading">New to CrossFit? Let's get started</h2>
         </div>
         <div className="intro__step-container">
           <ul className="intro__steps">
@@ -59,6 +97,33 @@ const Intro = (props) => {
         </div>
         <div className="intro__form-container">
           <Contact home={props.home} id={props.id} addClass={props.addClass} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const Memberships = (props) => {
+  return(
+    <div className="section__container">
+      <div className="section get-started__memberships">
+        <div className="memberships__heading">
+          <h2 className="section__heading">Experienced CrossFitter? Check out our membership options</h2>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const DropIn = (props) => {
+  return (
+    <div className="section__container">
+      <div className="section get-started__dropin">
+        <h2 className="section__heading">Drop in with us</h2>
+        <div className="dropin__content">
+          <div className="dropin__text">
+            If you're an experienced CrossFitter visiting Thomasville, we'd love to have you WOD with us. Check out our schedule to find the class that fits your needs, and plan to arrive 10 minutes early to sign a waiver and get your bearings. Our drop-in rate is $10 per class.
+          </div>
         </div>
       </div>
     </div>
