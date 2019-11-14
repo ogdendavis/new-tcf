@@ -20,7 +20,6 @@ class Testimonials extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     const containerClass = this.state.addClass ? 'section__container testimonials__container ' + this.state.addClass : 'section__container testimonials__container';
     return (
       <div className={containerClass}>
