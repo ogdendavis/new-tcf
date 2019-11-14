@@ -1,0 +1,37 @@
+.programs {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.programs .programs__heading {
+  width: 100%;
+  text-align: center;
+}
+
+.programs .program {
+  flex-grow: 1;
+  box-sizing: border-box;
+  color: var(--white);
+  padding: 3rem 2rem;
+}
+
+.programs .program .program__heading {
+  text-align: center;
+}
+
+.program__heading {
+  font-size: 24px;
+}
+
+.program__detail {
+  display: block;
+  margin: auto;
+  width: fit-content;
+  width: -moz-fit-content;
+}
+
+.program__action {
+  text-align: center;
+  margin: 2rem auto;
+}

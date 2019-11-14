@@ -1,9 +1,10 @@
 import React from 'react';
 
 // Import modules
-import Testimonials from '../modules/Testimonials.js';
-import Trainers from '../modules/Trainers.js';
-import Schedule from '../modules/Schedule.js';
+import Testimonials from '../modules/Testimonials';
+import Trainers from '../modules/Trainers';
+import Schedule from '../modules/Schedule';
+import Programs from '../modules/Programs'
 
 // Import styles
 import './Home.css';
@@ -17,10 +18,48 @@ class Home extends React.Component {
     }
   }
 
+  componentDidMount() {
+    // Temporary object to hold Program info
+    const tempPrograms = [
+      {
+        title: 'CrossFit',
+        points: [
+          'Fun, motivating group classes',
+          'Led by professional CrossFit trainers',
+          'Unlimited sessions per month',
+        ],
+        button: 'Sign up now',
+        image: 'http://localhost/new-tcf/wp-content/uploads/2019/10/demo-team.jpg',
+      },
+      {
+        title: 'Foundations',
+        points: [
+          'Start CrossFit with 1:1 guidance',
+          'Learn how to eat for your goals',
+          'Gain skills and confidence',
+        ],
+        button: 'Get started',
+        image: 'http://localhost/new-tcf/wp-content/uploads/2019/10/pete-coaches.jpg',
+      },
+      {
+        title: 'Youth',
+        points: [
+          'Learn about fitness and health',
+          'Gain strength and confidence',
+          'have fun!',
+        ],
+        button: 'Learn more',
+        image: 'http://localhost/new-tcf/wp-content/uploads/2019/10/teens.jpg',
+      },
+    ];
+    this.setState({ programs: tempPrograms });
+  }
+
+
   render() {
     return (
       <div className="home__wrapper">
-        <Programs />
+        <Programs programs={this.state.programs} />
         <Testimonials />
         <DoIt link="#" text="Get Started" blurb="Ready to start your fitness journey? Sign up for our Foundations program today." />
         <Trainers />
@@ -33,63 +72,6 @@ class Home extends React.Component {
 }
 
 // Stateless child components
-
-const Programs = (props) => {
-  return (
-    <div className="section__container">
-      <div className="section home__programs">
-        <div className="programs__heading">
-          <h2 className="screen-reader-text">Our Programs</h2>
-        </div>
-        <div className="programs__left">
-          <h3 className="program__heading">
-            CrossFit
-          </h3>
-          <ul className="program__detail">
-            <li>Fun, motivating group classes</li>
-            <li>Led by professional CrossFit trainers</li>
-            <li>Unlimited sessions per month</li>
-          </ul>
-          <div className="button__container">
-            <a className="program__action button" href="#">
-              Sign up now
-            </a>
-          </div>
-        </div>
-        <div className="programs__center">
-          <h3 className="program__heading">
-            Foundations
-          </h3>
-          <ul className="program__detail">
-            <li>Start CrossFit with 1:1 guidance</li>
-            <li>Learn how to eat for your goals</li>
-            <li>Gain skills and confidence</li>
-          </ul>
-          <div className="button__container">
-            <a className="program__action button" href="#">
-              Get started
-            </a>
-          </div>
-        </div>
-        <div className="programs__right">
-          <h3 className="program__heading">
-            Youth
-          </h3>
-          <ul className="program__detail">
-            <li>Learn about fitness and health</li>
-            <li>Gain strength and confidence</li>
-            <li>Have fun!</li>
-          </ul>
-          <div className="button__container">
-            <a className="program__action button" href="#">
-              Learn More
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 const DoIt = (props) => {
   return (
