@@ -18,5 +18,6 @@ body {
   box-sizing: border-box;
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0 1rem;
   overflow: auto; /* Keeps margins of child elements from moving container */
 }

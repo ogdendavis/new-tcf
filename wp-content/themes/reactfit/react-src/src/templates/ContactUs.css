@@ -4,16 +4,12 @@
   justify-content: space-around;
 }
 
-.contact-us__form {
-  font-size: 18px;
-}
-
 .contact-us__form input, .contact-us__form textarea {
-  font-size: 18px;
+  font-size: var(--body-font-size);
 }
 
 .contact-us__real-world {
-  font-size: 18px;
+  font-size: var(--body-font-size);
 }
 
 .contact-us__address, .contact-us__email {

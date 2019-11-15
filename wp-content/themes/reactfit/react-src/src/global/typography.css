@@ -3,10 +3,12 @@
 :root {
   --heading-font: 'Montserrat', sans-serif;
   --body-font: 'Karla', sans-serif;
+  --body-font-size: 1.125rem;
 }
 
 body {
   font-family: var(--body-font);
+  font-size: var(--body-font-size);
 }
 
 h1, h2, h3, h4 {
