@@ -103,18 +103,6 @@ const Intro = (props) => {
   );
 }
 
-const Memberships = (props) => {
-  return(
-    <div className="section__container">
-      <div className="section get-started__memberships">
-        <div className="memberships__heading">
-          <h2 className="section__heading">Experienced CrossFitter? Check out our membership options</h2>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 const DropIn = (props) => {
   return (
     <div className="section__container">
