@@ -1,0 +1,17 @@
+.contact-us__content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.contact-us__form {
+  font-size: 18px;
+}
+
+.contact-us__form input, .contact-us__form textarea {
+  font-size: 18px;
+}
+
+.contact-us__real-world {
+  font-size: 18px;
+}
