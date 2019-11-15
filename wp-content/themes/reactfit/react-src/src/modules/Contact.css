@@ -1,3 +1,7 @@
+.wpcf7__container {
+  font-size: 18px;
+}
+
 .wpcf7__container input:, .wpcf7__container textarea {
   box-shadow: none;
 }

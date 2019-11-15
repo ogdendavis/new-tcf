@@ -8,17 +8,16 @@ class Contact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      home: this.props.home,
-      id: this.props.id,
       rendered: false,
       addClass: false,
     }
   }
 
   componentDidMount() {
+    // Get rendered form
     const theForm = async () => {
       const form = await axios
-        .get(this.state.home + '/wp-json/reactfit/contact-form/' + this.state.id).
+        .get(this.props.home + '/wp-json/reactfit/contact-form/' + this.props.id).
         then(response => {
           return response.data;
         })
@@ -26,22 +25,31 @@ class Contact extends React.Component {
       return form;
     }
 
+    // Put the form in state. This also calls the styling function
     const putFormInState = async () => {
       const renderedForm = await theForm();
       this.setState({
         rendered: renderedForm,
+      }, styleForm);
+    }
+
+    // Style the form by adding pre-styled button class. Assumes only one form on page.
+    const styleForm = () => {
+      if (!this.props.buttonClass) {
+        return;
+      }
+      const submitButton = document.querySelector('.wpcf7-submit');
+      const splitClasses = this.props.buttonClass.split(' ');
+      splitClasses.forEach(cl => {
+        submitButton.classList.add(cl);
       });
     }
 
     putFormInState();
-
-    if (this.props.addClass) {
-      this.setState({ addClass: this.props.addClass });
-    }
   }
 
   render() {
-    const containerClass = this.state.addClass ? 'wpcf7__container ' + this.state.addClass : 'wpcf7__container';
+    const containerClass = this.props.addClass ? 'wpcf7__container ' + this.props.addClass : 'wpcf7__container';
     return (
       <div className={containerClass} dangerouslySetInnerHTML={{
         __html: this.state.rendered

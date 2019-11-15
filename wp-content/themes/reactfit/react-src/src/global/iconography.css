@@ -35,6 +35,10 @@
   color: var(--gray);
 }
 
+.button--no-margin {
+  margin: 0;
+}
+
 .button__container {
   text-align: center;
 }
