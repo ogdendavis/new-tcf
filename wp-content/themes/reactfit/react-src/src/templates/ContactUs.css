@@ -15,3 +15,11 @@
 .contact-us__real-world {
   font-size: 18px;
 }
+
+.contact-us__address, .contact-us__email {
+  margin-bottom: 1.5rem;
+}
+
+.contact-us__phone {
+  margin-bottom: 0.5rem;
+}

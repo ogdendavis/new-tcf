@@ -13,6 +13,7 @@
 .button:hover {
   background: var(--white);
   color: var(--tcf-blue);
+  cursor: pointer;
 }
 
 .button--white {
@@ -30,7 +31,7 @@
   color: var(--tcf-blue);
 }
 
-.button--white-alt:hover {
+.button--white-alt:hover, .button--alt:hover {
   background: var(--yellow);
   color: var(--gray);
 }
