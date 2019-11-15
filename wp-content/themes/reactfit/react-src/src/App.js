@@ -16,6 +16,7 @@ import Home from './templates/Home';
 import GetStarted from './templates/GetStarted';
 import DefaultTemplate from './templates/Default';
 import ContactUs from './templates/ContactUs';
+import AboutUs from './templates/AboutUs';
 
 // Declare gloabl to prevent ESLint error in Yarn build
 /* global reactfitHomeUrl */
@@ -181,6 +182,9 @@ class App extends React.Component {
             </Route>
             <Route path ="/TEMP-contact-us" key="TEMP-contact-route">
               <ContactUs home={this.state.home} formId='5330'/>
+            </Route>
+            <Route path ="/TEMP-about-us" key="TEMP-about-us-route">
+              <AboutUs home={this.state.home} />
             </Route>
 
             {/* When done, move this logic to createRoutes, and change to a 404 page as the default route */}

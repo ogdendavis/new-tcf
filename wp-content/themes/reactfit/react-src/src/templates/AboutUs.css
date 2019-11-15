@@ -1,0 +1,54 @@
+.about-us__intro {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.about-us__intro .intro__heading {
+  width: 100%;
+}
+
+.about-us__intro-text {
+  flex-basis: 50%;
+}
+
+.about-us__wrapper .community__container {
+  background: var(--tcf-blue);
+  color: white;
+}
+
+.community__photos {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.community__photo {
+  flex-basis: 25%;
+  height: 20rem;
+}
+
+.programs-details__program-detail {
+  background: linear-gradient(var(--black-a1),var(--black-a1));
+  padding: 1rem;
+  margin: 2rem auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.program-detail__text {
+  flex-basis: 60%;
+}
+
+.program-detail__image-container {
+  flex-basis: 35%;
+}
+
+.program-detail__image {
+  width: 100%;
+}
+
+.programs-details__program-detail:nth-child(odd) .program-detail__text {
+  order: 2;
+}
