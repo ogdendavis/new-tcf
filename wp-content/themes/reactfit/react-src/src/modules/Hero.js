@@ -7,13 +7,11 @@ import './Hero.css';
 class Hero extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      image: this.props.image,
-    }
+    this.state = {}
   }
 
   render() {
-    const img = 'url(' + this.state.image + ')';
+    const img = 'url(' + this.props.image + ')';
     return (
       <div className="hero" style={{backgroundImage: img}}>
         <div className="hero__tagline">

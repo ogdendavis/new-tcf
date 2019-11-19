@@ -1,10 +1,11 @@
 import React from 'react';
 
 // Import modules
+import Hero from '../modules/Hero';
 import Testimonials from '../modules/Testimonials';
 import Trainers from '../modules/Trainers';
 import Schedule from '../modules/Schedule';
-import Programs from '../modules/Programs'
+import Programs from '../modules/Programs';
 
 // Import styles
 import './Home.css';
@@ -59,6 +60,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home__wrapper">
+        <Hero image={'http://localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg'} />
         <Programs programs={this.state.programs} />
         <Testimonials />
         <DoIt link="#" text="Get Started" blurb="Ready to start your fitness journey? Sign up for our Foundations program today." />

@@ -136,6 +136,11 @@ class App extends React.Component {
       // User updates field on page edit screen (created via ACF)
       // These template names map to the possible values of the ACF field
       switch(template) {
+        case 'Home':
+          content = (
+            <Home meta={this.state.meta} />
+          );
+          break;
         case 'Get Started':
           content = (
             <GetStarted />
@@ -189,7 +194,6 @@ class App extends React.Component {
 
             {/* When done, move this logic to createRoutes, and change to a 404 page as the default route */}
             <Route path="/" key="home_route">
-              <Hero home={true} image={'http://localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg'} />
               <Home meta={this.state.meta}/>
             </Route>
 
