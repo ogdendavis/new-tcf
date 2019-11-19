@@ -60,7 +60,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home__wrapper">
-        <Hero image={'http://localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg'} />
+        <Hero image={this.props.page.acf_fields.hero_image} heading={this.props.page.acf_fields.hero_heading} subhead={this.props.page.acf_fields.hero_subhead} />
         <Programs programs={this.state.programs} />
         <Testimonials />
         <DoIt link="#" text="Get Started" blurb="Ready to start your fitness journey? Sign up for our Foundations program today." />
