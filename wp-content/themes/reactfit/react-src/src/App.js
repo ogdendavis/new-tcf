@@ -135,8 +135,6 @@ class App extends React.Component {
           'default' :
           page.acf_fields.custom_page_template) :
         'default';
-      console.log(template);
-      console.log(page.acf_fields.custom_page_template);
       let content;
 
       // Template determined by custom template field
