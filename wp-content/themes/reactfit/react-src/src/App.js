@@ -99,6 +99,7 @@ class App extends React.Component {
               template: page.custom_template,
               parent: page.parent,
               content: page.content.rendered,
+              acf_fields: page.acf_fields,
             };
           });
           return simplifiedPages;
@@ -129,7 +130,13 @@ class App extends React.Component {
 
   createRoutes(pages) {
     return pages.map(page => {
-      const template = page.template === '' ? 'default' : page.template;
+      const template = page.acf_fields ?
+        (page.acf_fields.custom_page_template === '' ?
+          'default' :
+          page.acf_fields.custom_page_template) :
+        'default';
+      console.log(template);
+      console.log(page.acf_fields.custom_page_template);
       let content;
 
       // Template determined by custom template field
