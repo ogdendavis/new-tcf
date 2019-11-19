@@ -79,20 +79,20 @@ const ProgramDetail = () => {
         </div>
         <div className="programs-details__program-detail">
           <div className="program-detail__text">
-            <h3>CrossFit</h3>
-            <p>All of our workouts are based on functional movements – these are movements that you use everyday, everywhere. These will help you move the heaviest weight the furthest distance and are optimal for getting the most work done in the shortest amount of time. The magic is in the movements! Our coaches focus on the perfection of these movements and working with each athlete to make them their best and keep them safe. By using a constantly varied training program, these functional movements performed at high intensity produce dramatic fitness gains.</p>
-          </div>
-          <div className="program-detail__image-container">
-            <img className="program-detail__image" src="http://localhost/new-tcf/wp-content/uploads/2019/11/learning-cleans.jpg" alt="CrossFit image" />
-          </div>
-        </div>
-        <div className="programs-details__program-detail">
-          <div className="program-detail__text">
             <h3>Foundations</h3>
             <p>In our Foundations course, you will learn the fundamental movements of CrossFit, discuss your goals and limitations with coaches, gain nutritional guidance, and meet our CrossFit community! Over the course of five one-on-one sessions with one of our expert coaches, you'll build skills and gain confidence to prepare you for successful entry into our CrossFit group classes.</p>
           </div>
           <div className="program-detail__image-container">
             <img className="program-detail__image" src="http://localhost/new-tcf/wp-content/uploads/2019/11/coaches-n-leslie.jpg" alt="Foundations image" />
+          </div>
+        </div>
+        <div className="programs-details__program-detail">
+          <div className="program-detail__text">
+            <h3>CrossFit</h3>
+            <p>All of our workouts are based on functional movements – these are movements that you use everyday, everywhere. These will help you move the heaviest weight the furthest distance and are optimal for getting the most work done in the shortest amount of time. The magic is in the movements! Our coaches focus on the perfection of these movements and working with each athlete to make them their best and keep them safe. By using a constantly varied training program, these functional movements performed at high intensity produce dramatic fitness gains.</p>
+          </div>
+          <div className="program-detail__image-container">
+            <img className="program-detail__image" src="http://localhost/new-tcf/wp-content/uploads/2019/11/learning-cleans.jpg" alt="CrossFit image" />
           </div>
         </div>
         <div className="programs-details__program-detail">
