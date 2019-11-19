@@ -141,9 +141,19 @@ class App extends React.Component {
             <Home meta={this.state.meta} />
           );
           break;
+        case 'About Us':
+          content = (
+            <AboutUs home={this.state.home}/>
+          );
+          break;
+        case 'Contact Us':
+          content = (
+            <ContactUs home={this.state.home} />
+          );
+          break;
         case 'Get Started':
           content = (
-            <GetStarted />
+            <GetStarted home={this.state.home} />
           );
           break;
         case 'None':
@@ -180,17 +190,6 @@ class App extends React.Component {
           <Switch>
 
             {this.createRoutes(this.state.pages)}
-
-            {/* TEMP routes for page design */}
-            <Route path ="/TEMP-get-started" key="TEMP-get-started-route">
-              <GetStarted home={this.state.home}/>
-            </Route>
-            <Route path ="/TEMP-contact-us" key="TEMP-contact-route">
-              <ContactUs home={this.state.home} formId='5330'/>
-            </Route>
-            <Route path ="/TEMP-about-us" key="TEMP-about-us-route">
-              <AboutUs home={this.state.home} />
-            </Route>
 
             {/* When done, move this logic to createRoutes, and change to a 404 page as the default route */}
             <Route path="/" key="home_route">
