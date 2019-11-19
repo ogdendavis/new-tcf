@@ -6,15 +6,15 @@ import './Default.css';
 class DefaultTemplate extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      title: props.title,
-      content: props.content,
-    }
+    this.state = {}
   }
 
   render() {
     return (
-      <div className="section default__container" dangerouslySetInnerHTML={{__html: this.state.content}} />
+      <div className="section default__container">
+      <h1 className="default__heading">{this.props.page.title}</h1>
+      <div className="default__content" dangerouslySetInnerHTML={{__html: this.props.page.content}} />
+      </div>
     );
   }
 

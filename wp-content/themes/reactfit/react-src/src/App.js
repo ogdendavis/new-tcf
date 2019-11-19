@@ -143,28 +143,28 @@ class App extends React.Component {
       switch(template) {
         case 'Home':
           content = (
-            <Home meta={this.state.meta} />
+            <Home meta={this.state.meta} page={page} />
           );
           break;
         case 'About Us':
           content = (
-            <AboutUs home={this.state.home}/>
+            <AboutUs home={this.state.home} page={page} />
           );
           break;
         case 'Contact Us':
           content = (
-            <ContactUs home={this.state.home} />
+            <ContactUs home={this.state.home} page={page} />
           );
           break;
         case 'Get Started':
           content = (
-            <GetStarted home={this.state.home} />
+            <GetStarted home={this.state.home} page={page} />
           );
           break;
         case 'None':
         default:
           content = (
-            <DefaultTemplate title={page.title} content={page.content} />
+            <DefaultTemplate page={page} />
           );
       }
 
