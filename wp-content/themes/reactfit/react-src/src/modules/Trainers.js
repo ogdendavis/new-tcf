@@ -7,6 +7,7 @@ class Coaches extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      meta: {},
       coaches: [],
     }
   }
@@ -25,48 +26,38 @@ class Coaches extends React.Component {
   }
 
   render() {
-    const renderedCoaches = this.state.coaches.map(coach => {
-      const coachBg = 'url("' + coach.acf_fields
-      return (
-        <div className="trainer" style={{
-          background: "url('http://localhost/new-tcf/wp-content/uploads/2019/10/nick-cleans-square.jpg') center/cover no-repeat"
-        }}>
-          <h3>Nick Sellers</h3>
-          <div className="trainer__text">
-            Nick is awesome! He's so awesome that it's hard to describe how awesome he is. But let's try: He's more awesome than the awesomest thing that the awesomest person in the world could ever hope to think of.
+    const width = this.state.meta.width;
+    const renderedCoaches = this.state.coaches
+      .sort((a,b) => {
+        return a.acf_fields.display_order > b.acf_fields.display_order;
+      })
+      .map(coach => {
+        const img = coach.acf_fields.image;
+        const bgImage = width < 768 ?   img.sizes.medium_large :
+                       width < 1024 ? img.sizes.large :
+                       width < 1536 ? img.sizes['1536x1536'] :
+                       width < 2048 ? img.sizes['2048x2048'] :
+                       img.url;
+        const trainerStyle = {
+          background: 'url("' + bgImage + '") center/cover no-repeat',
+        }
+        return (
+          <div className="trainer" style={trainerStyle} key={'coach' + coach.acf_fields.first_name}>
+            <h3>{coach.acf_fields.first_name} {coach.acf_fields.last_name}</h3>
+            <div className="trainer__text">
+              {coach.acf_fields.bio}
+            </div>
           </div>
-        </div>
-      );
-    });
+        );
+      });
 
     return(
 
         <div className="section__container">
           <div className="section trainers">
             <h2 className="section__heading">Our Trainers</h2>
-
             <div className="trainers__container">
-
-
-
-              <div className="trainer" style={{
-                background: "url('http://localhost/new-tcf/wp-content/uploads/2019/10/abrie-square.jpg') center/cover no-repeat"
-              }}>
-                <h3>Abrie Sellers</h3>
-                <div className="trainer__text">
-                  Abrie is awesome! She's so awesome that it's hard to describe how awesome she is. But let's try: She's more awesome than the awesomest thing that the awesomest person in the world could ever hope to think of.
-                </div>
-              </div>
-
-              <div className="trainer" style={{
-                background: "url('http://localhost/new-tcf/wp-content/uploads/2019/10/lucas-silly-mod.jpg') center/cover no-repeat"
-              }}>
-                <h3>Lucas Ogden-Davis</h3>
-                <div className="trainer__text">
-                  Lucas is ok, too. It's pretty easy to describe how ok he is. Imagine someone who is pretty ok. Now imagine that person imagining another person, who the original ok person thinks is ok. Lucas is that ok person, as envisioned by another ok person.
-                </div>
-              </div>
-
+              {renderedCoaches}
             </div>
           </div>
         </div>
