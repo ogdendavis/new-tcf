@@ -7,7 +7,6 @@ class Coaches extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      meta: {},
       coaches: [],
     }
   }
@@ -26,7 +25,7 @@ class Coaches extends React.Component {
   }
 
   render() {
-    const width = this.state.meta.width;
+    const width = this.props.meta.width;
     const renderedCoaches = this.state.coaches
       .sort((a,b) => {
         return a.acf_fields.display_order > b.acf_fields.display_order;

@@ -61,7 +61,7 @@ class App extends React.Component {
 
       // Get window width, to pass to child components for use in selecting appropriately-sized images
       const width = window.innerWidth || document.body.clientWidth;
-      meta.windowWidth = width;
+      meta.width = width;
 
       return meta;
     }
