@@ -63,6 +63,7 @@ function reactfit_custom_post_types() {
       'public' => true,
       'menu_icon' => 'dashicons-businessman',
       'show_in_rest' => true,
+      'rest_base' => 'coaches'
   ));
 }
 add_action( 'init', 'reactfit_custom_post_types' );

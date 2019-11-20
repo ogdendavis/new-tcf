@@ -1,13 +1,25 @@
 import React from 'react';
+import axios from 'axios';
 
 import './Trainers.css';
 
 class Coaches extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = {}
+  }
 
-    }
+  async componentDidMount() {
+    const coaches = await axios
+      .get(this.props.home + '/wp-json/wp/v2/coaches')
+      .then(response => {
+        return response.data;
+      })
+      .catch(error => console.error(error));
+
+    this.setState({
+      coaches: coaches,
+    });
   }
 
   render() {
