@@ -33,11 +33,11 @@ class Coaches extends React.Component {
       })
       .map(coach => {
         const img = coach.acf_fields.image;
-        const bgImage = width < 768 ?   img.sizes.medium_large :
-                       width < 1024 ? img.sizes.large :
-                       width < 1536 ? img.sizes['1536x1536'] :
-                       width < 2048 ? img.sizes['2048x2048'] :
-                       img.url;
+        const bgImage = width < 768 ?   img.sizes.medium :
+                       width < 1024 ? img.sizes.medium_large :
+                       width < 1536 ? img.sizes.large :
+                       width < 2048 ? img.sizes['1536x1536'] :
+                       img.sizes['2048x2048'];
         const trainerStyle = {
           background: 'url("' + bgImage + '") center/cover no-repeat',
         }
