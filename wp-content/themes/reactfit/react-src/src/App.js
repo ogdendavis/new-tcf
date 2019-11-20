@@ -114,10 +114,17 @@ class App extends React.Component {
       const meta = await getSiteMeta();
       const header = await getHeaderInfo();
       const pages = await getPages();
+
+      // Get home page, for creataing default route
+      const homePage = pages.filter(page => {
+        return page.id == 5340;
+      });
+
       this.setState({
         meta: meta,
         header: header,
         pages: pages,
+        homePage: homePage[0],
       }, goTime);
     }
 
@@ -198,7 +205,7 @@ class App extends React.Component {
 
             {/* When done, move this logic to createRoutes, and change to a 404 page as the default route */}
             <Route path="/" key="home_route">
-              <Home meta={this.state.meta}/>
+              <Home meta={this.state.meta} page={this.state.homePage}/>
             </Route>
 
           </Switch>
