@@ -6,12 +6,14 @@ import './Trainers.css';
 class Coaches extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      coaches: [],
+    }
   }
 
   async componentDidMount() {
     const coaches = await axios
-      .get(this.props.home + '/wp-json/wp/v2/coaches')
+      .get(this.props.meta.home + '/wp-json/wp/v2/coaches')
       .then(response => {
         return response.data;
       })
@@ -23,6 +25,20 @@ class Coaches extends React.Component {
   }
 
   render() {
+    const renderedCoaches = this.state.coaches.map(coach => {
+      const coachBg = 'url("' + coach.acf_fields
+      return (
+        <div className="trainer" style={{
+          background: "url('http://localhost/new-tcf/wp-content/uploads/2019/10/nick-cleans-square.jpg') center/cover no-repeat"
+        }}>
+          <h3>Nick Sellers</h3>
+          <div className="trainer__text">
+            Nick is awesome! He's so awesome that it's hard to describe how awesome he is. But let's try: He's more awesome than the awesomest thing that the awesomest person in the world could ever hope to think of.
+          </div>
+        </div>
+      );
+    });
+
     return(
 
         <div className="section__container">
@@ -31,14 +47,7 @@ class Coaches extends React.Component {
 
             <div className="trainers__container">
 
-              <div className="trainer" style={{
-                background: "url('http://localhost/new-tcf/wp-content/uploads/2019/10/nick-cleans-square.jpg') center/cover no-repeat"
-              }}>
-                <h3>Nick Sellers</h3>
-                <div className="trainer__text">
-                  Nick is awesome! He's so awesome that it's hard to describe how awesome he is. But let's try: He's more awesome than the awesomest thing that the awesomest person in the world could ever hope to think of.
-                </div>
-              </div>
+
 
               <div className="trainer" style={{
                 background: "url('http://localhost/new-tcf/wp-content/uploads/2019/10/abrie-square.jpg') center/cover no-repeat"

@@ -59,6 +59,10 @@ class App extends React.Component {
       const testPath = '/' + meta.url.split('/').pop();
       meta.basePath = testPath.includes('.') || testPath.length === 0 ? '/' : testPath;
 
+      // Get window width, to pass to child components for use in selecting appropriately-sized images
+      const width = window.innerWidth || document.body.clientWidth;
+      meta.windowWidth = width;
+
       return meta;
     }
 
@@ -155,23 +159,23 @@ class App extends React.Component {
           break;
         case 'About Us':
           content = (
-            <AboutUs home={this.state.home} page={page} />
+            <AboutUs meta={this.state.meta} page={page} />
           );
           break;
         case 'Contact Us':
           content = (
-            <ContactUs home={this.state.home} page={page} />
+            <ContactUs meta={this.state.meta} page={page} />
           );
           break;
         case 'Get Started':
           content = (
-            <GetStarted home={this.state.home} page={page} />
+            <GetStarted meta={this.state.meta} page={page} />
           );
           break;
         case 'None':
         default:
           content = (
-            <DefaultTemplate page={page} />
+            <DefaultTemplate meta={this.state.meta} page={page} />
           );
       }
 

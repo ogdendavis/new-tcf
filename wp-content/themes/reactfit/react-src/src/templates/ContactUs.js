@@ -27,7 +27,7 @@ class ContactUs extends React.Component {
 
             <div className="contact-us__form">
               <h2>Send us a message</h2>
-              <Contact home={this.props.home} id={this.props.formId} formClass={this.props.formClass}
+              <Contact meta={this.props.meta} id={this.props.formId} formClass={this.props.formClass}
               buttonClass={'button button--alt button--no-margin'} />
             </div>
 
