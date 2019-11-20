@@ -21,7 +21,6 @@ class Hero extends React.Component {
                    width < 2048 ? img.sizes['2048x2048'] :
                    img.url;
     this.setState({ imgUrl: 'url(' + imgUrl + ')' });
-    console.log(this.props);
   }
 
   render() {

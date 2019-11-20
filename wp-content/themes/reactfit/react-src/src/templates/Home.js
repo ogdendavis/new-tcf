@@ -58,16 +58,17 @@ class Home extends React.Component {
 
 
   render() {
+    const fields = this.props.page.acf_fields;
     return (
       <div className="home__wrapper">
-        <Hero image={this.props.page.acf_fields.hero_image} heading={this.props.page.acf_fields.hero_heading} subhead={this.props.page.acf_fields.hero_subhead} />
+        <Hero image={fields.hero_image} heading={fields.hero_heading} subhead={fields.hero_subhead} />
         <Programs programs={this.state.programs} />
         <Testimonials />
-        <DoIt link="#" text="Get Started" blurb="Ready to start your fitness journey? Sign up for our Foundations program today." />
+        <DoIt link={fields.c2a1_button_link} text={fields.c2a1_button_text} blurb={fields.c2a1_text} />
         <Trainers />
-        <DoIt link="#" text="Join Us" blurb="Want to get fit and have fun? Check out our membership options." />
+        <DoIt link={fields.c2a2_button_link} text={fields.c2a2_button_text} blurb={fields.c2a2_text} />
         <Schedule />
-        <DoIt link="#" text="Contact Us" blurb="Have questions? We'd love to talk with you about our awesome fitness programs." />
+        <DoIt link={fields.c2a3_button_link} text={fields.c2a3_button_text} blurb={fields.c2a3_text} />
       </div>
     );
   }
