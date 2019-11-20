@@ -52,3 +52,17 @@ add_action( 'rest_api_init', function () {
     'get_callback' => 'reactfit_get_custom_fields'
   ));
 });
+
+// Add custom post types!
+function reactfit_custom_post_types() {
+  register_post_type( 'reactfit_trainer', array(
+    'labels' => array(
+        'name' => 'Coaches',
+        'singular_name' => 'Coach',
+      ),
+      'public' => true,
+      'menu_icon' => 'dashicons-businessman',
+      'show_in_rest' => true,
+  ));
+}
+add_action( 'init', 'reactfit_custom_post_types' );
