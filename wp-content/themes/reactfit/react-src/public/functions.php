@@ -48,9 +48,17 @@ function reactfit_get_custom_fields($object) {
   return get_fields($object['id']);
 }
 add_action( 'rest_api_init', function () {
-  register_rest_field( array('page','reactfit_trainer'), 'acf_fields', array(
-    'get_callback' => 'reactfit_get_custom_fields'
-  ));
+  register_rest_field(
+    array(
+      'page',
+      'reactfit_trainer',
+      'reactfit_testimonial',
+    ),
+    'acf_fields',
+    array(
+    'get_callback' => 'reactfit_get_custom_fields',
+    )
+  );
 });
 
 // Add custom post types!
@@ -63,7 +71,17 @@ function reactfit_custom_post_types() {
       'public' => true,
       'menu_icon' => 'dashicons-businessman',
       'show_in_rest' => true,
-      'rest_base' => 'coaches'
+      'rest_base' => 'coaches',
+  ));
+  register_post_type( 'reactfit_testimonial', array(
+    'labels' => array(
+      'name' => 'Testimonials',
+      'singular_name' => 'Testimonial',
+    ),
+    'public' => true,
+    'menu_icon' => 'dashicons-format-quote',
+    'show_in_rest' => true,
+    'rest_base' => 'testimonials',
   ));
 }
 add_action( 'init', 'reactfit_custom_post_types' );
