@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 import './Testimonials.css'
 
@@ -10,17 +11,56 @@ class Testimonials extends React.Component {
     super(props);
     this.state = {
       addClass: false,
+      testimonials: [],
     }
   }
 
-  componentDidMount() {
-    if (this.props.addClass) {
-      this.setState({ addClass: this.props.addClass });
-    }
+  async componentDidMount() {
+    const testimonials = await axios
+    .get(this.props.meta.home + '/wp-json/wp/v2/testimonials')
+    .then(response => {
+      return response.data;
+    })
+    .catch(error => console.error(error));
+
+    this.setState({
+      testimonials: testimonials,
+    });
   }
 
   render() {
-    const containerClass = this.state.addClass ? 'section__container testimonials__container ' + this.state.addClass : 'section__container testimonials__container';
+    const width = this.props.meta.width;
+    const containerClass = this.props.addClass ? 'section__container testimonials__container ' + this.props.addClass : 'section__container testimonials__container';
+
+    const renderedTestimonials = this.state.testimonials
+    .sort((a,b) => {
+      return a.acf_fields.display_order > b.acf_fields.display_order;
+    })
+    .map(testimonial => {
+      const img = testimonial.acf_fields.image;
+      const useImg = width < 768 ?   img.sizes.medium :
+                     width < 1024 ? img.sizes.medium_large :
+                     width < 1536 ? img.sizes.large :
+                     width < 2048 ? img.sizes['1536x1536'] :
+                     img.sizes['2048x2048'];
+
+      return (
+        <div className="testimonial" key={'testimonial' + testimonial.acf_fields.first_name + testimonial.acf_fields.last_name}>
+          <div className="testimonial__text">
+            <div className="testimonial__quote">
+              {testimonial.acf_fields.text}
+            </div>
+            <div className="testimonial__author">
+              {testimonial.acf_fields.first_name}
+            </div>
+          </div>
+          <div className="testimonial__photo">
+            <img src={useImg} alt={testimonial.acf_fields.image.alt} />
+          </div>
+        </div>
+      );
+    });
+
     return (
       <div className={containerClass}>
         <div className="section testimonials">
@@ -31,17 +71,7 @@ class Testimonials extends React.Component {
           </div>
 
           <div className="testimonials__carousel">
-            <div className="testimonial__text">
-              <div className="testimonial test">
-                I love Thomasville Crossfit. Nick and Abrie have really helped motivate me to be a better person and I have lots of new friends! We help each other great stronger and in better shape everyday. I thank God for Thomasville CrossFit -- it has changed my life!
-              </div>
-              <div className="testimonial__author">
-                Shane
-              </div>
-            </div>
-            <div className="testimonial__photo">
-              <img src="http://localhost/new-tcf/wp-content/uploads/2019/10/shane.jpg" alt="Shane holding a kettlebell" />
-            </div>
+            {renderedTestimonials}
           </div>
 
           <div className="testimonials__nav-container">

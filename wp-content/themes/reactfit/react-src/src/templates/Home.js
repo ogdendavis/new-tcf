@@ -57,11 +57,12 @@ class Home extends React.Component {
 
   render() {
     const fields = this.props.page.acf_fields;
+
     return (
       <div className="home__wrapper">
         <Hero image={fields.hero_image} heading={fields.hero_heading} subhead={fields.hero_subhead} />
         <Programs programs={this.state.programs} />
-        <Testimonials />
+        <Testimonials meta={this.props.meta}/>
         <DoIt link={fields.c2a1_button_link} text={fields.c2a1_button_text} blurb={fields.c2a1_text} />
         <Trainers meta={this.props.meta} />
         <DoIt link={fields.c2a2_button_link} text={fields.c2a2_button_text} blurb={fields.c2a2_text} />
