@@ -48,7 +48,7 @@ function reactfit_get_custom_fields($object) {
   return get_fields($object['id']);
 }
 add_action( 'rest_api_init', function () {
-  register_rest_field( 'page', 'acf_fields', array(
+  register_rest_field( array('page','reactfit_trainer'), 'acf_fields', array(
     'get_callback' => 'reactfit_get_custom_fields'
   ));
 });
