@@ -105,7 +105,6 @@ function reactfit_contact_info_init() {
     'reactfit_email',
     array(
       'type' => 'string',
-      'show_in_rest' => true,
     )
   );
   add_settings_field(
@@ -126,7 +125,6 @@ function reactfit_contact_info_init() {
     'reactfit_phone',
     array(
       'type' => 'string',
-      'show_in_rest' => true,
     )
   );
   add_settings_field(
@@ -147,7 +145,6 @@ function reactfit_contact_info_init() {
     'reactfit_address',
     array(
       'type' => 'string',
-      'show_in_rest' => true,
     )
   );
   add_settings_field(
@@ -168,7 +165,6 @@ function reactfit_contact_info_init() {
     'reactfit_facebook',
     array(
       'type' => 'string',
-      'show_in_rest' => true,
     )
   );
   add_settings_field(
@@ -189,7 +185,6 @@ function reactfit_contact_info_init() {
     'reactfit_instagram',
     array(
       'type' => 'string',
-      'show_in_rest' => true,
     )
   );
   add_settings_field(
