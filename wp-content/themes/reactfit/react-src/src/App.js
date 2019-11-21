@@ -63,6 +63,15 @@ class App extends React.Component {
       const width = window.innerWidth || document.body.clientWidth;
       meta.width = width;
 
+      // Add custom contact info settings to meta
+      const contact = await axios
+        .get(this.state.home + '/wp-json/reactfit/contact-info')
+        .then(response => {
+          return response.data;
+        })
+        .catch(error => console.error(error));
+      meta.contact = contact;
+
       return meta;
     }
 
@@ -188,6 +197,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.meta);
     if (!this.state.render) {
       return (
         <div className="App" style={{marginTop:'50px'}}>
