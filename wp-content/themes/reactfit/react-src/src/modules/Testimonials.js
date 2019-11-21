@@ -34,7 +34,7 @@ class Testimonials extends React.Component {
 
     const renderedTestimonials = this.state.testimonials
     .sort((a,b) => {
-      return a.acf_fields.display_order > b.acf_fields.display_order;
+      return Number(a.acf_fields.display_order) >= Number(b.acf_fields.display_order) ? 1 : -1;
     })
     .map(testimonial => {
       const img = testimonial.acf_fields.image;

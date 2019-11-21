@@ -28,7 +28,7 @@ class Coaches extends React.Component {
     const width = this.props.meta.width;
     const renderedCoaches = this.state.coaches
       .sort((a,b) => {
-        return a.acf_fields.display_order > b.acf_fields.display_order;
+        return Number(a.acf_fields.display_order) >= Number(b.acf_fields.display_order) ? 1 : -1;
       })
       .map(coach => {
         const img = coach.acf_fields.image;
