@@ -237,3 +237,20 @@ function reactfit_contact_info_markup() {
   include( plugin_dir_path(__FILE__) . 'admin/contact_info.php' );
 }
 add_action( 'admin_menu', 'reactfit_contact_info_menu' );
+
+// Expose contact info settings to REST API
+function reactfit_get_contact_info() {
+  return array (
+    'email' => get_option('reactfit_email'),
+    'phone' => get_option('reactfit_phone'),
+    'address' => get_option('reactfit_address'),
+    'facebook' => get_option('reactfit_facebook'),
+    'instagram' => get_option('reactfit_instagram'),
+  );
+}
+add_action( 'rest_api_init', function() {
+  register_rest_route( 'reactfit', '/contact-info', array(
+    'methods' => 'GET',
+    'callback' => 'reactfit_get_contact_info',
+  ));
+});
