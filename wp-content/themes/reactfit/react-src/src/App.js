@@ -206,7 +206,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     if (!this.state.render) {
       return (
         <div className="App" style={{marginTop:'50px'}}>
@@ -220,7 +219,7 @@ class App extends React.Component {
       <BrowserRouter basename={this.state.meta.basePath}>
         <div className="App">
 
-          <Header menuItems={this.state.header.menu} meta={this.state.meta} />
+          <Header menuItems={this.state.header.menu} logo={this.state.header.logo} meta={this.state.meta} />
 
           <Switch>
 
