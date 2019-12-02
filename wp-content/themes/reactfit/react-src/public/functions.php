@@ -8,15 +8,28 @@ function reactfit_register_menus() {
 }
 add_action( 'after_setup_theme', 'reactfit_register_menus' );
 
-// Need custom function to get menu item in order to send it out via REST API
+// Get all header info, and make it available via the REST API
+// Get the header menu
 function reactfit_get_header_menu() {
   return wp_get_nav_menu_items( get_nav_menu_locations()['header-menu'] );
 }
-// Creating custom endpoint for menu via REST API
+// Get the site logo for the header -- depends on reactfit_logo_in_customizer, below
+function reactfit_get_header_logo() {
+  return get_theme_mod( 'reactfit_logo' );
+}
+// Get all header info and combine it into one array
+function reactfit_get_all_header_stuff() {
+  $all = array(
+    'menu' => reactfit_get_header_menu(),
+    'logo' => reactfit_get_header_logo(),
+  );
+  return $all;
+}
+// Create custom endpoint for header info via REST API
 add_action( 'rest_api_init', function() {
-  register_rest_route( 'reactfit', '/header-menu', array(
+  register_rest_route( 'reactfit', '/header', array(
     'methods' => 'GET',
-    'callback' => 'reactfit_get_header_menu',
+    'callback' => 'reactfit_get_all_header_stuff',
   ));
 });
 
@@ -249,3 +262,17 @@ add_action( 'rest_api_init', function() {
     'callback' => 'reactfit_get_contact_info',
   ));
 });
+
+// Add a full-size logo field to the customizer
+function reactfit_logo_in_customizer( $wp_customize ) {
+  // add a setting for the site logo
+  $wp_customize->add_setting('reactfit_logo');
+  // Add a control to upload the logo
+  $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'reactfit_logo',
+  array(
+  'label' => 'Upload Logo',
+  'section' => 'title_tagline',
+  'settings' => 'reactfit_logo',
+  ) ) );
+}
+add_action('customize_register', 'reactfit_logo_in_customizer');

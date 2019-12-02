@@ -86,10 +86,10 @@ class App extends React.Component {
     // Header info -- just menu items, for now
     const getHeaderInfo = async () => {
       const headerInfo = await axios
-        .get(this.state.home + '/wp-json/reactfit/header-menu')
+        .get(this.state.home + '/wp-json/reactfit/header')
         .then(response => {
           // Just pull out needed data for now (might want more, if we get fancy)
-          const headerMenuItems = response.data.map(item => {
+          const headerMenuItems = response.data.menu.map(item => {
             return {
               id: item.ID,
               title: item.title,
@@ -99,6 +99,7 @@ class App extends React.Component {
 
           return {
             menu: headerMenuItems,
+            logo: response.data.logo
           };
 
         })
@@ -205,7 +206,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.meta);
+    console.log(this.state);
     if (!this.state.render) {
       return (
         <div className="App" style={{marginTop:'50px'}}>
