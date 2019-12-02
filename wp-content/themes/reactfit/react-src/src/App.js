@@ -51,7 +51,15 @@ class App extends React.Component {
       const meta = await axios
         .get(this.state.home + '/wp-json')
         .then(response => {
-          return response.data;
+          const simplified = {
+            name: response.data.name,
+            description: response.data.description,
+            url: response.data.url,
+            home: response.data.home,
+            gmt_offset: response.data.gmt_offset,
+            timezone_string: response.data.timezone_string,
+          }
+          return simplified;
         })
         .catch(error => console.error(error));
 
@@ -211,7 +219,7 @@ class App extends React.Component {
       <BrowserRouter basename={this.state.meta.basePath}>
         <div className="App">
 
-          <Header menuItems={this.state.header.menu} home={this.state.home} />
+          <Header menuItems={this.state.header.menu} meta={this.state.meta} />
 
           <Switch>
 
