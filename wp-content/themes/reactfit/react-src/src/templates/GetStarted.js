@@ -58,7 +58,7 @@ class GetStarted extends React.Component {
       <div className="get-started__wrapper">
         <Hero image={'http://localhost/new-tcf/wp-content/uploads/2019/11/learning-cleans.jpg'} />
         <Intro meta={this.props.meta} id='285' formClass='get-started__form' />
-        <Programs programs={this.state.programs} title='Check out our programs'/>
+        <Programs meta={this.props.meta} programs={this.state.programs} title='Check out our programs'/>
         <Testimonials addClass="get-started__testimonials-container" meta={this.props.meta} />
         <DropIn />
       </div>

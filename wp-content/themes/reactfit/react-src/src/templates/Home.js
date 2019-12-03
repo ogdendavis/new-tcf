@@ -61,7 +61,7 @@ class Home extends React.Component {
     return (
       <div className="home__wrapper">
         <Hero image={fields.hero_image} heading={fields.hero_heading} subhead={fields.hero_subhead} />
-        <Programs programs={this.state.programs} />
+        <Programs meta={this.props.meta} programs={this.state.programs} />
         <Testimonials meta={this.props.meta}/>
         <DoIt link={fields.c2a1_button_link} text={fields.c2a1_button_text} blurb={fields.c2a1_text} />
         <Trainers meta={this.props.meta} />
