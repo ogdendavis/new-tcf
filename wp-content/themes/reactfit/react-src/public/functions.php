@@ -1,5 +1,6 @@
 <?php
 
+// Add menu in WP back-end for the header menu
 function reactfit_register_menus() {
   register_nav_menus( array(
       'header-menu' => __( 'Header Menu' )
@@ -66,6 +67,7 @@ add_action( 'rest_api_init', function () {
       'page',
       'reactfit_trainer',
       'reactfit_testimonial',
+      'reactfit_program',
     ),
     'acf_fields',
     array(
@@ -85,6 +87,16 @@ function reactfit_custom_post_types() {
       'menu_icon' => 'dashicons-businessman',
       'show_in_rest' => true,
       'rest_base' => 'coaches',
+  ));
+  register_post_type( 'reactfit_program', array(
+    'labels' => array(
+      'name' => 'Programs',
+      'singular_name' => 'Program',
+    ),
+    'public' => true,
+    'menu_icon' => 'dashicons-carrot',
+    'show_in_rest' => true,
+    'rest_base' => 'programs',
   ));
   register_post_type( 'reactfit_testimonial', array(
     'labels' => array(
