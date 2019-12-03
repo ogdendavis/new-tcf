@@ -1,15 +1,11 @@
 // Import modules and globals
 import React from 'react';
-import logo from './logo.svg';
 import axios from 'axios';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 // Import components
 import Header from './components/Header';
 import Footer from './components/Footer';
-
-// Import modules
-import Hero from './modules/Hero';
 
 // Import page templates
 import Home from './templates/Home';
@@ -139,7 +135,7 @@ class App extends React.Component {
 
       // Get home page, for creataing default route
       const homePage = pages.filter(page => {
-        return page.id == 5340;
+        return page.id === 5340;
       });
 
       this.setState({

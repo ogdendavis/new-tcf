@@ -17,8 +17,8 @@ class Contact extends React.Component {
     // Get rendered form
     const theForm = async () => {
       const form = await axios
-        .get(this.props.meta.home + '/wp-json/reactfit/contact-form/' + this.props.id).
-        then(response => {
+        .get(this.props.meta.home + '/wp-json/reactfit/contact-form/' + this.props.id)
+        .then(response => {
           return response.data;
         })
         .catch(error => console.error(error));

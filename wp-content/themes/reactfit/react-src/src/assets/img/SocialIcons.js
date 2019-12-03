@@ -50,7 +50,7 @@ const SocialIcon = (props) => {
       );
   }
   return (
-    <a href={props.link} target="_blank">
+    <a href={props.link} target="_blank" rel="noopener noreferrer">
       {inner}
     </a>
   )

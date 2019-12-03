@@ -14,7 +14,6 @@ class Footer extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <footer className="site-footer">
         <FooterUpper contact={this.props.contact} />
@@ -86,7 +85,7 @@ const FooterLower = (props) => {
         &#169; 2019 Thomasville CrossFit
       </div>
       <div className="site-footer__credit">
-        Site by <a href="https://ogdendavis.com" rel="nofollow" target="_blank" rel="noopener noreferrer">ogdendavis.com</a>
+        Site by <a href="https://ogdendavis.com" target="_blank" rel="noopener noreferrer">ogdendavis.com</a>
       </div>
     </div>
   );
