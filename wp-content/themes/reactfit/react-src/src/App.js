@@ -232,7 +232,7 @@ class App extends React.Component {
 
           </Switch>
 
-          <Footer />
+          <Footer meta={this.state.meta} />
 
         </div>
       </BrowserRouter>

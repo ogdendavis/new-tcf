@@ -10,16 +10,14 @@ import SocialIcon from '../assets/img/SocialIcons.js';
 class Footer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      facebook: 'https://www.facebook.com/thomasvillecrossfit/',
-      instagram: 'https://www.instagram.com/thomasvillecrossfit/',
-    }
+    this.state = {}
   }
 
   render() {
+    console.log(this.props)
     return (
       <footer className="site-footer">
-        <FooterUpper fb={this.state.facebook} ig={this.state.instagram} />
+        <FooterUpper fb={this.props.meta.contact.facebook} ig={this.props.meta.contact.instagram} />
         <FooterLower />
       </footer>
     );
