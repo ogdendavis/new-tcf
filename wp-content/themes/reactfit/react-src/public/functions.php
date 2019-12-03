@@ -65,9 +65,6 @@ add_action( 'rest_api_init', function () {
   register_rest_field(
     array(
       'page',
-      'reactfit_trainer',
-      'reactfit_testimonial',
-      'reactfit_program',
     ),
     'acf_fields',
     array(
@@ -85,8 +82,6 @@ function reactfit_custom_post_types() {
       ),
       'public' => true,
       'menu_icon' => 'dashicons-businessman',
-      'show_in_rest' => true,
-      'rest_base' => 'coaches',
   ));
   register_post_type( 'reactfit_program', array(
     'labels' => array(
@@ -95,8 +90,6 @@ function reactfit_custom_post_types() {
     ),
     'public' => true,
     'menu_icon' => 'dashicons-carrot',
-    'show_in_rest' => true,
-    'rest_base' => 'programs',
   ));
   register_post_type( 'reactfit_testimonial', array(
     'labels' => array(
@@ -110,6 +103,50 @@ function reactfit_custom_post_types() {
   ));
 }
 add_action( 'init', 'reactfit_custom_post_types' );
+
+// Expose custom post types in reactfit namespace instead of wp/v2
+add_action( 'rest_api_init', function() {
+  register_rest_route( 'reactfit', '/coaches', array(
+    'methods' => 'GET',
+    'callback' => 'reactfit_get_coaches',
+  ));
+  register_rest_route( 'reactfit', '/programs', array(
+    'methods' => 'GET',
+    'callback' => 'reactfit_get_programs',
+  ));
+  register_rest_route( 'reactfit', '/testimonials', array(
+    'methods' => 'GET',
+    'callback' => 'reactfit_get_testimonials',
+  ));
+});
+function reactfit_get_coaches() {
+  $raw = get_posts( array(
+    'numberposts' => -1,
+    'post_type' => 'reactfit_trainer',
+  ));
+  return array_map( 'reactfit_add_acf_fields', $raw );
+}
+function reactfit_get_programs() {
+  $raw = get_posts( array(
+    'numberposts' => -1,
+    'post_type' => 'reactfit_program',
+  ));
+  return array_map( 'reactfit_add_acf_fields', $raw );
+}
+function reactfit_get_testimonials() {
+  $raw = get_posts( array(
+    'numberposts' => -1,
+    'post_type' => 'reactfit_testimonial',
+  ));
+  return array_map( 'reactfit_add_acf_fields', $raw );
+}
+function reactfit_add_acf_fields( $object ) {
+  $fields = get_fields($object->ID);
+  if ($fields) {
+    $object->acf_fields = $fields;
+  }
+  return $object;
+}
 
 // Add custom settings for contact info, and settings page to manage
 function reactfit_contact_info_init() {

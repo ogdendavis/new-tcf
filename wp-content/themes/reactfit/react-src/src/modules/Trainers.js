@@ -13,7 +13,7 @@ class Coaches extends React.Component {
 
   async componentDidMount() {
     const coaches = await axios
-      .get(this.props.meta.home + '/wp-json/wp/v2/coaches')
+      .get(this.props.meta.home + '/wp-json/reactfit/coaches')
       .then(response => {
         return response.data;
       })

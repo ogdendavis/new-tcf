@@ -17,7 +17,7 @@ class Testimonials extends React.Component {
 
   async componentDidMount() {
     const testimonials = await axios
-    .get(this.props.meta.home + '/wp-json/wp/v2/testimonials')
+    .get(this.props.meta.home + '/wp-json/reactfit/testimonials')
     .then(response => {
       return response.data;
     })
