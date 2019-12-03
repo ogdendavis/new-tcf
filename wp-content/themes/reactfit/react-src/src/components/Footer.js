@@ -17,7 +17,7 @@ class Footer extends React.Component {
     console.log(this.props)
     return (
       <footer className="site-footer">
-        <FooterUpper fb={this.props.meta.contact.facebook} ig={this.props.meta.contact.instagram} />
+        <FooterUpper contact={this.props.contact} />
         <FooterLower />
       </footer>
     );
@@ -26,32 +26,32 @@ class Footer extends React.Component {
 
 // Stateless child components
 const FooterUpper = (props) => {
+  const cfHours = Object.values(props.contact.hours.crossfit).map(cf => {
+    return (<li key={`cfHours${cf}`}>{cf}</li>);
+  });
+
   return(
     <div className="site-footer__upper">
       <div className="site-footer__hours">
         <h2>CLASS HOURS</h2>
         <ul className="hours__list">
           <li>
-            <span className="hours__day">Monday - Friday:</span>
+            <span className="hours__type">CrossFit</span><br /><span className="hours__days">Monday - Friday</span>
             <ul>
-              <li>5:30a</li>
-              <li>8:00a</li>
-              <li>4:30p</li>
-              <li>5:30p</li>
-              <li>6:30p</li>
+              {cfHours}
             </ul>
           </li>
           <li>
-            <span className="hours__day">Saturday:</span>
+            <span className="hours__type">Open Bay</span>
             <ul>
-              <li>Open Bay<br />8:00a - 12:00p</li>
+              <li>Saturday<br />{props.contact.hours.open_bay}</li>
             </ul>
           </li>
           <li>
-            <span className="hours__day">Kids Class:</span>
+            <span className="hours__type">Kids Class</span>
             <ul>
-              <li>Monday & Wednesday</li>
-              <li>3:30p</li>
+              <li>{props.contact.hours.kids_days}</li>
+              <li>{props.contact.hours.kids_time}</li>
             </ul>
           </li>
         </ul>
@@ -60,20 +60,20 @@ const FooterUpper = (props) => {
         <h2>LOCATION</h2>
         <div className="location__address">
           <a href="https://goo.gl/maps/aCP4gUYY4CrYWixM6" target="_blank" rel="noopener noreferrer">
-            118 Fairbanks Avenue<br />
+            {props.contact.address}<br />
             Thomasville, Georgia 31792
           </a>
         </div>
         <div className="location__phone">
-          Phone: 229.977.5025
+          Phone: {props.contact.phone}
         </div>
         <div className="location__email">
-          Email: abrie@thomasvillecrossfit.com
+          Email: {props.contact.email}
         </div>
       </div>
       <div className="site-footer__social">
-        <SocialIcon platform='fb' link={props.fb}/>
-        <SocialIcon platform='ig' link={props.ig}/>
+        <SocialIcon platform='fb' link={props.contact.facebook}/>
+        <SocialIcon platform='ig' link={props.contact.instagram}/>
       </div>
     </div>
   );
