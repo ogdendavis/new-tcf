@@ -108,7 +108,7 @@ function reactfit_contact_info_init() {
 
   add_settings_section(
     'reactfit-settings-section',
-    'Contact Information',
+    'Contact Information & Class Hours',
     'reactfit_contact_info_heading',
     'reactfit-contact-info'
   );
@@ -212,15 +212,96 @@ function reactfit_contact_info_init() {
       'type' => 'url',
     )
   );
+
+  register_setting(
+    'reactfit_settings',
+    'reactfit_crossfit_hours',
+    array(
+      'type' => 'string',
+    )
+  );
+  add_settings_field(
+    'reactfit_crossfit_hours_field',
+    'CrossFit class hours: (separate with a comma)',
+    'reactfit_contact_info_fields',
+    'reactfit-contact-info',
+    'reactfit-settings-section',
+    array(
+      'label_for' => 'reactfit_crossfit_hours',
+      'id' => 'reactfit_crossfit_hours_field',
+      'type' => 'text',
+      'class' => 'admin-text--long'
+    )
+  );
+
+  register_setting(
+    'reactfit_settings',
+    'reactfit_open-bay_hours',
+    array(
+      'type' => 'string',
+    )
+  );
+  add_settings_field(
+    'reactfit_open-bay_hours_field',
+    'Saturday Open Bay hours: (starting and ending)',
+    'reactfit_contact_info_fields',
+    'reactfit-contact-info',
+    'reactfit-settings-section',
+    array(
+      'label_for' => 'reactfit_open-bay_hours',
+      'id' => 'reactfit_open-bay_hours_field',
+      'type' => 'text',
+    )
+  );
+
+  register_setting(
+    'reactfit_settings',
+    'reactfit_kids_days',
+    array(
+      'type' => 'string',
+    )
+  );
+  add_settings_field(
+    'reactfit_kids_days_field',
+    'Kids Class days:',
+    'reactfit_contact_info_fields',
+    'reactfit-contact-info',
+    'reactfit-settings-section',
+    array(
+      'label_for' => 'reactfit_kids_days',
+      'id' => 'reactfit_kids_days_field',
+      'type' => 'text',
+    )
+  );
+
+  register_setting(
+    'reactfit_settings',
+    'reactfit_kids_time',
+    array(
+      'type' => 'string',
+    )
+  );
+  add_settings_field(
+    'reactfit_kids_time_field',
+    'Kids Class start time:',
+    'reactfit_contact_info_fields',
+    'reactfit-contact-info',
+    'reactfit-settings-section',
+    array(
+      'label_for' => 'reactfit_kids_time',
+      'id' => 'reactfit_kids_time_field',
+      'type' => 'text',
+    )
+  );
 }
 function reactfit_contact_info_heading() {
   ?>
-  <p>These settings will update the contact info displayed in the header, footer, and main pages.</p>
+  <p>These settings will update the contact info and class hours displayed in the header, footer, and main pages.</p>
   <?php
 }
 function reactfit_contact_info_fields( $args ) {
  ?>
- <input id="<?php echo esc_attr( $args['id'] ); ?>" name="<?php echo esc_attr( $args['label_for'] ); ?>" type="<?php echo esc_attr( $args['type'] ); ?>" value="<?php echo get_option( $args['label_for'] ); ?>">
+ <input id="<?php echo esc_attr( $args['id'] ); ?>" name="<?php echo esc_attr( $args['label_for'] ); ?>" type="<?php echo esc_attr( $args['type'] ); ?>" value="<?php echo get_option( $args['label_for'] ); ?>" class="<?php echo $args['class'] ? esc_attr( $args['class'] ) : ''; ?>">
  <?php
 }
 add_action( 'admin_init', 'reactfit_contact_info_init' );
@@ -232,8 +313,8 @@ function reactfit_contact_info_menu() {
   }
 
   add_menu_page(
-    'Contact Info',
-    'Contact Info',
+    'Contact Info & Hours',
+    'Contact & Hours',
     'manage_options',
     'reactfit-contact-info',
     'reactfit_contact_info_markup',
@@ -248,12 +329,19 @@ add_action( 'admin_menu', 'reactfit_contact_info_menu' );
 
 // Expose contact info settings to REST API
 function reactfit_get_contact_info() {
+  $crossfit_classes = reactfit_parse_hours( get_option('reactfit_crossfit_hours') );
   return array (
     'email' => get_option('reactfit_email'),
     'phone' => get_option('reactfit_phone'),
     'address' => get_option('reactfit_address'),
     'facebook' => get_option('reactfit_facebook'),
     'instagram' => get_option('reactfit_instagram'),
+    'hours' => array(
+      'crossfit' => $crossfit_classes,
+      'open_bay' => get_option('reactfit_open-bay_hours'),
+      'kids_days' => get_option('reactfit_kids_days'),
+      'kids_time' => get_option('reactfit_kids_time'),
+    ),
   );
 }
 add_action( 'rest_api_init', function() {
@@ -262,6 +350,10 @@ add_action( 'rest_api_init', function() {
     'callback' => 'reactfit_get_contact_info',
   ));
 });
+// Function to split listed hours into arrays
+function reactfit_parse_hours( $input ) {
+  return array_map( 'trim', explode( ',', $input ) );
+}
 
 // Add a full-size logo field to the customizer
 function reactfit_logo_in_customizer( $wp_customize ) {
