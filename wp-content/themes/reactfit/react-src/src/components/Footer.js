@@ -1,7 +1,6 @@
 import React from 'react';
 
 // Import styles
-import '../global/export.css';
 import './Footer.css';
 
 // Import social icons
