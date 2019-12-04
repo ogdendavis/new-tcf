@@ -22,7 +22,7 @@ class AboutUs extends React.Component {
         <Hero image='http://localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg' />
         <Intro video={videoEmbedCode} />
         <Community />
-        <Trainers />
+        <Trainers meta={this.props.meta}/>
         <ProgramDetail />
       </div>
     );
