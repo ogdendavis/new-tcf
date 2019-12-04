@@ -13,13 +13,15 @@ class AboutUs extends React.Component {
   }
 
   render() {
+    console.log('About Us', this.props.page);
     // TEMP until we can get this from WP
     const videoEmbedCode = {
       __html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/mlVrkiCoKkg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
     }
+    const fields = this.props.page.acf_fields
     return (
       <div className="about-us__wrapper">
-        <Hero image='http://localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg' />
+        <Hero image={fields.hero_image} heading={fields.hero_heading} subhead={fields.hero_subhead} />
         <Intro video={videoEmbedCode} />
         <Community />
         <Trainers meta={this.props.meta}/>
