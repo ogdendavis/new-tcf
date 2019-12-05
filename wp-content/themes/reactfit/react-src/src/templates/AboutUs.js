@@ -4,7 +4,8 @@ import './AboutUs.css';
 
 // Modules
 import Hero from '../modules/Hero';
-import Trainers from '../modules/Trainers'
+import Trainers from '../modules/Trainers';
+import Programs from '../modules/Programs';
 
 class AboutUs extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class AboutUs extends React.Component {
         <Intro fields={fields} />
         <Community fields={fields} />
         <Trainers meta={this.props.meta}/>
-        <ProgramDetail />
+        <Programs title={'Our Programs'} detail={true} meta={this.props.meta} />
       </div>
     );
   }
@@ -60,45 +61,6 @@ const Community = (props) => {
         </div>
         <div className="community__text">
           <p>{props.fields.community_body}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-const ProgramDetail = () => {
-  return (
-    <div className="section__container">
-      <div className="section about-us__programs-details">
-        <div className="programs-details__heading">
-          <h2 className="section__heading">Our Programs</h2>
-        </div>
-        <div className="programs-details__program-detail">
-          <div className="program-detail__text">
-            <h3>Foundations</h3>
-            <p>In our Foundations course, you will learn the fundamental movements of CrossFit, discuss your goals and limitations with coaches, gain nutritional guidance, and meet our CrossFit community! Over the course of five one-on-one sessions with one of our expert coaches, you'll build skills and gain confidence to prepare you for successful entry into our CrossFit group classes.</p>
-          </div>
-          <div className="program-detail__image-container">
-            <img className="program-detail__image" src="http://localhost/new-tcf/wp-content/uploads/2019/11/coaches-n-leslie.jpg" alt="Foundations program" />
-          </div>
-        </div>
-        <div className="programs-details__program-detail">
-          <div className="program-detail__text">
-            <h3>CrossFit</h3>
-            <p>All of our workouts are based on functional movements – these are movements that you use everyday, everywhere. These will help you move the heaviest weight the furthest distance and are optimal for getting the most work done in the shortest amount of time. The magic is in the movements! Our coaches focus on the perfection of these movements and working with each athlete to make them their best and keep them safe. By using a constantly varied training program, these functional movements performed at high intensity produce dramatic fitness gains.</p>
-          </div>
-          <div className="program-detail__image-container">
-            <img className="program-detail__image" src="http://localhost/new-tcf/wp-content/uploads/2019/11/learning-cleans.jpg" alt="CrossFit program" />
-          </div>
-        </div>
-        <div className="programs-details__program-detail">
-          <div className="program-detail__text">
-            <h3>Youth</h3>
-            <p>The benefits of teaching children and teenagers about fitness and healath can't be overstated. Our program uses the constantly varied and infinitely scalable CrossFit methodology to create workouts tailored to the needs of young athletes while also keeping things interesting and fun. Youth CrossFit attendees will gain strength and confidence while building skills to lead a healthy life.</p>
-          </div>
-          <div className="program-detail__image-container">
-            <img className="program-detail__image" src="http://localhost/new-tcf/wp-content/uploads/2019/11/kids-farmer-carry.jpg" alt="Youth Fitness program" />
-          </div>
         </div>
       </div>
     </div>
