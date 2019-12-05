@@ -13,16 +13,12 @@ class AboutUs extends React.Component {
   }
 
   render() {
-    console.log('About Us', this.props.page);
-    // TEMP until we can get this from WP
-    const videoEmbedCode = {
-      __html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/mlVrkiCoKkg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-    }
     const fields = this.props.page.acf_fields
+    console.log('About Us fields', fields);
     return (
       <div className="about-us__wrapper">
         <Hero image={fields.hero_image} heading={fields.hero_heading} subhead={fields.hero_subhead} />
-        <Intro video={videoEmbedCode} />
+        <Intro fields={fields} />
         <Community />
         <Trainers meta={this.props.meta}/>
         <ProgramDetail />
@@ -38,14 +34,12 @@ const Intro = (props) => {
     <div className="section__container">
       <div className="section about-us__intro">
         <div className="intro__heading">
-          <h2 className="section__heading">About Us</h2>
+          <h2 className="section__heading">{props.fields.intro_heading}</h2>
         </div>
         <div className="about-us__intro-text">
-          <p>We opened Thomasville CrossFit to help our community achieve their health and fitness goals. Each day, we strive to build a strong, healthy, and fit community that supports each other. Our love for Thomasville is as great as our love for fitness! CrossFit provided a way for us to deliver functional fitness, nutrition education, and support to our community.</p>
-          <h3>What is CrossFit?</h3>
-          <p>Our Goal is to forge a broad, general and inclusive fitness program. We have designed a program that will best prepare our members for any physical task — not only for the unknown, but for the unknowable. We strive to increase work capacity across broad time and modal domains. Capacity is the ability to do real work, which is measurable using the basic terms of physics (force, distance and time). Life is unpredictable (much more so than sport) so real world fitness must be broad and not specialized, both in terms of duration and type of effort (time and modal domains).</p>
+          <p>{props.fields.intro_body}</p>
         </div>
-        <div className="about-us__video-wrapper" dangerouslySetInnerHTML={props.video} />
+        <div className="about-us__video-wrapper" dangerouslySetInnerHTML={{__html: props.fields.intro_video_embed}} />
       </div>
     </div>
   );
