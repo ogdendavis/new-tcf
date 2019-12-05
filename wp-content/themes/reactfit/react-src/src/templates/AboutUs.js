@@ -19,7 +19,7 @@ class AboutUs extends React.Component {
       <div className="about-us__wrapper">
         <Hero image={fields.hero_image} heading={fields.hero_heading} subhead={fields.hero_subhead} />
         <Intro fields={fields} />
-        <Community />
+        <Community fields={fields} />
         <Trainers meta={this.props.meta}/>
         <ProgramDetail />
       </div>
@@ -50,16 +50,16 @@ const Community = (props) => {
     <div className="section__container community__container">
       <div className="section about-us__community">
         <div className="community__heading">
-          <h2 className="section__heading">Our Community</h2>
+          <h2 className="section__heading">{props.fields.community_heading}</h2>
         </div>
         <div className="community__photos">
-          <div className="community__photo" style={{background:'url("http://localhost/new-tcf/wp-content/uploads/2019/11/community0.jpg") center/cover no-repeat',}} />
-          <div className="community__photo" style={{background:'url("http://localhost/new-tcf/wp-content/uploads/2019/11/community1.jpg") center/cover no-repeat',}} />
-          <div className="community__photo" style={{background:'url("http://localhost/new-tcf/wp-content/uploads/2019/11/community2.jpg") center/cover no-repeat',}} />
-          <div className="community__photo" style={{background:'url("http://localhost/new-tcf/wp-content/uploads/2019/11/community3.jpg") center/cover no-repeat',}} />
+          <div className="community__photo" style={{background:'url("' + props.fields.community_image_1.url + '") center/cover no-repeat',}} />
+          <div className="community__photo" style={{background:'url("' + props.fields.community_image_2.url + '") center/cover no-repeat',}} />
+          <div className="community__photo" style={{background:'url("' + props.fields.community_image_3.url + '") center/cover no-repeat',}} />
+          <div className="community__photo" style={{background:'url("' + props.fields.community_image_4.url + '") center/cover no-repeat',}} />
         </div>
         <div className="community__text">
-          <p>The needs of our members differ by degree, not kind. Our former highs school and collegiate athletes, endurance athletes, grandparents, and soccer moms have all found their best fitness from the same regimen. Our melting pot of members drive each other to be better, record their data, get stronger, eat healthier, and truly support each other inside and outside of the box. While it challenges the world’s fittest, the CrossFit program is designed for universal scaling, making it the perfect application for any committed individual, regardless of experience. We scale load and intensity; we don’t change programs.</p>
+          <p>{props.fields.community_body}</p>
         </div>
       </div>
     </div>
