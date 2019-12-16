@@ -26,6 +26,19 @@ class Programs extends React.Component {
     });
   }
 
+  componentDidUpdate() {
+    // Anchor links don't work out of the box with React Router, so quick implementation
+    if (window.location.href.includes('/#')) {
+      window.setTimeout(function() {
+        const anchor = document.querySelector('#' + window.location.href.split('/#')[1]);
+        anchor.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+      }, 500)
+    }
+  }
+
   generateMarkup(prog,width) {
     const fields = prog.acf_fields;
     const img = fields.featured_image;
@@ -34,7 +47,8 @@ class Programs extends React.Component {
                       width < 1536 ? img.sizes.large :
                       width < 2048 ? img.sizes['1536x1536'] :
                       img.sizes['2048x2048'];
-    const buttonLink = fields.button_link ? fields.button_link : 'http://This needs to be changed to a link to an anchor on the About Us page with this program\'s blurb';
+    const anchor = 'about-' + fields.name.toLowerCase();
+    const buttonLink = fields.button_link ? fields.button_link : this.props.meta.home + '/about-thomasville-crossfit/#' + anchor;
 
     //return (<h1 style={{fontSize: '10rem', color:'red'}}>FARTS</h1>);
 
@@ -43,7 +57,7 @@ class Programs extends React.Component {
     return this.props.detail ?
       // Case for detail version first
       (
-        <div className="programs-details__program-detail" key={'detailProgram' + fields.name}>
+        <div className="programs-details__program-detail" key={'detailProgram' + fields.name} id={anchor}>
           <div className="program-detail__text">
             <h3>{fields.name}</h3>
             <p>{fields.program_blurb}</p>
@@ -68,7 +82,7 @@ class Programs extends React.Component {
               <li key={`${fields.name}-feature3`}>{fields.feature3}</li>
             </ul>
             <div className="button__container">
-              <a className="program__action button" href="#">
+              <a className="program__action button" href={buttonLink}>
                 {fields.button_text}
               </a>
             </div>
@@ -77,7 +91,6 @@ class Programs extends React.Component {
   }
 
   render() {
-    console.log('Programs', this.state.programs);
     const width = this.props.meta.width;
 
     const renderedPrograms = this.state.programs ?

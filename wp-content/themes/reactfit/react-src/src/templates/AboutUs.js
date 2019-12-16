@@ -15,7 +15,6 @@ class AboutUs extends React.Component {
 
   render() {
     const fields = this.props.page.acf_fields
-    console.log('About Us fields', fields);
     return (
       <div className="about-us__wrapper">
         <Hero image={fields.hero_image} heading={fields.hero_heading} subhead={fields.hero_subhead} />
