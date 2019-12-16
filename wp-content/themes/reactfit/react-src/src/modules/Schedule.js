@@ -15,7 +15,7 @@ class Schedule extends React.Component {
       <div className="section__container">
         <div className="section schedule">
           <h2 className="section__heading">Class Schedule</h2>
-            <iframe title="Class Schedule" src="https://app.wodify.com/Schedule/PublicCalendarListView.aspx?tenant=3716" width="800" height="800"></iframe>
+            <iframe title="Class Schedule" src={this.props.url} width="800" height="800"></iframe>
         </div>
       </div>
     );

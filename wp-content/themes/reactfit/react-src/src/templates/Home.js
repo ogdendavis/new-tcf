@@ -66,7 +66,7 @@ class Home extends React.Component {
         <DoIt link={fields.c2a1_button_link} text={fields.c2a1_button_text} blurb={fields.c2a1_text} />
         <Trainers meta={this.props.meta} />
         <DoIt link={fields.c2a2_button_link} text={fields.c2a2_button_text} blurb={fields.c2a2_text} />
-        <Schedule />
+        <Schedule url={fields.schedule_url}/>
         <DoIt link={fields.c2a3_button_link} text={fields.c2a3_button_text} blurb={fields.c2a3_text} />
       </div>
     );
