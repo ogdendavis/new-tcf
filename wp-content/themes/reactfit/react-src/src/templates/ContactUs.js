@@ -13,21 +13,23 @@ class ContactUs extends React.Component {
   }
 
   render() {
+    const fields = this.props.page.acf_fields
+    const contact = this.props.meta.contact;
     const mapEmbedCode = {
-      __html: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13703.936351420407!2d-83.961876!3d30.831112!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9e2701983b333faf!2sThomasville%20CrossFit!5e0!3m2!1sen!2sus!4v1573827345631!5m2!1sen!2sus" width="480" height="360" frameborder="0" style="border:0;" allowfullscreen=""></iframe>'
+      __html: fields.map_embed_code
     };
 
     return (
       <div className="contact-us__wrapper">
 
-        <Hero image='http://localhost/new-tcf/wp-content/uploads/2019/09/hero-temp.jpg' />
+        <Hero heading={fields.hero_heading} subhead={fields.hero_subhead} image={fields.hero_image} />
 
         <div className="section__container">
           <div className="section contact-us__content">
 
             <div className="contact-us__form">
               <h2>Send us a message</h2>
-              <Contact meta={this.props.meta} id={this.props.formId} formClass={this.props.formClass}
+              <Contact meta={this.props.meta} id={fields.contact_form_id} formClass={this.props.formClass}
               buttonClass={'button button--alt button--no-margin'} />
             </div>
 
@@ -35,14 +37,14 @@ class ContactUs extends React.Component {
               <div className="contact-us__location">
                 <h2>Find us in the real world</h2>
                 <div className="contact-us__address">
-                  118 Fairbanks Avenue<br />
+                  {contact.address}<br />
                   Thomasville, Georgia 31792
                 </div>
                 <div className="contact-us__phone">
-                  Phone: 229.977.5025
+                  Phone: {contact.phone}
                 </div>
                 <div className="contact-us__email">
-                  Email: abrie@thomasvillecrossfit.com
+                  Email: {contact.email}
                 </div>
               </div>
               <div className="contact-us__map-wrapper" dangerouslySetInnerHTML={mapEmbedCode} />
