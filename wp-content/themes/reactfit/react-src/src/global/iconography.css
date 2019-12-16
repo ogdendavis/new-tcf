@@ -38,6 +38,7 @@
 
 .button--no-margin {
   margin: 0;
+  border: 0;
 }
 
 .button__container {
