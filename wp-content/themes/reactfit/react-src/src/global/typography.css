@@ -21,7 +21,7 @@ a {
   transition: color .5s ease-in-out;
 }
 
-a:visited {
+a:visited:not(.button){
   color: var(--purple);
 }
 
