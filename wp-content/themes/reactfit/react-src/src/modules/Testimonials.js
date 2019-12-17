@@ -3,6 +3,7 @@ import axios from 'axios';
 
 // Slider library -- installed via yarn
 import Glide from '@glidejs/glide';
+import '../../node_modules/@glidejs/glide/dist/css/glide.core.min.css'
 
 import './Testimonials.css';
 
