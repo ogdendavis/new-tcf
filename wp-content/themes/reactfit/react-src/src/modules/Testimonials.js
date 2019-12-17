@@ -35,7 +35,11 @@ class Testimonials extends React.Component {
   }
 
   initializeGlider() {
-    this.slider = new Glide('.glide');
+    this.slider = new Glide('.glide', {
+      type: 'carousel',
+      autoplay: 7000,
+      hoverpause: true,
+    });
     this.slider.mount();
     console.log(this.state);
   }
