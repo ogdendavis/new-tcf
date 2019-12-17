@@ -1,7 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 
-import './Testimonials.css'
+// Slider library -- installed via yarn
+import Glide from '@glidejs/glide';
+
+import './Testimonials.css';
 
 // Import nav icons
 import NavIcon from '../assets/img/NavIcons.js';
