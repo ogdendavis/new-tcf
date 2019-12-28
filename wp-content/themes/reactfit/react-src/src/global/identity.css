@@ -24,3 +24,44 @@ body {
   padding: 0 1rem;
   overflow: auto; /* Keeps margins of child elements from moving container */
 }
+
+/* App loading state */
+.App--loading {
+  background: var(--black-a3);
+  width: 100vw;
+  height: 100vh;
+  padding: 30vh 0;
+}
+.loading__image {
+  width: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.loading__spinner {
+  display: block;
+  margin: auto;
+  width: 160px;
+  height: 160px;
+  position: relative;
+}
+.loading__spinner:after {
+  content: " ";
+  display: block;
+  width: 144px;
+  height: 144px;
+  margin: 4px;
+  border-radius: 50%;
+  border: 6px solid var(--tcf-blue);
+  border-color: var(--tcf-blue) transparent var(--tcf-blue) transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

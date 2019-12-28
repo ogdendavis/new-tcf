@@ -204,9 +204,10 @@ class App extends React.Component {
   render() {
     if (!this.state.render) {
       return (
-        <div className="App" style={{marginTop:'50px'}}>
-          {/*Replace this with a cool loading spinner!*/}
-          ... loading ...
+        <div className="App App--loading">
+          <div className="loading__spinner">
+            <img className="loading__image" src="http://localhost/new-tcf/wp-content/uploads/2019/09/SM-tcf-logo-wings-only.png" />
+          </div>
         </div>
       );
     }

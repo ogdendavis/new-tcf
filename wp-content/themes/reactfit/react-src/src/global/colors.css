@@ -12,6 +12,7 @@
   /* Making some transparent overlays */
   --black-a0: rgba(34,34,34,0);
   --black-a1: rgba(34,34,34,0.1);
+  --black-a3: rgba(34,34,34,0.3);
   --black-a5: rgba(34,34,34,0.5);
   --black-a6: rgba(34,34,34,0.6);
   --black-a8: rgba(34,34,34,0.8);
