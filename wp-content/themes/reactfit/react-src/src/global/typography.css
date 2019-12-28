@@ -21,7 +21,7 @@ a {
   transition: color .5s ease-in-out;
 }
 
-a:visited:not(.button){
+a:visited:not(.button):not(.header__nav-link) {
   color: var(--purple);
 }
 

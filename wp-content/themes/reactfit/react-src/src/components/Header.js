@@ -51,7 +51,7 @@ const HeaderMenu = (props) => {
     const itemKey = 'header-menu-' + item.id;
     return (
       <div className="header-menu__item" key={itemKey}>
-        <a href={item.url}>{item.title}</a>
+        <a className="header__nav-link" href={item.url}>{item.title}</a>
       </div>
     );
   });
