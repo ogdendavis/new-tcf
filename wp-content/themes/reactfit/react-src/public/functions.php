@@ -179,7 +179,7 @@ function reactfit_contact_info_init() {
       'label_for' => 'reactfit_email',
       'id' => 'reactfit_email_field',
       'type' => 'email'
-    ),
+    )
   );
 
   register_setting(
