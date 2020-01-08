@@ -1,5 +1,7 @@
+/*
+Removed to support IE, kept for reference
+All instances of these variables have been replaced with their values (ugh)
 :root {
-  /* base colors */
   --black: #222;
   --gray: #383838;
   --white: #fff;
@@ -9,7 +11,6 @@
   --yellow: #ffcb00;
   --purple: #8300ee;
 
-  /* Making some transparent overlays */
   --black-a0: rgba(34,34,34,0);
   --black-a1: rgba(34,34,34,0.1);
   --black-a3: rgba(34,34,34,0.3);
@@ -29,3 +30,4 @@
   --orange-a5: rgba(255,100,0,0.5);
   --orange-a9: rgba(255,100,0,0.9);
 }
+*/

@@ -1,9 +1,9 @@
 .site-footer {
-  color: var(--white);
+  color: #fff;
 }
 
 .site-footer a {
-  color: var(--yellow);
+  color: #ffcb00;
 }
 
 .site-footer__upper, .site-footer__lower {
@@ -14,7 +14,7 @@
 }
 
 .site-footer__upper {
-  background: linear-gradient(var(--black-a9), var(--black-a9));
+  background: linear-gradient(rgba(34,34,34,0.9),rgba(34,34,34,0.9));
   font-size: 18px;
 }
 
@@ -46,6 +46,6 @@
 }
 
 .site-footer__lower {
-  background: var(--black);
+  background: #222;
   font-size: 14px;
 }

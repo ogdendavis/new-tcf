@@ -12,7 +12,7 @@
 .programs .program {
   flex-grow: 1;
   box-sizing: border-box;
-  color: var(--white);
+  color: #fff;
   padding: 3rem 2rem;
 }
 

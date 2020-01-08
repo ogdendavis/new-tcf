@@ -18,8 +18,8 @@
   box-sizing: border-box;
   padding: 1rem;
   margin-left: -2rem;
-  background: var(--tcf-blue);
-  color: var(--white);
+  background: #005fed;
+  color: #fff;
   position: relative;
   z-index: 2;
 }
@@ -27,10 +27,10 @@
 .trainer__text {
   text-align: justify;
   margin: 12rem 3rem 5rem;
-  color: var(--black);
+  color: #222;
   position: relative;
   z-index: 2;
-  transition: var(--transition);
+  transition: all .5s ease-in-out;
   opacity: 0;
   pointer-events: none;
 }
@@ -48,9 +48,9 @@
   bottom: 0;
   left: 0;
   z-index: 1;
-  background: var(--white);
+  background: #fff;
   opacity: 0;
-  transition: var(--transition);
+  transition: all .5s ease-in-out;
 }
 
 .trainer:hover::after {

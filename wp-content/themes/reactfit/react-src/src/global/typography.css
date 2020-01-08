@@ -1,32 +1,36 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700|Montserrat:400,700&display=swap');
 
+/*
+Removed for IE support, but kept here for reference
+All instances of variable use replaced with values (ugh)
 :root {
   --heading-font: 'Montserrat', sans-serif;
   --body-font: 'Karla', sans-serif;
   --body-font-size: 1.125rem;
 }
+*/
 
 body {
-  font-family: var(--body-font);
-  font-size: var(--body-font-size);
+  font-family: 'Karla', sans-serif;
+  font-size: 1.125rem;
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--heading-font);
+  font-family: 'Montserrat', sans-serif;
 }
 
 a {
-  color: var(--tcf-blue);
+  color: #005fed;
   text-decoration: none;
   transition: color .5s ease-in-out;
 }
 
 a:visited:not(.button):not(.header__nav-link) {
-  color: var(--purple);
+  color: #8300ee;
 }
 
 a:hover {
-  color: var(--orange);
+  color: #ff6400;
 }
 
 /* Screen reader text class from WordPress */

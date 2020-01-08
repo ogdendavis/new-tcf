@@ -5,11 +5,11 @@
 }
 
 .contact-us__form input, .contact-us__form textarea {
-  font-size: var(--body-font-size);
+  font-size: 1.125rem;
 }
 
 .contact-us__real-world {
-  font-size: var(--body-font-size);
+  font-size: 1.125rem;
 }
 
 .contact-us__address, .contact-us__email {

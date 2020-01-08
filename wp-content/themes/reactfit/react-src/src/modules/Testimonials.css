@@ -21,7 +21,7 @@
 
 .testimonial__quote::before, .testimonial__quote::after {
   display: block;
-  font-family: var(--heading-font);
+  font-family: 'Montserrat', sans-serif;
   font-size: 5rem;
   box-sizing: border-box;
 }

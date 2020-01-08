@@ -2,38 +2,38 @@
   display: inline-block;
   padding: 1rem;
   margin: 1rem;
-  color: var(--white);
+  color: #fff;
   text-decoration: none;
   font-weight: 700;
   font-size: 18px;
-  background: var(--tcf-blue);
-  transition: var(--transition);
+  background: #005fed;
+  transition: all .5s ease-in-out;
 }
 
 .button:hover {
-  background: var(--white);
-  color: var(--tcf-blue);
+  background: #fff;
+  color: #005fed;
   cursor: pointer;
 }
 
 .button--white {
-  background: var(--white);
-  color: var(--tcf-blue);
+  background: #fff;
+  color: #005fed;
 }
 
 .button--white:hover {
-  background: var(--tcf-blue);
-  color: var(--white);
+  background: #005fed;
+  color: #fff;
 }
 
 .button--white-alt {
-  background: var(--white);
-  color: var(--tcf-blue);
+  background: #fff;
+  color: #005fed;
 }
 
 .button--white-alt:hover, .button--alt:hover {
-  background: var(--yellow);
-  color: var(--gray);
+  background: #ffcb00;
+  color: #383838;
 }
 
 .button--no-margin {
@@ -50,10 +50,10 @@
 }
 
 .social__icon path, .social__icon circle {
-  fill: var(--white);
+  fill: #fff;
   transition: fill .5s ease-in-out;
 }
 
 .social__icon:hover path, .social__icon:hover circle {
-  fill: var(--tcf-blue);
+  fill: #005fed;
 }

@@ -13,7 +13,7 @@
 }
 
 .about-us__wrapper .community__container {
-  background: var(--tcf-blue);
+  background: #005fed;
   color: white;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .programs-details__program-detail {
-  background: linear-gradient(var(--black-a1),var(--black-a1));
+  background: linear-gradient(rgba(34,34,34,0.1),rgba(34,34,34,0.1));
   padding: 1rem;
   margin: 2rem auto;
   display: flex;

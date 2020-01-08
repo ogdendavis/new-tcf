@@ -1,10 +1,14 @@
+/*
+Removed for IE support, but kept here for reference
+All instances of variable use replaced with values (ugh)
 :root {
   --transition: all .5s ease-in-out;
   --rounded: 10px;
 }
+*/
 
 body {
-  background: var(--off-white);
+  background: #f7f7f7;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -27,7 +31,7 @@ body {
 
 /* App loading state */
 .App--loading {
-  background: var(--black-a3);
+  background: rgba(34,34,34,0.3);
   width: 100vw;
   height: 100vh;
   padding: 30vh 0;
@@ -53,8 +57,8 @@ body {
   height: 144px;
   margin: 4px;
   border-radius: 50%;
-  border: 6px solid var(--tcf-blue);
-  border-color: var(--tcf-blue) transparent var(--tcf-blue) transparent;
+  border: 6px solid #005fed;
+  border-color: #005fed transparent #005fed transparent;
   animation: 1.2s linear infinite lds-dual-ring;
 }
 @keyframes lds-dual-ring {
