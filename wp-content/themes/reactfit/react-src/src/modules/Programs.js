@@ -71,7 +71,7 @@ class Programs extends React.Component {
       // Return simple version if detail not specified
       : (
           <div key={'prog' + fields.name} className="program" style={{
-            background: 'linear-gradient(var(--black-a6),var(--black-a6)), url("' + progImage + '") center/cover no-repeat',
+            background: 'linear-gradient(rgba(34,34,34,0.6),rgba(34,34,34,0.6)), url("' + progImage + '") center/cover no-repeat',
           }}>
             <h2 className="program__heading">
               {fields.name}
