@@ -1,3 +1,17 @@
+## Note to Self
+
+The build assumes that you're putting the static folder in the web root, but I
+am actually leaving it in the theme folder created by the build (where it's
+automatically placed.)
+
+Fixed with a shell script, copied below. This script is for the dev server, so
+I'll need to make an updated version once we're on live:
+
+sed -i '.bak' 's/="https:\/\/dev.ogdendavis.com\/tcf\/static\//="https:\/\/dev.ogdendavis.com\/tcf\/wp-content\/themes\/reactfit\/static\//g' /Applications/MAMP/htdocs/new-tcf/wp-content/themes/reactfit/reactfit/index.php
+
+
+-----------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
