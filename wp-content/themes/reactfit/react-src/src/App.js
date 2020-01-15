@@ -206,7 +206,7 @@ class App extends React.Component {
       return (
         <div className="App App--loading">
           <div className="loading__spinner">
-            <img className="loading__image" src="http://localhost/new-tcf/wp-content/uploads/2019/09/SM-tcf-logo-wings-only.png" alt="loading..." />
+            <img className="loading__image" src={this.state.home + '/wp-content/uploads/2019/09/SM-tcf-logo-wings-only.png'} alt="loading..." />
           </div>
         </div>
       );
