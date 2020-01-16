@@ -10,14 +10,19 @@ class Header extends React.Component {
     this.state = {
       scrolled: false,
     }
+
+    this.handleScroll = this.handleScroll.bind(this);
+    this.handleHammy = this.handleHammy.bind(this);
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
+    document.querySelector('.header__hammy').addEventListener('click', this.handleHammy);
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
+    document.querySelector('.header__hammy').removeEventListener('click', this.handleHammy);
   }
 
   handleScroll = () => {
@@ -29,6 +34,19 @@ class Header extends React.Component {
     }
   }
 
+  handleHammy = () => {
+    const header = document.querySelector('.site-header');
+    if (header.classList.contains('site-header--open')) {
+      document.querySelector('.header__content').style.height = '0';
+    }
+    else {
+      const newHeight = window.innerHeight -document.querySelector('.header__hammy').offsetHeight;
+      document.querySelector('.header__content').style.height = `${newHeight}px`;
+      console.log(newHeight);
+    }
+    header.classList.toggle('site-header--open');
+  }
+
   render() {
     const classes = this.state.scrolled ? 'site-header site-header--scrolled' : 'site-header';
     return (
@@ -38,12 +56,14 @@ class Header extends React.Component {
           <div className="hammy__mid" />
           <div className="hammy__bot" />
         </div>
-        <div className="header__row-one">
-          <HeaderContact contact={this.props.meta.contact}/>
-        </div>
-        <div className="header__row-two">
-          <HeaderLogo url={this.props.meta.home} logo={this.props.logo} />
-          <HeaderMenu items={this.props.menuItems} />
+        <div className="header__content">
+          <div className="header__row-one">
+            <HeaderContact contact={this.props.meta.contact}/>
+          </div>
+          <div className="header__row-two">
+            <HeaderLogo url={this.props.meta.home} logo={this.props.logo} />
+            <HeaderMenu items={this.props.menuItems} />
+          </div>
         </div>
       </div>
     );
