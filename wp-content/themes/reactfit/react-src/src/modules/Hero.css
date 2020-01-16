@@ -25,3 +25,24 @@
 .tagline__subhead {
   font-size: 1.5rem;
 }
+
+@media only screen and (max-width: 480px) {
+  .hero {
+    margin-top: 0;
+    padding: 3rem;
+    height: 55vh;
+  }
+
+  .hero__tagline {
+    max-width: none;
+  }
+
+  .tagline__heading {
+    font-size: 2rem;
+  }
+
+  .tagline__subhead {
+    font-size: 1.25rem;
+  }
+
+}
