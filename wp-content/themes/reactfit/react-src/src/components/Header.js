@@ -42,7 +42,6 @@ class Header extends React.Component {
     else {
       const newHeight = window.innerHeight -document.querySelector('.header__hammy').offsetHeight;
       document.querySelector('.header__content').style.height = `${newHeight}px`;
-      console.log(newHeight);
     }
     header.classList.toggle('site-header--open');
   }

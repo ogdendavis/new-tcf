@@ -41,7 +41,6 @@ class Testimonials extends React.Component {
       hoverpause: true,
     });
     this.slider.mount();
-    console.log(this.state);
   }
 
   render() {
