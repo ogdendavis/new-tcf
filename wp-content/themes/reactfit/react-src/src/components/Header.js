@@ -40,8 +40,10 @@ class Header extends React.Component {
       document.querySelector('.header__content').style.height = '0';
     }
     else {
-      const newHeight = window.innerHeight -document.querySelector('.header__hammy').offsetHeight;
-      document.querySelector('.header__content').style.height = `${newHeight}px`;
+      const hammyHeight = document.querySelector('.header__hammy').offsetHeight;
+      const headerContent = document.querySelector('.header__content');
+      headerContent.style.height = `${window.innerHeight - hammyHeight + 2}px`;
+      headerContent.style.top = `${hammyHeight - 2}px`;
     }
     header.classList.toggle('site-header--open');
   }
