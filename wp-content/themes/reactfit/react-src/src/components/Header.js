@@ -33,6 +33,11 @@ class Header extends React.Component {
     const classes = this.state.scrolled ? 'site-header site-header--scrolled' : 'site-header';
     return (
       <div className={classes}>
+        <div className="header__hammy">
+          <div className="hammy__top" />
+          <div className="hammy__mid" />
+          <div className="hammy__bot" />
+        </div>
         <div className="header__row-one">
           <HeaderContact contact={this.props.meta.contact}/>
         </div>
@@ -66,12 +71,18 @@ const HeaderMenu = (props) => {
 const HeaderContact = (props) => {
   return(
     <div className="header__contact">
-      <i className="fa fa-phone-alt"></i>
-      <span className="contact__phone">{props.contact.phone}</span>
-      <i className="fa fa-envelope"></i>
-      <span className="contact__email">{props.contact.email}</span>
-      <i className="fa fa-map-marker-alt"></i>
-      <span className="contact__address">{props.contact.address}, Thomasville GA, 31792</span>
+      <span className="contact__group">
+        <i className="fa fa-phone-alt"></i>
+        <span className="contact__phone">{props.contact.phone}</span>
+      </span>
+      <span className="contact__group">
+        <i className="fa fa-envelope"></i>
+        <span className="contact__email">{props.contact.email}</span>
+      </span>
+      <span className="contact__group">
+        <i className="fa fa-map-marker-alt"></i>
+        <span className="contact__address">{props.contact.address}, Thomasville GA, 31792</span>
+      </span>
     </div>
   );
 }

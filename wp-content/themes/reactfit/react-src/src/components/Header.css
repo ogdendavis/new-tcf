@@ -49,6 +49,10 @@
 
 .header__menu {
   display: flex;
+  flex-flow: row wrap;
+}
+
+.site-header--scrolled .header__menu {
   flex-flow: row nowrap;
 }
 
@@ -70,4 +74,39 @@
 
 .header-menu__item a:hover {
   color: #ffcb00;
+}
+
+@media only screen and (max-width: 480px) {
+  .header__row-one, .header__row-two {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+  }
+
+  .header__hammy {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    float: right;
+  }
+
+  .hammy__top, .hammy__mid, .hammy__bot {
+    width: 2rem;
+    height: 5px;
+    background: #ffcb00;
+    margin: 6px 0;
+    transition: all .5s ease-in-out;
+  }
+
+  .site-header--open .hammy__top {
+    transform: rotate(-45deg) translate(-8px, 6px);
+    background: #005fed
+  }
+  .site-header--open .hammy__mid {
+    opacity: 0;
+  }
+  .site-header--open .hammy__bot {
+    transform: rotate(45deg) translate(-9px, -8px);
+    background: #005fed
+  }
 }
