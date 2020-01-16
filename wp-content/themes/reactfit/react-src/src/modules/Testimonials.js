@@ -82,7 +82,7 @@ class Testimonials extends React.Component {
         <h2 className="screen-reader-text">Testimonials</h2>
       {/* Slides go in glide__track */}
         <div className="glide__track" data-glide-el="track">
-          <ul className="glide__slides">
+          <ul className="glide__slides testimonials__slides">
             {renderedSlides}
           </ul>
         </div>
