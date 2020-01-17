@@ -11,6 +11,13 @@
   justify-content: space-evenly;
 }
 
+@media only screen and (max-width: 480px) {
+  .do-it {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+}
+
 .do-it__blurb {
   padding: 0 1rem;
 }
