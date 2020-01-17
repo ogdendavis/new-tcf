@@ -1,6 +1,6 @@
 .trainers__container {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
 }
 
 .trainer {
@@ -33,6 +33,18 @@
   transition: all .5s ease-in-out;
   opacity: 0;
   pointer-events: none;
+}
+
+@media only screen and (max-width: 480px) {
+  .trainer__text {
+    margin: 8rem 0 0;
+    padding: 1rem;
+    background: rgba(255,255,255,0.85);
+  }
+
+  .trainer__text--visible {
+    opacity: 1;
+  }
 }
 
 .trainer:hover .trainer__text {

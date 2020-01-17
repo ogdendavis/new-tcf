@@ -9,6 +9,7 @@ class Coaches extends React.Component {
     this.state = {
       coaches: [],
     }
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   async componentDidMount() {
@@ -21,6 +22,28 @@ class Coaches extends React.Component {
 
     this.setState({
       coaches: coaches,
+    });
+
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll() {
+    const coachTexts = document.querySelectorAll('.trainer__text');
+    coachTexts.forEach(function(coach) {
+      const rect = coach.getBoundingClientRect();
+      const isVisible = (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+      if (isVisible) {
+        coach.classList.add('trainer__text--visible');
+      }
     });
   }
 
