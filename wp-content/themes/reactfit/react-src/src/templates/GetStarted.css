@@ -9,9 +9,31 @@
   padding-left: 2rem;
 }
 
+@media only screen and (max-width: 480px) {
+  .get-started__intro .intro__heading {
+    padding: 0;
+  }
+}
+
 .get-started__intro .intro__step-container {
   flex-basis: 65%;
   padding: 0 1rem;
+}
+
+@media only screen and (max-width: 480px) {
+  .get-started__intro .intro__step-container {
+    flex-basis: 95%;
+    padding: 0;
+  }
+
+  .get-started__intro .intro__step-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .get-started__intro .intro__step-container li {
+    margin-bottom: 1rem;
+  }
 }
 
 .get-started__intro .intro__form-container {
