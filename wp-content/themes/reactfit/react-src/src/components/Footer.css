@@ -18,11 +18,19 @@
   font-size: 18px;
 }
 
+.site-footer__hours, .site-footer__location, .site-footer__social {
+  max-width: 35%;
+}
+
 @media only screen and (max-width: 480px) {
   .site-footer__upper {
     flex-direction: column;
     padding: 1rem;
     text-align: center;
+  }
+
+  .site-footer__hours, .site-footer__location, .site-footer__social {
+    max-width: none;
   }
 
   .site-footer__hours {
