@@ -77,3 +77,21 @@
   padding: 2rem;
   font-size: 1.25rem;
 }
+
+@media only screen and (max-width: 800px) {
+  .dropin__text {
+    max-width: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .dropin__content {
+    padding: 0;
+  }
+
+  .dropin__text {
+    background: #f7f7f7;
+    color: #222;
+    max-width: none;
+  }
+}

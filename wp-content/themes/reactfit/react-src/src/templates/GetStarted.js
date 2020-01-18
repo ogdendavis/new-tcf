@@ -57,7 +57,7 @@ const DropIn = (props) => {
     __html: props.body,
   }
   const contentStyle = {
-    background: 'url(' + props.image.url + ') left no-repeat'
+    background: 'url(' + props.image.url + ') center no-repeat'
   }
 
   return (
