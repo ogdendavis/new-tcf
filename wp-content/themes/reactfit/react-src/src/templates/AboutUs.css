@@ -12,6 +12,12 @@
   flex-basis: 50%;
 }
 
+@media only screen and (max-width: 480px) {
+  .about-us__intro-text {
+    flex-basis: 95%;
+  }
+}
+
 .about-us__wrapper .community__container {
   background: #005fed;
   color: white;
@@ -26,6 +32,20 @@
 .community__photo {
   flex-basis: 25%;
   height: 20rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .community__photo {
+    flex-basis: 50%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .community__photo {
+    flex-basis: 100%;
+    height: 20rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .programs-details__program-detail {
@@ -43,6 +63,8 @@
 
 .program-detail__image-container {
   flex-basis: 35%;
+  display: flex;
+  align-items: center;
 }
 
 .program-detail__image {
@@ -51,4 +73,19 @@
 
 .programs-details__program-detail:nth-child(odd) .program-detail__text {
   order: 2;
+}
+
+@media only screen and (max-width: 480px) {
+  .programs-details__program-detail {
+    margin: 1rem auto;
+  }
+  .program-detail__text {
+    flex-basis: 95%;
+  }
+  .program-detail__image-container {
+    flex-basis: 100%;
+  }
+  .programs-details__program-detail:nth-child(odd) .program-detail__text {
+    order: 0;
+  }
 }
