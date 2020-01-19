@@ -4,12 +4,19 @@
   justify-content: space-around;
 }
 
+.contact-us__form {
+  max-width: 100%;
+  margin: 0 1rem;
+}
+
 .contact-us__form input, .contact-us__form textarea {
   font-size: 1.125rem;
+  max-width: 100%;
 }
 
 .contact-us__real-world {
   font-size: 1.125rem;
+  max-width: 100%;
 }
 
 .contact-us__address, .contact-us__email {
