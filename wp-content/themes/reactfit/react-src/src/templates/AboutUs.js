@@ -6,6 +6,7 @@ import './AboutUs.css';
 import Hero from '../modules/Hero';
 import Trainers from '../modules/Trainers';
 import Programs from '../modules/Programs';
+import VideoEmbed from  '../modules/VideoEmbed';
 
 class AboutUs extends React.Component {
   constructor(props) {
@@ -39,7 +40,9 @@ const Intro = (props) => {
         <div className="about-us__intro-text">
           <p>{props.fields.intro_body}</p>
         </div>
-        <div className="about-us__video-wrapper" dangerouslySetInnerHTML={{__html: props.fields.intro_video_embed}} />
+        <div className="about-us__video-wrapper">
+          <VideoEmbed url={props.fields.intro_video_url} />
+        </div>
       </div>
     </div>
   );
