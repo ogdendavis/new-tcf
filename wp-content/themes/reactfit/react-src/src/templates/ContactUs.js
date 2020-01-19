@@ -5,6 +5,7 @@ import './ContactUs.css';
 // import modules
 import ContactForm from '../modules/ContactForm';
 import Hero from '../modules/Hero';
+import MapEmbed from '../modules/MapEmbed';
 
 class ContactUs extends React.Component {
   constructor(props) {
@@ -47,7 +48,9 @@ class ContactUs extends React.Component {
                   Email: {contact.email}
                 </div>
               </div>
-              <div className="contact-us__map-wrapper" dangerouslySetInnerHTML={mapEmbedCode} />
+              <div className="contact-us__map-wrapper">
+                <MapEmbed url={fields.map_embed_url} />
+              </div>
             </div>
 
           </div>
