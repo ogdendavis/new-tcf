@@ -16,9 +16,6 @@ class ContactUs extends React.Component {
   render() {
     const fields = this.props.page.acf_fields
     const contact = this.props.meta.contact;
-    const mapEmbedCode = {
-      __html: fields.map_embed_code
-    };
 
     return (
       <div className="contact-us__wrapper">
