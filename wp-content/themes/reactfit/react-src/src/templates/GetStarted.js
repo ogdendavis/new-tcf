@@ -3,7 +3,7 @@ import React from 'react';
 // Import modules
 import Hero from '../modules/Hero';
 import Testimonials from '../modules/Testimonials';
-import Contact from '../modules/Contact';
+import ContactForm from '../modules/ContactForm';
 import Programs from '../modules/Programs'
 
 // Import styles
@@ -45,7 +45,7 @@ const Intro = (props) => {
         </div>
         <div className="intro__step-container" dangerouslySetInnerHTML={dangerousBody} />
         <div className="intro__form-container">
-          <Contact meta={props.meta} id={props.id} formClass={props.formClass} buttonClass={'button button--no-margin button--white-alt'} />
+          <ContactForm meta={props.meta} id={props.id} formClass={props.formClass} buttonClass={'button button--no-margin button--white-alt'} />
         </div>
       </div>
     </div>

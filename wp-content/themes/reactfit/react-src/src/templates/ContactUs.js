@@ -3,7 +3,7 @@ import React from 'react';
 import './ContactUs.css';
 
 // import modules
-import Contact from '../modules/Contact';
+import ContactForm from '../modules/ContactForm';
 import Hero from '../modules/Hero';
 
 class ContactUs extends React.Component {
@@ -29,7 +29,7 @@ class ContactUs extends React.Component {
 
             <div className="contact-us__form">
               <h2>Send us a message</h2>
-              <Contact meta={this.props.meta} id={fields.contact_form_id} formClass={this.props.formClass}
+              <ContactForm meta={this.props.meta} id={fields.contact_form_id} formClass={this.props.formClass}
               buttonClass={'button button--alt button--no-margin'} />
             </div>
 

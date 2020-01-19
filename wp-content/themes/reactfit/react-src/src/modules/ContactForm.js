@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 
-import './Contact.css';
+import './ContactForm.css';
 
 // Main export component
-class Contact extends React.Component {
+class ContactForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,4 +59,4 @@ class Contact extends React.Component {
 
 }
 
-export default Contact;
+export default ContactForm;
