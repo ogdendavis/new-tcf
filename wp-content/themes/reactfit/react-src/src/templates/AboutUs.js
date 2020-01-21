@@ -8,27 +8,22 @@ import Trainers from '../modules/Trainers';
 import Programs from '../modules/Programs';
 import VideoEmbed from  '../modules/VideoEmbed';
 
-class AboutUs extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-  }
+// Main component
 
-  render() {
-    const fields = this.props.page.acf_fields
-    return (
-      <div className="about-us__wrapper">
-        <Hero image={fields.hero_image} heading={fields.hero_heading} subhead={fields.hero_subhead} />
-        <Intro fields={fields} />
-        <Community fields={fields} />
-        <Trainers meta={this.props.meta}/>
-        <Programs title={'Our Programs'} detail={true} meta={this.props.meta} />
-      </div>
-    );
-  }
+const AboutUs = (props) => {
+  const fields = props.page.acf_fields
+  return (
+    <div className="about-us__wrapper">
+      <Hero image={fields.hero_image} heading={fields.hero_heading} subhead={fields.hero_subhead} />
+      <Intro fields={fields} />
+      <Community fields={fields} />
+      <Trainers meta={props.meta}/>
+      <Programs title={'Our Programs'} detail={true} meta={props.meta} />
+    </div>
+  );
 }
 
-// Stateless child components
+// Child components
 
 const Intro = (props) => {
   return (

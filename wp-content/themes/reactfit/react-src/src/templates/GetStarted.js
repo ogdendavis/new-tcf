@@ -10,28 +10,21 @@ import Programs from '../modules/Programs'
 import './GetStarted.css';
 
 // Main export component
-class GetStarted extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-  }
+const GetStarted = (props) => {
+  const fields = props.page.acf_fields
 
-  render() {
-    const fields = this.props.page.acf_fields
-
-    return (
-      <div className="get-started__wrapper">
-        <Hero heading={fields.hero_heading} subhead={fields.hero_subhead} image={fields.hero_image} />
-        <Intro heading={fields.intro_heading} body={fields.intro_body} meta={this.props.meta} id={fields.intro_form_id} formClass='get-started__form' />
-        <Programs meta={this.props.meta} title='Check out our programs'/>
-        <Testimonials addClass="get-started__testimonials-container" meta={this.props.meta} />
-        <DropIn heading={fields['drop-in_heading']} body={fields['drop-in_text']} image={fields['drop-in_image']} />
-      </div>
-    );
-  }
+  return (
+    <div className="get-started__wrapper">
+      <Hero heading={fields.hero_heading} subhead={fields.hero_subhead} image={fields.hero_image} />
+      <Intro heading={fields.intro_heading} body={fields.intro_body} meta={props.meta} id={fields.intro_form_id} formClass='get-started__form' />
+      <Programs meta={props.meta} title='Check out our programs'/>
+      <Testimonials addClass="get-started__testimonials-container" meta={props.meta} />
+      <DropIn heading={fields['drop-in_heading']} body={fields['drop-in_text']} image={fields['drop-in_image']} />
+    </div>
+  );
 }
 
-// Stateless child components
+// Child components
 
 const Intro = (props) => {
   const dangerousBody = {
