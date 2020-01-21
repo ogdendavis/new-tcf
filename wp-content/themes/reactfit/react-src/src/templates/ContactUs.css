@@ -6,12 +6,14 @@
 
 .contact-us__form {
   max-width: 100%;
-  margin: 0 1rem;
+  box-sizing: border-box;
+  padding: 0 1rem;
 }
 
 .contact-us__form input, .contact-us__form textarea {
   font-size: 1.125rem;
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-us__real-world {
