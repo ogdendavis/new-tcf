@@ -41,12 +41,7 @@ class Programs extends React.Component {
 
   generateMarkup(prog,width) {
     const fields = prog.acf_fields;
-    const img = fields.featured_image;
-    const progImage = width < 768 ? img.sizes.medium :
-                      width < 1024 ? img.sizes.medium_large :
-                      width < 1536 ? img.sizes.large :
-                      width < 2048 ? img.sizes['1536x1536'] :
-                      img.sizes['2048x2048'];
+    const progImage = fields.featured_image.url;
     const anchor = 'about-' + fields.name.toLowerCase();
     const buttonLink = fields.button_link ? fields.button_link : this.props.meta.home + '/about-thomasville-crossfit/#' + anchor;
 

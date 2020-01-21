@@ -48,20 +48,13 @@ class Coaches extends React.Component {
   }
 
   render() {
-    const width = this.props.meta.width;
     const renderedCoaches = this.state.coaches
       .sort((a,b) => {
         return Number(a.acf_fields.display_order) >= Number(b.acf_fields.display_order) ? 1 : -1;
       })
       .map(coach => {
-        const img = coach.acf_fields.image;
-        const bgImage = width < 768 ?   img.sizes.medium :
-                       width < 1024 ? img.sizes.medium_large :
-                       width < 1536 ? img.sizes.large :
-                       width < 2048 ? img.sizes['1536x1536'] :
-                       img.sizes['2048x2048'];
         const trainerStyle = {
-          background: 'url("' + bgImage + '") center/cover no-repeat',
+          background: 'url("' + coach.acf_fields.image.url + '") center/cover no-repeat',
         }
         return (
           <div className="trainer" style={trainerStyle} key={'coach' + coach.acf_fields.first_name}>
