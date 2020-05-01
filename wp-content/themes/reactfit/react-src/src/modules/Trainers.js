@@ -71,7 +71,10 @@ class Coaches extends React.Component {
             <h3>
               {coach.acf_fields.first_name} {coach.acf_fields.last_name}
             </h3>
-            <div className="trainer__text">{coach.acf_fields.bio}</div>
+            <div
+              className="trainer__text"
+              dangerouslySetInnerHTML={{ __html: coach.acf_fields.bio }}
+            />
           </div>
         );
       });
