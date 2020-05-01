@@ -9,6 +9,7 @@
   padding: 3rem 2rem;
   margin: 0 1rem 2rem;
   position: relative;
+  min-width: 45%;
 }
 
 .trainer h3 {
@@ -30,7 +31,7 @@
   color: #222;
   position: relative;
   z-index: 2;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   opacity: 0;
   pointer-events: none;
 }
@@ -39,7 +40,7 @@
   .trainer__text {
     margin: 8rem 0 0;
     padding: 1rem;
-    background: rgba(255,255,255,0.85);
+    background: rgba(255, 255, 255, 0.85);
   }
 
   .trainer__text--visible {
@@ -47,13 +48,14 @@
   }
 }
 
-.trainer:hover .trainer__text {
+.trainer:hover .trainer__text,
+.trainer:active .trainer__text {
   opacity: 1;
   pointer-events: auto;
 }
 
 .trainer::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -62,7 +64,7 @@
   z-index: 1;
   background: #fff;
   opacity: 0;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .trainer:hover::after {
